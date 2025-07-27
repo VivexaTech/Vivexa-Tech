@@ -66,6 +66,7 @@
 
     .head1 {
       background-color: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 50px;
       padding-left: 25px;
     }
@@ -104,33 +105,13 @@
       width: 100%;
       height: 100vh;
       display: none;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      position: sticky;
       top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 9999;
     }
 
-    .logform {
-      background-color: white;
-      width: 500px;
-      height: 500px;
-      padding: 20px;
-      color: black;
-      border-radius: 12px;
-    }
-
-    .logform button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-    }
 
     .sec2 {
       padding: 120px 7vw 60px 7vw;
@@ -224,8 +205,13 @@
       background-color: blueviolet;
     }
 
-    .cb { justify-content: end; }
-    .cl { justify-content: start; }
+    .cb { 
+      display: flex;
+      justify-content: end; 
+    }
+    .cl { 
+      display: flex;
+      justify-content: start; }
 
     .logo2 {
       width: 60px;
@@ -265,6 +251,39 @@
       .navbar-nav .nav-link {
         margin-bottom: 5px;
       }
+      .cb{
+        display: flex;
+        justify-content: center;
+      }
+      .cl{
+        display: flex;
+        justify-content: center;
+      }
+      .b2{
+        width: 80%;
+      }
+      .p2{
+  margin-left: 0vw;
+  margin-right: 0vw;
+}
+    .clog{
+      width: 100vw;
+      height: 50vh;
+      position: absolute;
+      left: 10vw;
+      right: 10vw;
+      top: 25vh;
+      bottom: 25vh;
+    }
+    }
+    .clog{
+      width: 40vw;
+      height: 50vh;
+      position: absolute;
+      left: 30vw;
+      right: 30vw;
+      top: 25vh;
+      bottom: 25vh;
     }
     .glass-card {
   background: rgba(255, 255, 255, 0.05);
@@ -280,6 +299,18 @@
   top: 100px; /* adjust based on header height */
   z-index: 10;
 }
+.closebtn{
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background-color: transparent;
+  border: none;
+}
+.p2{
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
   </style></head>
 <body>
 
@@ -289,7 +320,7 @@
       <div class="container-fluid head1" style="background-color: #1a1a1a;">
         <a class="navbar-brand" href="https://vivexatech.github.io/Vivexa-Tech/"><img src="VivexaTech/favicon.png" alt="logo" class="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"><img src="VivexaTech/menu.png" alt=""></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
@@ -306,19 +337,22 @@
   </header>
 
   <!-- Contact Form Popup -->
-  <div class="loginform" id="loginform">
-    <div class="logform" id="logform">
-      <button onclick="closelog()">xfuhyeiufhewhiu</button>
-      <h4>Share your information and we will contact you soon.</h4>
-      
-      <form>
-        <input type="text" placeholder="Name*" name="name" required>
-        <input type="number" placeholder="Mobile No.*" name="num" required>
-        <input type="email" placeholder="Email ID" name="email">
-        <input type="text" placeholder="Company" name="comp"><br>
-        <button type="submit">Submit</button>
-      </form>
+  <div class="loginform  justify-content-center" id="loginform">
+    <div class="card clog">
+      <button onclick="closelog()" class="closebtn" ><img src="VivexaTech/delete.png" alt=""></button>
+      <form action="https://formsubmit.co/vivexatech@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://vivexatech.github.io/Vivexa-Tech/">
+                <input type="text" placeholder="Name*" name="name" required>
+                <input type="number" placeholder="Mobile No.*" name="num" required>
+                <input type="email" placeholder="Email ID" name="email">
+                <input type="text" placeholder="Company" name="comp"><br>
+                <button type="submit" class="submit">Submit</button>
+            </form>
+
+
     </div>
+
   </div>
 
   <!-- About Section -->
@@ -361,95 +395,6 @@
       </div>
     </div>
   </div>
-  <!-- Services Section -->
-  <div class="sec2" id="Services" style="min-height: 100vh;">
-  <h1 class="text-center text-white mb-4">Our Services</h1>
-
-  <div class="container">
-    <div class="row" style="position: relative;">
-
-      <!-- Left Scrollable Cards -->
-      <div class="col-lg-7" style="height: fit-content; overflow-y: auto; padding-right: 15px;">
-        <div class="row g-4">
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>🚀 Fast Delivery</h5>
-              <p>We deliver responsive websites quickly and reliably.</p>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>🎨 Custom Design</h5>
-              <p>Each design is tailored uniquely to your brand.</p>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>📈 SEO Friendly</h5>
-              <p>Built with SEO in mind for more traffic & visibility.</p>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>🚀 Fast Delivery</h5>
-              <p>We deliver responsive websites quickly and reliably.</p>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>🎨 Custom Design</h5>
-              <p>Each design is tailored uniquely to your brand.</p>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>📈 SEO Friendly</h5>
-              <p>Built with SEO in mind for more traffic & visibility.</p>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>🚀 Fast Delivery</h5>
-              <p>We deliver responsive websites quickly and reliably.</p>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>🎨 Custom Design</h5>
-              <p>Each design is tailored uniquely to your brand.</p>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="card p-4 glass-card h-100">
-              <h5>📈 SEO Friendly</h5>
-              <p>Built with SEO in mind for more traffic & visibility.</p>
-            </div>
-          </div>
-
-          <!-- Add more cards as needed -->
-        </div>
-      </div>
-
-      <!-- Right Sticky Box -->
-      <div class="col-lg-5">
-        <div class="sticky-box glass-card p-4">
-          <h5>Why Choose Us</h5>
-          <h2 class="mb-3">Smart Choice for Online Growth</h2>
-          <p>
-            We don’t just build websites — we craft digital experiences that grow your business. Fast, SEO-rich, custom-built to help your brand shine.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
   <!-- Products Section -->
   <div class="sec2" id="Products">
   <h1>Products</h1>
@@ -502,52 +447,6 @@
     </div>
   </div>
 </div>
-  <!-- Pricing Section -->
-    <div class="sec2" id="Pricing">
-    <h1>Pricing</h1>
-  <div class="container-lg">
-    <!-- Add gap-3 to row -->
-    <div class="row g-3 justify-content-center">
-      
-      <!-- Reusable card structure -->
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title hc">Starter</h5>
-            <h2>₹4,999</h2>
-            <p class="card-text">1 Page Website <br>Responsive Design <br>Basic SEO</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title hc">Professional</h5>
-            <h2>₹9,999</h2>
-            <p class="card-text">Up to 5 Pages
-SEO Optimized
-Contact Form + Map</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title hc">Premium</h5>
-            <h2>₹14,999</h2>
-            <p class="card-text">Unlimited Pages
-Advanced SEO + Blog
-Custom Features</p>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </div>    
-  </div>
   <!-- Our work Section -->
   <div class="sec2" id="Work">
     <h1>Our Work</h1>
@@ -573,6 +472,136 @@ Custom Features</p>
   </button>
 </div>
   </div>
+  <!-- why us Section -->
+  <div class="sec2" id="Services" style="min-height: 100vh;">
+  <h1 class="text-center text-white mb-4">Why Choose us</h1>
+
+  <div class="container">
+    <div class="row" style="position: relative;">
+
+      <!-- Left Scrollable Cards -->
+      <div class="col-lg-7" style="height: fit-content; overflow-y: auto; padding-right: 15px;">
+        <div class="row g-4">
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">Fast Delivery</h3>
+              <p>We deliver responsive websites quickly and reliably.</p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">Custom Design</h3>
+              <p>Each design is tailored uniquely to your brand.</p>
+            </div>
+          </div>
+
+
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">Fast Delivery</h3>
+              <p>We deliver responsive websites quickly and reliably.</p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">Custom Design</h3>
+              <p>Each design is tailored uniquely to your brand.</p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">SEO Friendly</h3>
+              <p>Built with SEO in mind for more traffic & visibility.</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">Fast Delivery</h3>
+              <p>We deliver responsive websites quickly and reliably.</p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">Custom Design</h3>
+              <p>Each design is tailored uniquely to your brand.</p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card p-4 glass-card h-100">
+              <h3 class="hc">SEO Friendly</h3>
+              <p>Built with SEO in mind for more traffic & visibility.</p>
+            </div>
+          </div>
+
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+
+      <!-- Right Sticky Box -->
+      <div class="col-lg-5">
+        <div class="sticky-box glass-card p-4">
+          <h5>Why Choose Us</h5>
+          <h2 class="mb-3 hc">Smart Choice for Online Growth</h2>
+          <p>
+            We don’t just build websites — we craft digital experiences that grow your business. Fast, SEO-rich, custom-built to help your brand shine.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+  <!-- Pricing Section -->
+    <div class="sec2" id="Pricing">
+    <h1>Pricing</h1>
+  <div class="container-lg">
+    <!-- Add gap-3 to row -->
+    <div class="row g-3 justify-content-center">
+      
+      <!-- Reusable card structure -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <h5 class="card-title hc">Basic</h5>
+            <h2>₹1,499</h2>
+            <p class="card-text">1 Page Website <br><br>Basic SEO <br><br>Contact Form <br><br> Free domain for 1 year <br><br> Delivery in 2-3 days</p>
+            <button class="b2" onclick="showform()">Get started</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-12 p2">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <h5 class="card-title hc">Standard</h5>
+            <h2>₹4,999</h2>
+            <p class="card-text">Up to 5 Pages <br><br>SEO Optimized <br><br>Contact Form + Map <br><br>WhatsApp integration <br><br> Free domain for 3 years <br><br> Delivery in 5-7 dayes</p>
+            <button class="b2" onclick="showform()">Get started</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <h5 class="card-title hc">Premium</h5>
+            <h2>₹9,999</h2>
+            <p class="card-text">Unlimited Pages <br><br>Advanced SEO + Blog <br><br>Custom Features <br><br>1-month support included <br><br>Free domain for 3 years <br><br> Delivery in 7-10 days</p>
+            <button class="b2" onclick="showform()">Get started</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>    
+  </div>
+
   <!-- <footer></footer> -->
   <footer>
     <div class="foot">
@@ -587,7 +616,7 @@ Custom Features</p>
   <div class="col-sm-6">
     <div class="card c3 ">
       <div class="card-body cb">
-        <button class="b2" onclick="showform()">REQUEST A CALLBACK</button>
+        <button class="b2"  onclick="showform()">REQUEST A CALLBACK</button>
       </div>
     </div>
   </div>
