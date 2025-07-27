@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vivexatech.github.io/Vivexa-Tech/sitemap.xml
