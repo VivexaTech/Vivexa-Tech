@@ -463,7 +463,34 @@
         font-size: 0.95rem;
       }
     }
+        .carousel-box {
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      max-width: 1200px;   /* container size */
+      margin: auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 5vh 1vw 5vh 1vw;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.4); /* optional for better visibility */
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    @media (max-width: 576px) {
+      .carousel-box {
+        border: none;
+      }
+    }
   </style></head>
 <body>
   <!-- Header -->
@@ -617,28 +644,69 @@
   <!-- Our work Section -->
   <div class="sec2" id="Work">
     <h1>Our Work</h1>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
+<div class="carousel-box mt-4">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row align-items-center">
+          <!-- Text -->
+          <div class="col-lg-8 col-12 order-2 order-lg-1 text-center text-lg-start p-4">
+            <h1>Vivexa Tech Official Website</h1>
+            <p>A modern, bold website built to turn visitors into customers...</p>
+          </div>
+          <!-- Image -->
+          <div class="col-lg-4 col-12 order-1 order-lg-2">
+            <img src="./demo/d1.png" class="d-block w-100" alt="Slide 1">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row align-items-center">
+          <!-- Text -->
+          <div class="col-lg-8 col-12 order-2 order-lg-1 text-center text-lg-start p-4">
+            <h1>Vking – Creative Graphic Designer</h1>
+            <p>A creatively bold and minimalistic personal portfolio that showcases skills, projects, and passion with impact. Built with a dark theme, vibrant typography, and interactive elements — this site reflects design confidence and developer personality.</p>
+          </div>
+          <!-- Image -->
+          <div class="col-lg-4 col-12 order-1 order-lg-2">
+            <img src="./demo/d2.png" class="d-block w-100" alt="Slide 2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="row align-items-center">
+          <!-- Text -->
+          <div class="col-lg-8 col-12 order-2 order-lg-1 text-center text-lg-start p-4">
+            <h1>Yet Another Project</h1>
+            <p>Description of the third project. Clean and minimal layout.</p>
+          </div>
+          <!-- Image -->
+          <div class="col-lg-4 col-12 order-1 order-lg-2">
+            <img src="./demo/d1.png" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-  </div>
   <!-- why us Section -->
   <div class="sec2" id="Services" style="min-height: 100vh;">
   <h1 class="text-center text-white mb-4">Why Choose us</h1>
