@@ -463,34 +463,44 @@
         font-size: 0.95rem;
       }
     }
-        .carousel-box {
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      max-width: 1200px;   /* container size */
-      margin: auto;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      padding: 5vh 1vw 5vh 1vw;
-      position: relative;
-      overflow: hidden;
-    }
+    /* Carousel row layout */
+.carousel-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px;
+  gap: 20px;
+}
 
-    .carousel-control-prev, .carousel-control-next {
-      width: 5%;
-    }
+/* Carousel text block */
+.carousel-text {
+  flex: 1 1 60%;
+  text-align: left;
+}
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: rgba(0, 0, 0, 0.4); /* optional for better visibility */
-      border-radius: 50%;
-      padding: 10px;
-    }
+/* Carousel image block */
+.carousel-img {
+  flex: 1 1 35%;
+}
 
-    @media (max-width: 576px) {
-      .carousel-box {
-        border: none;
-      }
-    }
+@media (max-width: 768px) {
+  .carousel-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .carousel-text, .carousel-img {
+    flex: 1 1 100%;
+  }
+}
+.csl{
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+    
   </style></head>
 <body>
   <!-- Header -->
@@ -641,72 +651,67 @@
     </div>
   </div>
 </div>
-  <!-- Our work Section -->
-  <div class="sec2" id="Work">
-    <h1>Our Work</h1>
-<div class="carousel-box mt-4">
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
+<!-- Our work Section -->
+<div class="sec2" id="Work">
+  <h1>Our Work</h1>
+  <div class="carousel-box mt-4 csl">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
 
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row align-items-center">
-          <!-- Text -->
-          <div class="col-lg-8 col-12 order-2 order-lg-1 text-center text-lg-start p-4">
-            <h1>Vivexa Tech Official Website</h1>
-            <p>A modern, bold website built to turn visitors into customers...</p>
-          </div>
-          <!-- Image -->
-          <div class="col-lg-4 col-12 order-1 order-lg-2">
-            <img src="./demo/d1.png" class="d-block w-100" alt="Slide 1">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-row d-flex align-items-center">
+            <div class="carousel-text">
+              <h1>Vivexa Tech Official Website</h1>
+              <p>A modern, bold website built to turn visitors into customers...</p>
+            </div>
+            <div class="carousel-img">
+              <img src="./demo/d1.png" class="d-block w-100" alt="Slide 1">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <!-- Text -->
-          <div class="col-lg-8 col-12 order-2 order-lg-1 text-center text-lg-start p-4">
-            <h1>Vking – Creative Graphic Designer</h1>
-            <p>A creatively bold and minimalistic personal portfolio that showcases skills, projects, and passion with impact. Built with a dark theme, vibrant typography, and interactive elements — this site reflects design confidence and developer personality.</p>
-          </div>
-          <!-- Image -->
-          <div class="col-lg-4 col-12 order-1 order-lg-2">
-            <img src="./demo/d2.png" class="d-block w-100" alt="Slide 2">
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-row d-flex align-items-center">
+            <div class="carousel-text">
+              <h1>Vking – Creative Graphic Designer</h1>
+              <p>A creatively bold and minimalistic personal portfolio that showcases skills, projects, and passion with impact. Built with a dark theme, vibrant typography, and interactive elements — this site reflects design confidence and developer personality.</p>
+            </div>
+            <div class="carousel-img">
+              <img src="./demo/d2.png" class="d-block w-100" alt="Slide 2">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <!-- Text -->
-          <div class="col-lg-8 col-12 order-2 order-lg-1 text-center text-lg-start p-4">
-            <h1>Yet Another Project</h1>
-            <p>Description of the third project. Clean and minimal layout.</p>
-          </div>
-          <!-- Image -->
-          <div class="col-lg-4 col-12 order-1 order-lg-2">
-            <img src="./demo/d1.png" class="d-block w-100" alt="Slide 3">
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-row d-flex align-items-center">
+            <div class="carousel-text">
+              <h1>Yet Another Project</h1>
+              <p>Description of the third project. Clean and minimal layout.</p>
+            </div>
+            <div class="carousel-img">
+              <img src="./demo/d1.png" class="d-block w-100" alt="Slide 3">
+            </div>
           </div>
         </div>
+
       </div>
 
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-
   </div>
 </div>
+
   <!-- why us Section -->
   <div class="sec2" id="Services" style="min-height: 100vh;">
   <h1 class="text-center text-white mb-4">Why Choose us</h1>
