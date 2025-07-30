@@ -463,7 +463,7 @@
         font-size: 0.95rem;
       }
     }
-    /* Carousel row layout */
+/* Carousel row layout (desktop default) */
 .carousel-row {
   display: flex;
   flex-direction: row;
@@ -484,15 +484,18 @@
   flex: 1 1 35%;
 }
 
+/* Responsive for mobile screens */
 @media (max-width: 768px) {
   .carousel-row {
-    flex-direction: column;
+    flex-direction: column-reverse; /* image will come first */
     text-align: center;
   }
+
   .carousel-text, .carousel-img {
     flex: 1 1 100%;
   }
 }
+
 .csl{
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
