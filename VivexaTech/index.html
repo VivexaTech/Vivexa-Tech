@@ -71,6 +71,69 @@
   ]
 }
 </script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyDlmiQxH2ZFU2eUZ7V3JRtNNy8ozzJJ2_k",
+  authDomain: "vivexa-testimonial.firebaseapp.com",
+  projectId: "vivexa-testimonial",
+  storageBucket: "vivexa-testimonial.firebasestorage.app",
+  messagingSenderId: "615030329099",
+  appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const db = getFirestore(app);
+
+  // Google Login
+  async function loginAndPost() {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      let comment = document.getElementById("testimonialText").value.trim();
+      if (!comment) return alert("Please write a comment first!");
+
+      await addDoc(collection(db, "testimonial"), {
+        name: user.displayName,
+        photo: user.photoURL,
+        comment: comment,
+        createdAt: new Date()
+      });
+
+      document.getElementById("testimonialText").value = "";
+      loadTestimonial();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // Load Testimonials
+  async function loadTestimonial() {
+    const q = query(collection(db, "testimonial"), orderBy("createdAt", "desc"));
+    const querySnapshot = await getDocs(q);
+    let container = document.getElementById("testimonialList");
+    container.innerHTML = "";
+    querySnapshot.forEach(doc => {
+      let data = doc.data();
+      container.innerHTML += `
+        <div class="testimonial">
+          <img src="${data.photo}" alt="${data.name}" width="40">
+          <strong>${data.name}</strong>
+          <p>${data.comment}</p>
+        </div>
+      `;
+    });
+  }
+
+  window.loginAndPost = loginAndPost;
+  window.onload = loadTestimonial;
+</script>
 
     <style>
         /* CSS styles remain the same as they are universal */
@@ -484,6 +547,10 @@
                 <div class="section-title">
                     <h2>Trusted by New Businesses</h2>
                 </div>
+                <textarea id="testimonialText" placeholder="Write your feedback here"></textarea>
+<button onclick="loginAndPost()">Submit with Google</button>
+
+<div id="testimonialsList"></div>
                 <div class="testimonial-slider swiper-container-testimonials">
                      <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -778,10 +845,24 @@
                 }
             }
         });
+
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDlmiQxH2ZFU2eUZ7V3JRtNNy8ozzJJ2_k",
+  authDomain: "vivexa-testimonial.firebaseapp.com",
+  projectId: "vivexa-testimonial",
+  storageBucket: "vivexa-testimonial.firebasestorage.app",
+  messagingSenderId: "615030329099",
+  appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
+  measurementId: "G-84F8J877NQ"
+};
+        
     </script>
 </body>
 
 </html>
+
 
 
 
