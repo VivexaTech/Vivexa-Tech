@@ -478,6 +478,17 @@
                 </div>
             </div>
         </section>
+        <div class="testimonial-form">
+        <textarea id="testimonial-text" placeholder="Aapka anubhav kaisa raha..."></textarea>
+        <br><br>
+        <button id="submit-testimonial">Login with Google & Submit</button>
+    </div>
+
+    <h2>Logo Ne Kya Kaha</h2>
+    <div id="testimonials-area" class="testimonials-area">
+        </div>
+
+
 
         <section id="testimonials" class="testimonials-section">
             <div class="container reveal">
@@ -635,6 +646,10 @@
     </div>
     
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
 
     <script>
         // JavaScript remains the same as it controls functionality, not content
@@ -778,6 +793,96 @@
                 }
             }
         });
+        // Step 1: Firebase Console se copy kiya hua config object yahan paste karein
+const firebaseConfig = {
+  apiKey: "AIzaSyDlmiQxH2ZFU2eUZ7V3JRtNNy8ozzJJ2_k",
+  authDomain: "vivexa-testimonial.firebaseapp.com",
+  projectId: "vivexa-testimonial",
+  storageBucket: "vivexa-testimonial.firebasestorage.app",
+  messagingSenderId: "615030329099",
+  appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
+  measurementId: "G-84F8J877NQ"
+};
+
+// Step 2: Firebase ko initialize karein
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+// DOM Elements
+const submitButton = document.getElementById('submit-testimonial');
+const testimonialTextarea = document.getElementById('testimonial-text');
+const testimonialsArea = document.getElementById('testimonials-area');
+
+// -------- Submit Karne ka Logic --------
+submitButton.addEventListener('click', () => {
+    const comment = testimonialTextarea.value.trim();
+    if (comment === '') {
+        alert('Please apna feedback likhein.');
+        return;
+    }
+
+    // Google Sign-in Popup khole
+    auth.signInWithPopup(googleProvider)
+        .then((result) => {
+            // Sign-in successful
+            const user = result.user;
+            console.log("Signed in user:", user);
+
+            // Naya testimonial object banayein
+            const newTestimonial = {
+                name: user.displayName,
+                picture: user.photoURL,
+                comment: comment,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp() // Server ka time save karein
+            };
+
+            // "testimonials" collection me data save karein
+            return db.collection('testimonials').add(newTestimonial);
+        })
+        .then(() => {
+            // Data save hone ke baad
+            testimonialTextarea.value = ''; // Textarea khali karein
+            alert('Aapka feedback submit ho gaya hai. Dhanyavaad!');
+        })
+        .catch((error) => {
+            // Agar koi error aaye
+            console.error("Error submitting testimonial: ", error);
+            alert('Kuch gadbad ho gayi. Kripya dobara try karein.');
+        });
+});
+
+
+// -------- Testimonials ko Load Karne ka Logic --------
+function loadTestimonials() {
+    // 'testimonials' collection se data fetch karein, timestamp ke hisab se sort karke
+    db.collection('testimonials').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
+        testimonialsArea.innerHTML = ''; // Pehle se maujood content ko saaf karein
+        snapshot.forEach((doc) => {
+            const testimonial = doc.data();
+            addTestimonialToPage(testimonial);
+        });
+    });
+}
+
+// Naye testimonial ko page par display karne ka function
+function addTestimonialToPage(testimonial) {
+    const card = document.createElement('div');
+    card.className = 'testimonial-card'; // CSS class
+
+    card.innerHTML = `
+        <img src="${testimonial.picture}" alt="${testimonial.name}">
+        <div>
+            <strong>${testimonial.name}</strong>
+            <p>${testimonial.comment}</p>
+        </div>
+    `;
+    testimonialsArea.appendChild(card);
+}
+
+// Page load hote hi testimonials ko load karein
+loadTestimonials();
     </script>
 </body>
 
