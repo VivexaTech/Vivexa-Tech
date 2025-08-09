@@ -819,7 +819,7 @@ const testimonialsArea = document.getElementById('testimonials-area');
 submitButton.addEventListener('click', () => {
     const comment = testimonialTextarea.value.trim();
     if (comment === '') {
-        alert('Please apna feedback likhein.');
+        alert('Please share your feedback.');
         return;
     }
 
@@ -844,21 +844,18 @@ submitButton.addEventListener('click', () => {
         .then(() => {
             // Data save hone ke baad
             testimonialTextarea.value = ''; // Textarea khali karein
-            alert('Aapka feedback submit ho gaya hai. Dhanyavaad!');
+            alert('Thanks you for your feedback');
         })
         .catch((error) => {
-            // Agar koi error aaye
             console.error("Error submitting testimonial: ", error);
-            alert('Kuch gadbad ho gayi. Kripya dobara try karein.');
+            alert('Something went wrong.');
         });
 });
 
 
-// -------- Testimonials ko Load Karne ka Logic --------
 function loadTestimonials() {
-    // 'testimonials' collection se data fetch karein, timestamp ke hisab se sort karke
     db.collection('testimonials').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
-        testimonialsArea.innerHTML = ''; // Pehle se maujood content ko saaf karein
+        testimonialsArea.innerHTML = '';
         snapshot.forEach((doc) => {
             const testimonial = doc.data();
             addTestimonialToPage(testimonial);
@@ -866,7 +863,6 @@ function loadTestimonials() {
     });
 }
 
-// Naye testimonial ko page par display karne ka function
 function addTestimonialToPage(testimonial) {
     const card = document.createElement('div');
     card.className = 'testimonial-card'; // CSS class
@@ -881,7 +877,6 @@ function addTestimonialToPage(testimonial) {
     testimonialsArea.appendChild(card);
 }
 
-// Page load hote hi testimonials ko load karein
 loadTestimonials();
     </script>
 </body>
