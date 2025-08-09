@@ -830,7 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     comment: comment,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 };
-                return db.collection('testimonials').add(newTestimonial);
+                return db.collection('testimonials').doc(user.uid).set(newTestimonial);
             })
             .then(() => {
                 testimonialTxt.value = '';
@@ -898,6 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
 
 
 
