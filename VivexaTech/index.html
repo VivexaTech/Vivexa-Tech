@@ -228,6 +228,29 @@
         .swiper-button-next:after, .swiper-button-prev:after { text-shadow: 0 0 10px var(--bg-color); }
         @media (max-width: 992px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } .why-us-grid { grid-template-columns: 1fr; } .why-us-image { display: none; } .about-grid { grid-template-columns: 1fr; } }
         @media (max-width: 768px) { body { font-size: 15px; } section { padding: 80px 0; } .nav-links { display: none; position: fixed; top: 0; right: 0; width: min(75vw, 400px); height: 100vh; background-color: var(--card-color); flex-direction: column; justify-content: center; align-items: center; box-shadow: -10px 0px 30px -15px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.3s ease-in-out; } .nav-links.active { display: flex; transform: translateX(0); } .nav-links li { margin: 20px 0; } .nav-links a { font-size: 1.2rem; } .menu-toggle { display: block; font-size: 1.5rem; color: var(--cyan); cursor: pointer; z-index: 1001; } .footer-grid { grid-template-columns: 1fr; } .footer-column#footer-brand { grid-row: 4; text-align: center;} .pricing-grid { grid-template-columns: 1fr; } .about-grid { gap: 2rem; } .about-image { grid-row: 1; } .stats-container { grid-template-columns: 1fr; gap: 2rem; } }
+        .testimonial-form-container {
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    background: var(--card-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+.testimonial-form-container h4 {
+    font-family: var(--font-sans);
+    margin-bottom: 1.5rem;
+}
+.testimonial-form-container textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
     </style>
 </head>
 <body>
@@ -478,53 +501,23 @@
                 </div>
             </div>
         </section>
-        <div class="testimonial-form">
-        <textarea id="testimonial-text" placeholder="Aapka anubhav kaisa raha..."></textarea>
-        <br><br>
-        <button id="submit-testimonial">Login with Google & Submit</button>
-    </div>
 
-    <h2>Logo Ne Kya Kaha</h2>
-    <div id="testimonials-area" class="testimonials-area">
-        </div>
 
 
 
         <section id="testimonials" class="testimonials-section">
             <div class="container reveal">
                 <div class="section-title">
+                    <div class="testimonial-form-container reveal">
+    <h4>Share Your Experience With Us</h4>
+    <textarea id="testimonial-text" placeholder="Please tell us about your experience"></textarea>
+    <button id="submit-testimonial" class="cta-button">Submit with Google</button>
+</div>
                     <h2>Trusted by New Businesses</h2>
                 </div>
                 <div class="testimonial-slider swiper-container-testimonials">
                      <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial-card">
-                                <blockquote>
-                                    "Vivexa Tech built a fantastic website for our new startup on a very tight budget. Their work is professional and the support is excellent."
-                                </blockquote>
-                                <div class="client-info">
-                                    <img src="https://placehold.co/80x80/E2E8F0/0F172A?text=PS" alt="Priya Sharma" class="client-photo">
-                                    <div>
-                                        <span class="client-name">Priya S.</span>
-                                        <span class="client-title">Founder, The Daily Grind Cafe</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                             <div class="testimonial-card">
-                                <blockquote>
-                                    "We had our consultancy website made by them. The work was delivered on time and exceeded our expectations. Very happy with their service."
-                                </blockquote>
-                                <div class="client-info">
-                                    <img src="https://placehold.co/80x80/E2E8F0/0F172A?text=RA" alt="Rohan Agarwal" class="client-photo">
-                                    <div>
-                                        <span class="client-name">Rohan A.</span>
-                                        <span class="client-title">Director, ABC Consulting</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                      <div class="swiper-pagination"></div>
                 </div>
@@ -653,231 +646,254 @@
 
     <script>
         // JavaScript remains the same as it controls functionality, not content
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('.header');
-            window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-                navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
-            }
-            const themeToggle = document.getElementById('checkbox');
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme) {
-                document.documentElement.setAttribute('data-theme', currentTheme);
-                if (currentTheme === 'light') themeToggle.checked = true;
-            }
-            themeToggle.addEventListener('change', () => {
-                const theme = themeToggle.checked ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-            });
-            const popup = document.getElementById('contact-popup');
-            if (popup) {
-                document.querySelectorAll('[data-popup-trigger]').forEach(trigger => {
-                    trigger.addEventListener('click', e => {
-                        e.preventDefault();
-                        popup.classList.add('visible');
-                    });
-                });
-                const closePopup = () => popup.classList.remove('visible');
-                popup.querySelector('.close-popup').addEventListener('click', closePopup);
-                popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
-            }
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            new Swiper('.swiper-container', {
-                effect: 'coverflow',
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-                loop: true,
-            });
-            new Swiper('.swiper-container-testimonials', {
-                loop: true,
-                autoplay: { delay: 5000, disableOnInteraction: false },
-                pagination: { el: '.swiper-container-testimonials .swiper-pagination', clickable: true },
-            });
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const { width, height } = rect;
-                    const rotateX = (y / height - 0.5) * -20;
-                    const rotateY = (x / width - 0.5) * 20;
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                });
-            });
-            const canvas = document.getElementById('hero-bg');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            const numParticles = 100;
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 2 + 1;
-                    this.speedX = Math.random() * 2 - 1;
-                    this.speedY = Math.random() * 2 - 1;
-                    this.color = `rgba(0, 230, 247, ${Math.random()})`;
-                }
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    if (this.size > 0.2) this.size -= 0.01;
-                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-                }
-                draw() {
-                    ctx.fillStyle = this.color;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-            function initParticles() {
-                particles = [];
-                for (let i = 0; i < numParticles; i++) {
-                    particles.push(new Particle());
-                }
-            }
-            initParticles();
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
-                }
-                connectParticles();
-                requestAnimationFrame(animate);
-            }
-            animate();
-            function connectParticles() {
-                for (let a = 0; a < particles.length; a++) {
-                    for (let b = a; b < particles.length; b++) {
-                        const dx = particles[a].x - particles[b].x;
-                        const dy = particles[a].y - particles[b].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < 100) {
-                            const opacity = 1 - distance / 100;
-                            ctx.strokeStyle = `rgba(0, 230, 247, ${opacity})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.beginPath();
-                            ctx.moveTo(particles[a].x, particles[a].y);
-                            ctx.lineTo(particles[b].x, particles[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-        });
-        // Step 1: Firebase Console se copy kiya hua config object yahan paste karein
-const firebaseConfig = {
-  apiKey: "AIzaSyDlmiQxH2ZFU2eUZ7V3JRtNNy8ozzJJ2_k",
-  authDomain: "vivexa-testimonial.firebaseapp.com",
-  projectId: "vivexa-testimonial",
-  storageBucket: "vivexa-testimonial.firebasestorage.app",
-  messagingSenderId: "615030329099",
-  appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
-  measurementId: "G-84F8J877NQ"
-};
+        //======================================================================
+// Main Site Functionality (Aapka pehle ka code)
+//======================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
 
-// Step 2: Firebase ko initialize karein
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
-
-// DOM Elements
-const submitButton = document.getElementById('submit-testimonial');
-const testimonialTextarea = document.getElementById('testimonial-text');
-const testimonialsArea = document.getElementById('testimonials-area');
-
-// -------- Submit Karne ka Logic --------
-submitButton.addEventListener('click', () => {
-    const comment = testimonialTextarea.value.trim();
-    if (comment === '') {
-        alert('Please share your feedback.');
-        return;
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
     }
 
-    // Google Sign-in Popup khole
-    auth.signInWithPopup(googleProvider)
-        .then((result) => {
-            // Sign-in successful
-            const user = result.user;
-            console.log("Signed in user:", user);
+    // Theme switcher
+    const themeToggle = document.getElementById('checkbox');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'light') themeToggle.checked = true;
+    }
+    themeToggle.addEventListener('change', () => {
+        const theme = themeToggle.checked ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    });
 
-            // Naya testimonial object banayein
-            const newTestimonial = {
-                name: user.displayName,
-                picture: user.photoURL,
-                comment: comment,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp() // Server ka time save karein
-            };
-
-            // "testimonials" collection me data save karein
-            return db.collection('testimonials').add(newTestimonial);
-        })
-        .then(() => {
-            // Data save hone ke baad
-            testimonialTextarea.value = ''; // Textarea khali karein
-            alert('Thanks you for your feedback');
-        })
-        .catch((error) => {
-            console.error("Error submitting testimonial: ", error);
-            alert('Something went wrong.');
+    // Contact form popup
+    const popup = document.getElementById('contact-popup');
+    if (popup) {
+        document.querySelectorAll('[data-popup-trigger]').forEach(trigger => {
+            trigger.addEventListener('click', e => {
+                e.preventDefault();
+                popup.classList.add('visible');
+            });
         });
-});
+        const closePopup = () => popup.classList.remove('visible');
+        popup.querySelector('.close-popup').addEventListener('click', closePopup);
+        popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+    }
 
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    
+    // Portfolio Swiper
+    new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        loop: true,
+    });
 
-function loadTestimonials() {
-    db.collection('testimonials').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
-        testimonialsArea.innerHTML = '';
-        snapshot.forEach((doc) => {
-            const testimonial = doc.data();
-            addTestimonialToPage(testimonial);
+    // Project card 3D effect
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+            const { width, height } = rect;
+            const rotateX = (y / height - 0.5) * -20;
+            const rotateY = (x / width - 0.5) * 20;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
         });
     });
-}
 
-function addTestimonialToPage(testimonial) {
-    const card = document.createElement('div');
-    card.className = 'testimonial-card'; // CSS class
+    // Hero background canvas animation
+    const canvas = document.getElementById('hero-bg');
+    if(canvas) { // Check if canvas exists
+        const ctx = canvas.getContext('2d');
+        let particles = []; const numParticles = 100;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 2 - 1; this.speedY = Math.random() * 2 - 1;
+                this.color = `rgba(0, 230, 247, ${Math.random()})`;
+            }
+            update() {
+                this.x += this.speedX; this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = this.color; ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < numParticles; i++) particles.push(new Particle());
+        }
+        initParticles();
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update(); particles[i].draw();
+            }
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        animate();
+        function connectParticles() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    const dx = particles[a].x - particles[b].x;
+                    const dy = particles[a].y - particles[b].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        const opacity = 1 - distance / 100;
+                        ctx.strokeStyle = `rgba(0, 230, 247, ${opacity})`; ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y); ctx.stroke();
+                    }
+                }
+            }
+        }
+    }
+    
+    //======================================================================
+    // NEW: Firebase and Testimonial Functionality
+    //======================================================================
+    const firebaseConfig = {
+      apiKey: "AIzaSyDlmiQxH2ZFU2eUZ7V3JRtNNy8ozzJJ2_k",
+      authDomain: "vivexa-testimonial.firebaseapp.com",
+      projectId: "vivexa-testimonial",
+      storageBucket: "vivexa-testimonial.appspot.com",
+      messagingSenderId: "615030329099",
+      appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
+      measurementId: "G-84F8J877NQ"
+    };
 
-    card.innerHTML = `
-        <img src="${testimonial.picture}" alt="${testimonial.name}">
-        <div>
-            <strong>${testimonial.name}</strong>
-            <p>${testimonial.comment}</p>
-        </div>
-    `;
-    testimonialsArea.appendChild(card);
-}
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+    let testimonialSwiper; // Variable to hold the swiper instance
 
-loadTestimonials();
+    // DOM Elements for Testimonials
+    const submitBtn = document.getElementById('submit-testimonial');
+    const testimonialTxt = document.getElementById('testimonial-text');
+    const swiperWrapper = document.querySelector('.swiper-container-testimonials .swiper-wrapper');
+    
+    if(submitBtn) {
+        submitBtn.addEventListener('click', () => {
+            const comment = testimonialTxt.value.trim();
+            if (comment === '') {
+                alert('Please share your experience with us!');
+                return;
+            }
+            auth.signInWithPopup(googleProvider)
+            .then((result) => {
+                const user = result.user;
+                const newTestimonial = {
+                    name: user.displayName,
+                    picture: user.photoURL,
+                    comment: comment,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                };
+                return db.collection('testimonials').add(newTestimonial);
+            })
+            .then(() => {
+                testimonialTxt.value = '';
+                alert('Thank you! Your feedback has been submitted successfully.');
+            })
+            .catch((error) => {
+                console.error("Error submitting testimonial: ", error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    }
+
+    // Function to create a single testimonial slide HTML
+    function createTestimonialSlide(testimonial) {
+        const slideDiv = document.createElement('div');
+        slideDiv.className = 'swiper-slide';
+        slideDiv.innerHTML = `
+            <div class="testimonial-card">
+                <blockquote>“${testimonial.comment}”</blockquote>
+                <div class="client-info">
+                    <img src="${testimonial.picture}" alt="${testimonial.name}" class="client-photo">
+                    <div>
+                        <span class="client-name">${testimonial.name}</span>
+                        <span class="client-title">Verified Client</span>
+                    </div>
+                </div>
+            </div>`;
+        return slideDiv;
+    }
+
+    // Function to load testimonials from Firestore and manage Swiper
+    function loadAndDisplayTestimonials() {
+        if(!swiperWrapper) return; // If slider is not on this page, do nothing
+
+        db.collection('testimonials').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+            swiperWrapper.innerHTML = ''; // Clear old slides
+            
+            if(snapshot.empty) {
+                swiperWrapper.innerHTML = '<p style="color: var(--text-secondary); width: 100%;">Be the first one to leave a review!</p>';
+            } else {
+                snapshot.forEach(doc => {
+                    const testimonial = doc.data();
+                    const newSlide = createTestimonialSlide(testimonial);
+                    swiperWrapper.appendChild(newSlide);
+                });
+            }
+            
+            // Initialize or update swiper
+            if (testimonialSwiper) {
+                testimonialSwiper.update();
+            } else {
+                testimonialSwiper = new Swiper('.swiper-container-testimonials', {
+                    loop: !snapshot.empty, // Don't loop if there's only one or zero slides
+                    autoplay: { delay: 5000, disableOnInteraction: false },
+                    pagination: { el: '.swiper-container-testimonials .swiper-pagination', clickable: true },
+                });
+            }
+        });
+    }
+
+    // Start loading testimonials
+    loadAndDisplayTestimonials();
+});
     </script>
 </body>
 
