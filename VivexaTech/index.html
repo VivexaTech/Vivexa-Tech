@@ -858,30 +858,7 @@ const firebaseConfig = {
   appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
   measurementId: "G-84F8J877NQ"
 };
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { db } from "./firebase-config.js"; // yaha apna firebase config import kar
 
-async function loadComments() {
-    const querySnapshot = await getDocs(collection(db, "comments"));
-    const commentsContainer = document.getElementById("comments-list");
-    commentsContainer.innerHTML = ""; // Purana clear
-
-    querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        const commentElement = document.createElement("div");
-        commentElement.classList.add("comment");
-
-        commentElement.innerHTML = `
-            <strong>${data.name}</strong>
-            <p>${data.comment}</p>
-        `;
-
-        commentsContainer.appendChild(commentElement);
-    });
-}
-
-// Page load hote hi call kare
-loadComments();
         
     </script>
 </body>
