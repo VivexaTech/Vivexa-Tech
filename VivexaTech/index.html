@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vivexa Tech | Affordable Web Design for New Businesses in Gurugram</title>
 <meta name="description" content="Vivexa Tech helps new businesses and startups in Gurugram grow with affordable, professional websites. Get your business online with our packages starting at just ₹1499.">
-<meta name="keywords" content="affordable website, low cost website, website for new business, web design, gurugram, vivexa tech, startup website, business website,web development company in Gurugram, website design company in Gurugram, web development services Gurugram, best web development company in Gurugram, top web development company Gurgaon, e-commerce website development Gurugram, app development company in Gurugram, software development company Gurugram, hire web developer in Gurugram, affordable website design Gurugram, web designers near me, web development agency near me, local web development services, IT companies in Gurugram for web development, how much does a website cost in Gurugram, best web development for startups in Gurugram, how to choose a web development company in Gurgaon, e-commerce solutions for small business Gurugram, website redesign services Gurugram, local SEO services Gurugram, Vivexa Tech, Vivexa Tech Gurugram, Vivexa Tech reviews, Vivexa Tech web development, Vivexa Tech contact">
+<meta name="keywords" content="affordable website, low cost website, website for new business, web design, gurugram, vivexa tech, startup website, business website">
 <meta name="author" content="Vivexa Tech">
 <meta name="robots" content="index, follow">
 
@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -612,7 +612,7 @@
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/vivexa-tech-434954378/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://x.com/VivexaTech" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/vivexatech/" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/vivexatech/" aria-label="GitHub"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -632,13 +632,14 @@
                 <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
                 <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" name="email" required></div>
                 <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
-                <div class="form-group"><label for="details">Project Details</label><textarea id="details" name="details" rows="4" required>       </textarea></div>
+                <div class="form-group"><label for="details">Project Details</label><textarea id="details" name="details" rows="4" required></textarea></div>
                 <button type="submit" class="cta-button form-submit-btn">Submit Inquiry</button>
             </form>
         </div>
     </div>
     
-    <script src="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
@@ -798,6 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
       storageBucket: "vivexa-testimonial.appspot.com",
       messagingSenderId: "615030329099",
       appId: "1:615030329099:web:a4021bf93cb8a48bd71c0e",
+      measurementId: "G-84F8J877NQ"
     };
 
     // Initialize Firebase
@@ -828,7 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     comment: comment,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 };
-                return db.collection('testimonials').doc(user.uid).set(newTestimonial);
+                return db.collection('testimonials').add(newTestimonial);
             })
             .then(() => {
                 testimonialTxt.value = '';
@@ -859,35 +861,38 @@ document.addEventListener('DOMContentLoaded', () => {
         return slideDiv;
     }
 
-    // Function to load testimonials from Firestore and manage Swiper
-    function loadAndDisplayTestimonials() {
-        if(!swiperWrapper) return; // If slider is not on this page, do nothing
+// Function to load testimonials from Firestore and manage Swiper
+function loadAndDisplayTestimonials() {
+    if (!swiperWrapper) return; // If slider is not on this page, do nothing
 
-        db.collection('testimonials').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-            swiperWrapper.innerHTML = ''; // Clear old slides
-            
-            if(snapshot.empty) {
-                swiperWrapper.innerHTML = '<p style="color: var(--text-secondary); width: 100%;">Be the first one to leave a review!</p>';
-            } else {
-                snapshot.forEach(doc => {
-                    const testimonial = doc.data();
-                    const newSlide = createTestimonialSlide(testimonial);
-                    swiperWrapper.appendChild(newSlide);
-                });
-            }
-            
-            // Initialize or update swiper
-            if (testimonialSwiper) {
-                testimonialSwiper.update();
-            } else {
-                testimonialSwiper = new Swiper('.swiper-container-testimonials', {
-                    loop: !snapshot.empty, // Don't loop if there's only one or zero slides
-                    autoplay: { delay: 5000, disableOnInteraction: false },
-                    pagination: { el: '.swiper-container-testimonials .swiper-pagination', clickable: true },
-                });
-            }
-        });
-    }
+    db.collection('testimonials').orderBy('timestamp', 'desc').get().then(snapshot => {
+        swiperWrapper.innerHTML = ''; // Clear old slides
+
+        if (snapshot.empty) {
+            swiperWrapper.innerHTML = '<p style="color: var(--text-secondary); width: 100%;">Be the first one to leave a review!</p>';
+        } else {
+            snapshot.forEach(doc => {
+                const testimonial = doc.data();
+                const newSlide = createTestimonialSlide(testimonial);
+                swiperWrapper.appendChild(newSlide);
+            });
+        }
+
+        // Initialize or update swiper
+        if (testimonialSwiper) {
+            testimonialSwiper.update();
+        } else {
+            testimonialSwiper = new Swiper('.swiper-container-testimonials', {
+                loop: !snapshot.empty && snapshot.docs.length > 1, // Loop only if more than 1 slide
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                pagination: { el: '.swiper-container-testimonials .swiper-pagination', clickable: true },
+            });
+        }
+    }).catch(error => {
+        console.error("Error fetching testimonials: ", error);
+        swiperWrapper.innerHTML = '<p style="color: var(--text-secondary); width: 100%;">Could not load testimonials. Please try again later.</p>';
+    });
+}
 
     // Start loading testimonials
     loadAndDisplayTestimonials();
@@ -896,11 +901,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
-
-
-
-
-
 
 
 
