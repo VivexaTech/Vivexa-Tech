@@ -45,15 +45,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-<!-- JSON-LD Structured Data -->
+<!-- LocalBusiness + ProfessionalService Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "name": "Vivexa Tech",
   "url": "https://vivexatech.online/",
   "logo": "https://vivexatech.online/assets/favicon/web-app-manifest-512x512.png",
-  "image": "https://www.vivexatech.online/assets/images/ogimage.png",
+  "image": "https://vivexatech.online/assets/images/ogimage.png",
   "description": "Vivexa Tech provides affordable and professional website design services for new businesses and startups in Gurugram, India.",
   "address": {
     "@type": "PostalAddress",
@@ -63,12 +63,28 @@
     "addressCountry": "IN"
   },
   "telephone": "+91-9354486861",
-  "priceRange": "₹1499-₹9999",
+  "priceRange": "₹1,499 - ₹9,999",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.4595",
+    "longitude": "77.0266"
+  },
   "sameAs": [
     "https://www.instagram.com/vivexatech/",
     "https://x.com/VivexaTech",
-    "https://www.linkedin.com/in/vivexa-tech-434954378/"
+    "https://www.linkedin.com/company/vivexa-tech/"
   ]
+}
+</script>
+
+<!-- Organization Schema for Logo in Google Search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vivexa Tech",
+  "url": "https://vivexatech.online/",
+  "logo": "https://vivexatech.online/assets/favicon/web-app-manifest-512x512.png"
 }
 </script>
 
@@ -898,6 +914,7 @@ const firebaseConfig = {
 </body>
 
 </html>
+
 
 
 
