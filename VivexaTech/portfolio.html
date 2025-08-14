@@ -341,7 +341,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => initialObserver.observe(el));
 
-        // --- DYNAMIC PORTFOLIO LOADING LOGIC (FIXED) ---
+        // --- DYNAMIC PORTFOLIO LOADING LOGIC ---
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
         const portfolioContainer = document.getElementById('portfolio-container');
@@ -354,12 +354,14 @@
                         return;
                     }
 
-                    let allProjectsHTML = ''; // 1. Create an empty string to hold all the HTML
+                    let allProjectsHTML = '';
 
                     snapshot.forEach(doc => {
                         const project = doc.data();
                         const tagsHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
-                        // 2. Append the HTML for each project to the string variable
+                        
+                        // *** MODIFICATION START ***
+                        // The "See Project" button is added here.
                         allProjectsHTML += `
                             <article class="project-showcase reveal">
                                 <div class="project-image">
@@ -372,15 +374,17 @@
                                     <div class="tech-tags">
                                         ${tagsHTML}
                                     </div>
+                                    <a href="${project.url}" class="cta-button" target="_blank" rel="noopener noreferrer" style="margin-top: 2rem;">
+                                        See Project <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: 8px;"></i>
+                                    </a>
                                 </div>
                             </article>
                         `;
+                        // *** MODIFICATION END ***
                     });
 
-                    // 3. Set the innerHTML only ONCE, after the loop is complete
                     portfolioContainer.innerHTML = allProjectsHTML;
 
-                    // 4. Now that the elements are in the DOM, apply the reveal animation observer
                     const dynamicObserver = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
