@@ -112,7 +112,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
@@ -131,7 +130,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden bg-black bg-opacity-90 absolute top-full left-0 w-full transform -translate-y-[150%]">
             <a href="#about" class="block text-white text-center py-4 text-lg hover:bg-gray-800">About</a>
             <a href="#menu" class="block text-white text-center py-4 text-lg hover:bg-gray-800">Menu</a>
@@ -141,7 +139,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="hero-bg h-screen flex items-center justify-center text-white text-center">
         <div class="bg-black bg-opacity-50 p-12 rounded-lg">
             <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 leading-tight reveal">Experience Coffee, Redefined.</h1>
@@ -150,7 +147,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="py-20 md:py-32 bg-white">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -167,7 +163,6 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section id="menu" class="py-20 md:py-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
@@ -175,7 +170,6 @@
                 <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Handcrafted with love and the finest ingredients.</p>
             </div>
             
-            <!-- Menu Categories -->
             <div class="flex justify-center mb-12 space-x-4 md:space-x-8 reveal">
                 <button class="menu-filter-btn active px-6 py-2 rounded-full font-semibold" data-filter="all">All</button>
                 <button class="menu-filter-btn px-6 py-2 rounded-full font-semibold" data-filter="coffee">Coffee</button>
@@ -184,7 +178,6 @@
             </div>
 
             <div id="menu-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Coffee Items -->
                 <div class="menu-item reveal" data-category="coffee">
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                         <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg" alt="Espresso" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
@@ -210,106 +203,102 @@
                     </div>
                 </div>
                 <div class="menu-item reveal" data-category="coffee">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg" alt="Latte" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Latte</h3>
-                            <p class="text-gray-600 mb-4">A creamier version with more steamed milk.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg" alt="Latte" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Latte</h3>
+                                <p class="text-gray-600 mb-4">A creamier version with more steamed milk.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$4.50</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$4.50</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Food Items -->
                 <div class="menu-item reveal" data-category="food">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://media.istockphoto.com/id/1139597774/photo/toast-with-mashed-avocado-arugula.jpg?s=612x612&w=0&k=20&c=MXJpDlUCAMVnHCIuO6d4uq8iRXrJXegAYkGeuoTd5Wc=" alt="Avocado Toast" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Avocado Toast</h3>
-                            <p class="text-gray-600 mb-4">Sourdough, fresh avocado, chili flakes, and a hint of lime.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://media.istockphoto.com/id/1139597774/photo/toast-with-mashed-avocado-arugula.jpg?s=612x612&w=0&k=20&c=MXJpDlUCAMVnHCIuO6d4uq8iRXrJXegAYkGeuoTd5Wc=" alt="Avocado Toast" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Avocado Toast</h3>
+                                <p class="text-gray-600 mb-4">Sourdough, fresh avocado, chili flakes, and a hint of lime.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$8.50</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$8.50</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="menu-item reveal" data-category="food">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://media.istockphoto.com/id/1303481589/photo/sausage-and-egg-breakfast-burrito.jpg?s=612x612&w=0&k=20&c=I7U70VnoMB35GVZjT3zO9auDEAmh8X_xRJXATvbJ4Fk=" alt="Breakfast Burrito" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Breakfast Burrito</h3>
-                            <p class="text-gray-600 mb-4">Scrambled eggs, cheese, beans, and salsa in a warm tortilla.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://media.istockphoto.com/id/1303481589/photo/sausage-and-egg-breakfast-burrito.jpg?s=612x612&w=0&k=20&c=I7U70VnoMB35GVZjT3zO9auDEAmh8X_xRJXATvbJ4Fk=" alt="Breakfast Burrito" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Breakfast Burrito</h3>
+                                <p class="text-gray-600 mb-4">Scrambled eggs, cheese, beans, and salsa in a warm tortilla.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$9.00</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$9.00</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="menu-item reveal" data-category="food">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://media.istockphoto.com/id/937016542/photo/quinoa-salad-with-beet-root-and-spinach.jpg?s=612x612&w=0&k=20&c=hI7X9AzPWGtiusK8NZs7qF1rmJTjHrsmKilFkQgkZs8=" alt="Quinoa Salad" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Quinoa Salad</h3>
-                            <p class="text-gray-600 mb-4">A healthy mix of quinoa, fresh vegetables, and lemon vinaigrette.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://media.istockphoto.com/id/937016542/photo/quinoa-salad-with-beet-root-and-spinach.jpg?s=612x612&w=0&k=20&c=hI7X9AzPWGtiusK8NZs7qF1rmJTjHrsmKilFkQgkZs8=" alt="Quinoa Salad" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Quinoa Salad</h3>
+                                <p class="text-gray-600 mb-4">A healthy mix of quinoa, fresh vegetables, and lemon vinaigrette.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$10.00</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$10.00</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Pastries Items -->
                 <div class="menu-item reveal" data-category="pastries">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://media.istockphoto.com/id/1001971972/photo/breakfast-with-croissants-coffee-orange-juice-and-berries.jpg?s=612x612&w=0&k=20&c=wTVT_klrQJrY3_fMa23nl18vEa8KGUXokHSzB39t9hg=" alt="Croissant" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Croissant</h3>
-                            <p class="text-gray-600 mb-4">Buttery, flaky, and freshly baked every morning.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://media.istockphoto.com/id/1001971972/photo/breakfast-with-croissants-coffee-orange-juice-and-berries.jpg?s=612x612&w=0&k=20&c=wTVT_klrQJrY3_fMa23nl18vEa8KGUXokHSzB39t9hg=" alt="Croissant" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Croissant</h3>
+                                <p class="text-gray-600 mb-4">Buttery, flaky, and freshly baked every morning.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$3.50</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$3.50</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="menu-item reveal" data-category="pastries">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://media.istockphoto.com/id/1207748377/photo/fresh-homemade-cinnamon-rolls-or-cinnamon-buns.jpg?s=612x612&w=0&k=20&c=6EuzyJLCx9HOTJFsTwVt7uT5aMJGQ97soxePfmKYNBk=" alt="Cinnamon Roll" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Cinnamon Roll</h3>
-                            <p class="text-gray-600 mb-4">Soft, gooey, and topped with cream cheese frosting.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://media.istockphoto.com/id/1207748377/photo/fresh-homemade-cinnamon-rolls-or-cinnamon-buns.jpg?s=612x612&w=0&k=20&c=6EuzyJLCx9HOTJFsTwVt7uT5aMJGQ97soxePfmKYNBk=" alt="Cinnamon Roll" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Cinnamon Roll</h3>
+                                <p class="text-gray-600 mb-4">Soft, gooey, and topped with cream cheese frosting.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$4.00</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$4.00</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="menu-item reveal" data-category="pastries">
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                        <img src="https://media.istockphoto.com/id/1191458812/photo/chocolate-layer-cake.jpg?s=612x612&w=0&k=20&c=2plIArpL-W7A26kOafqp5cVY7VznJwbO4YpqNfah8yY=" alt="Chocolate Cake" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Chocolate Cake</h3>
-                            <p class="text-gray-600 mb-4">A rich and decadent slice of chocolate heaven.</p>
+                       <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            <img src="https://media.istockphoto.com/id/1191458812/photo/chocolate-layer-cake.jpg?s=612x612&w=0&k=20&c=2plIArpL-W7A26kOafqp5cVY7VznJwbO4YpqNfah8yY=" alt="Chocolate Cake" class="menu-item-image w-full h-48 object-cover transition-transform duration-300">
+                            <div class="p-6 flex-grow">
+                                <h3 class="text-2xl font-playfair font-bold mb-2 section-title">Chocolate Cake</h3>
+                                <p class="text-gray-600 mb-4">A rich and decadent slice of chocolate heaven.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <span class="text-xl font-bold text-gray-800">$5.50</span>
+                            </div>
                         </div>
-                        <div class="p-6 pt-0">
-                            <span class="text-xl font-bold text-gray-800">$5.50</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="py-20 md:py-32 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl md:text-5xl font-playfair font-bold section-title">Our Moments</h2>
                 <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">A glimpse into the life and art of The Daily Grind.</p>
             </div>
-            <!-- Swiper -->
-            <div class="swiper-container gallery-swiper reveal">
+            <div class="swiper-container gallery-swiper reveal overflow-hidden">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="https://media.istockphoto.com/id/1145612951/photo/how-to-make-coffee-latte-art.jpg?s=612x612&w=0&k=20&c=eWySA066zDDKeC3WN9WGekBsgkPg9tlVquVtswliX_c=" alt="Latte Art" class="w-full h-full object-cover"></div>
                     <div class="swiper-slide"><img src="https://media.istockphoto.com/id/842948570/photo/male-barista-making-cappuccino.jpg?s=612x612&w=0&k=20&c=o-QafCnC21rUH9nBXjxpA8W8d62zBiyHtkqn14_7gGk=" alt="Smiling Barista" class="w-full h-full object-cover"></div>
@@ -318,16 +307,13 @@
                     <div class="swiper-slide"><img src="https://media.istockphoto.com/id/1135359711/photo/roasted-coffee-beans-falling-down.jpg?s=612x612&w=0&k=20&c=95H4AaIuH-bVDdHeUlhn9qeWCZttdeoLaRygxQOQ2Wg=" alt="Coffee Beans" class="w-full h-full object-cover"></div>
                     <div class="swiper-slide"><img src="https://media.istockphoto.com/id/1466607636/photo/happy-young-woman-paying-bill-with-a-contactless-credit-card-in-a-restaurant-female-smiling.jpg?s=612x612&w=0&k=20&c=fnmRVrpCwYZuFjUNcalIhWPf6GVpyF9-9Y4Tu07vmaE=" alt="Happy Customers" class="w-full h-full object-cover"></div>
                 </div>
-                <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
-                <!-- Add Navigation -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 md:py-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
@@ -369,7 +355,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-20 md:py-32 bg-white">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12">
@@ -408,11 +393,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
         <div class="container mx-auto px-6">
             <div class="grid gap-12 md:grid-cols-3 text-center md:text-left">
-                <!-- Part 1: About -->
                 <div>
                     <h3 class="text-xl font-playfair font-bold text-white mb-4">The Daily Grind</h3>
                     <p class="text-gray-400 mb-4 text-sm">
@@ -431,7 +414,6 @@
                     </div>
                 </div>
 
-                <!-- Part 2: Quick Links -->
                 <div>
                     <h3 class="text-xl font-playfair font-bold text-white mb-4">Quick Links</h3>
                     <ul class="space-y-2">
@@ -443,7 +425,6 @@
                     </ul>
                 </div>
 
-                <!-- Part 3: Contact Info -->
                 <div>
                     <h3 class="text-xl font-playfair font-bold text-white mb-4">Contact Us</h3>
                     <p class="mb-2">123 Coffee Lane, Brewville, CA 90210</p>
@@ -454,7 +435,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500">
-                <p>&copy; <span id="year"></span> The Daily Grind. All Rights Reserved.</p>
+                <p>© <span id="year"></span> The Daily Grind. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
