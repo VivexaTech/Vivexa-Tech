@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. Doe & Associates - Premier Law Firm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(10, 24, 47, 0.85), rgba(10, 24, 47, 0.85)), url('https://media.istockphoto.com/id/1192060250/photo/supreme-court-of-india-building-in-new-delhi-india.jpg?s=612x612&w=0&k=20&c=e7ywH8wwo_-k85Y24l6oXOq9fYdQvxRq2fe1gyOsKBM=');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .stat-card {
+             background: rgba(255, 255, 255, 0.1);
+             backdrop-filter: blur(10px);
+             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 tracking-wider">Vivexa Law</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-gray-600 hover:text-yellow-600 transition-colors">About</a>
+                <a href="#practice-areas" class="text-gray-600 hover:text-yellow-600 transition-colors">Practice Areas</a>
+                <a href="#results" class="text-gray-600 hover:text-yellow-600 transition-colors">Case Results</a>
+                <a href="#blog" class="text-gray-600 hover:text-yellow-600 transition-colors">Blog</a>
+                <a href="#contact" class="text-gray-600 hover:text-yellow-600 transition-colors">Contact</a>
+                <a href="#contact" class="bg-yellow-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-yellow-600 cta-button">Free Consultation</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-gray-200">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-yellow-600">About</a>
+            <a href="#practice-areas" class="block py-2 text-gray-600 hover:text-yellow-600">Practice Areas</a>
+            <a href="#results" class="block py-2 text-gray-600 hover:text-yellow-600">Case Results</a>
+            <a href="#blog" class="block py-2 text-gray-600 hover:text-yellow-600">Blog</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-yellow-600">Contact</a>
+            <a href="#contact" class="block mt-2 bg-yellow-500 text-white text-center font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600 cta-button">Free Consultation</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section text-white py-24 md:py-40">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Expert Legal Counsel, Unwavering Dedication</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">Providing trusted legal advice and powerful representation to protect your rights and interests. We fight for you when it matters most.</p>
+                <a href="#contact" class="bg-yellow-500 text-white font-bold py-4 px-10 rounded-lg text-lg shadow-xl hover:bg-yellow-600 cta-button">Schedule a Free Consultation</a>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="stat-card p-6 rounded-lg">
+                        <h3 class="text-4xl font-bold text-yellow-400">98%</h3>
+                        <p class="text-gray-200 mt-2">Success Rate</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-lg">
+                        <h3 class="text-4xl font-bold text-yellow-400">₹50M+</h3>
+                        <p class="text-gray-200 mt-2">Recovered for Clients</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-lg">
+                        <h3 class="text-4xl font-bold text-yellow-400">20+</h3>
+                        <p class="text-gray-200 mt-2">Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="md:flex md:items-center md:space-x-16">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <img src="https://media.istockphoto.com/id/1008159054/photo/law-and-justice.jpg?s=612x612&w=0&k=20&c=cJEnc4NBJ4WwCm53FDHBquLSQA_TIPmTeayveA7U4_g=" alt="Jane Doe, Attorney at Law" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-6">Your Trusted Legal Partner</h2>
+                        <p class="text-gray-600 mb-4 text-lg">With over 20 years of experience, Jane Doe has built a reputation for integrity, sharp legal acumen, and a client-first approach. At J. Doe & Associates, we understand that legal challenges can be stressful. Our mission is to navigate the complexities of the law on your behalf, providing clear guidance and effective solutions.</p>
+                        <p class="text-gray-600 mb-8 text-lg">We are committed to achieving the best possible outcome for every client, combining deep legal knowledge with a personalized strategy tailored to your unique situation.</p>
+                        <div class="border-l-4 border-yellow-500 pl-6 py-3 bg-gray-50 rounded-r-lg">
+                            <p class="text-gray-700 italic text-xl">"Our commitment is to justice and to the clients we serve. We don't just represent you; we partner with you."</p>
+                            <p class="text-gray-900 font-semibold mt-3">- Jane Doe, Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900">Why Choose J. Doe & Associates?</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">We provide more than just legal representation. We provide peace of mind.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="text-center">
+                        <div class="flex justify-center items-center mx-auto bg-yellow-500 text-white w-20 h-20 rounded-full mb-4">
+                            <i data-lucide="scale" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Proven Track Record</h3>
+                        <p class="text-gray-600">Our history of successful verdicts and settlements speaks for itself. We have the experience to win.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex justify-center items-center mx-auto bg-yellow-500 text-white w-20 h-20 rounded-full mb-4">
+                            <i data-lucide="users" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Client-Centric Approach</h3>
+                        <p class="text-gray-600">You are our priority. We offer personalized attention, keeping you informed at every step of the legal process.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex justify-center items-center mx-auto bg-yellow-500 text-white w-20 h-20 rounded-full mb-4">
+                            <i data-lucide="award" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Award-Winning Experts</h3>
+                        <p class="text-gray-600">Our attorneys are recognized leaders in their fields, bringing unparalleled expertise to your case.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Areas Section -->
+        <section id="practice-areas" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900">Our Areas of Expertise</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">We offer comprehensive legal services across a range of practice areas to meet all your legal needs.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards -->
+                    <div class="bg-gray-50 p-8 rounded-lg text-center card-hover">
+                        <div class="flex justify-center mb-4"><div class="bg-yellow-100 p-4 rounded-full"><i data-lucide="heart-pulse" class="w-10 h-10 text-yellow-600"></i></div></div>
+                        <h3 class="text-xl font-bold mb-2">Personal Injury</h3>
+                        <p class="text-gray-600">Fighting for the compensation you deserve after an accident or injury.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg text-center card-hover">
+                        <div class="flex justify-center mb-4"><div class="bg-yellow-100 p-4 rounded-full"><i data-lucide="shield" class="w-10 h-10 text-yellow-600"></i></div></div>
+                        <h3 class="text-xl font-bold mb-2">Criminal Defense</h3>
+                        <p class="text-gray-600">Aggressively defending your rights and freedom when you're facing criminal charges.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg text-center card-hover">
+                        <div class="flex justify-center mb-4"><div class="bg-yellow-100 p-4 rounded-full"><i data-lucide="users-2" class="w-10 h-10 text-yellow-600"></i></div></div>
+                        <h3 class="text-xl font-bold mb-2">Family Law</h3>
+                        <p class="text-gray-600">Compassionate representation in divorce, child custody, and other family matters.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg text-center card-hover">
+                        <div class="flex justify-center mb-4"><div class="bg-yellow-100 p-4 rounded-full"><i data-lucide="briefcase" class="w-10 h-10 text-yellow-600"></i></div></div>
+                        <h3 class="text-xl font-bold mb-2">Business Law</h3>
+                        <p class="text-gray-600">Strategic legal counsel for businesses, from formation and contracts to litigation.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg text-center card-hover">
+                        <div class="flex justify-center mb-4"><div class="bg-yellow-100 p-4 rounded-full"><i data-lucide="home" class="w-10 h-10 text-yellow-600"></i></div></div>
+                        <h3 class="text-xl font-bold mb-2">Real Estate Law</h3>
+                        <p class="text-gray-600">Expert guidance on residential and commercial real estate transactions and disputes.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg text-center card-hover">
+                        <div class="flex justify-center mb-4"><div class="bg-yellow-100 p-4 rounded-full"><i data-lucide="file-text" class="w-10 h-10 text-yellow-600"></i></div></div>
+                        <h3 class="text-xl font-bold mb-2">Estate Planning</h3>
+                        <p class="text-gray-600">Helping you protect your assets and provide for your loved ones with wills and trusts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Results Section -->
+        <section id="results" class="py-24 bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold">Proven Success Stories</h2>
+                    <p class="text-gray-300 mt-4 max-w-3xl mx-auto text-lg">Our results demonstrate our commitment to achieving the best for our clients.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <p class="text-4xl font-bold text-yellow-400 mb-3">₹2.5 Million</p>
+                        <h3 class="text-xl font-semibold mb-2">Personal Injury Settlement</h3>
+                        <p class="text-gray-400">Successfully secured a multi-million dollar settlement for a client injured in a complex multi-vehicle accident.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <p class="text-4xl font-bold text-yellow-400 mb-3">Not Guilty</p>
+                        <h3 class="text-xl font-semibold mb-2">Major Felony Case</h3>
+                        <p class="text-gray-400">Achieved a full acquittal for a client facing serious felony charges after a lengthy and contentious jury trial.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <p class="text-4xl font-bold text-yellow-400 mb-3">Favorable</p>
+                        <h3 class="text-xl font-semibold mb-2">Business Litigation Verdict</h3>
+                        <p class="text-gray-400">Won a favorable verdict for a corporate client in a high-stakes breach of contract dispute, saving them millions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900">What Our Clients Say</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">Our clients' success is our greatest achievement.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 p-8 rounded-lg card-hover">
+                        <p class="text-gray-600 italic mb-4">"Jane Doe was a beacon of hope for my family during a very difficult time. Her professionalism and empathy were second to none. We are eternally grateful for her service."</p>
+                        <p class="font-bold text-gray-900">- Michael R.</p>
+                        <p class="text-sm text-yellow-600">Family Law Client</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg card-hover">
+                        <p class="text-gray-600 italic mb-4">"I was facing serious charges and the team at J. Doe & Associates was incredible. They were thorough, strategic, and fought tirelessly for me. They achieved a result I didn't think was possible."</p>
+                        <p class="font-bold text-gray-900">- Sarah L.</p>
+                        <p class="text-sm text-yellow-600">Criminal Defense Client</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg card-hover">
+                        <p class="text-gray-600 italic mb-4">"As a small business owner, having J. Doe & Associates on my side is invaluable. Their legal advice is always sound, timely, and crucial for my company's growth and protection."</p>
+                        <p class="font-bold text-gray-900">- David C.</p>
+                        <p class="text-sm text-yellow-600">Business Law Client</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900">Legal Insights & News</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">Stay informed with the latest legal updates and analysis from our expert team.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="https://placehold.co/600x400/d1d5db/334155?text=Legal+Topic+1" alt="Blog post image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">July 15, 2024</p>
+                            <h3 class="text-xl font-bold mb-3">Understanding Your Rights in a Traffic Stop</h3>
+                            <p class="text-gray-600 mb-4">Knowing what to do and say can make a significant difference. Here are the key things to remember...</p>
+                            <a href="#" class="font-semibold text-yellow-600 hover:text-yellow-700">Read More &rarr;</a>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="https://placehold.co/600x400/d1d5db/334155?text=Legal+Topic+2" alt="Blog post image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">June 28, 2024</p>
+                            <h3 class="text-xl font-bold mb-3">5 Key Clauses to Look for in a Business Contract</h3>
+                            <p class="text-gray-600 mb-4">Before you sign, make sure you understand these critical components of any business agreement...</p>
+                            <a href="#" class="font-semibold text-yellow-600 hover:text-yellow-700">Read More &rarr;</a>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="https://placehold.co/600x400/d1d5db/334155?text=Legal+Topic+3" alt="Blog post image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">June 10, 2024</p>
+                            <h3 class="text-xl font-bold mb-3">The Importance of Estate Planning at Any Age</h3>
+                            <p class="text-gray-600 mb-4">It's never too early to plan for the future. Learn why estate planning is crucial for everyone...</p>
+                            <a href="#" class="font-semibold text-yellow-600 hover:text-yellow-700">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">Quick answers to common questions about our services and the legal process.</p>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item p-6 border rounded-lg bg-gray-50" open>
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            What types of cases do you handle?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">We specialize in Personal Injury, Criminal Defense, Family Law, Business Law, Real Estate Law, and Estate Planning. We recommend scheduling a free consultation to discuss the specifics of your case.</p>
+                    </details>
+                    <details class="faq-item p-6 border rounded-lg bg-gray-50">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            How much does a consultation cost?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Your initial consultation with us is completely free and confidential. It's an opportunity for us to understand your situation and for you to learn how we can help, with no obligation.</p>
+                    </details>
+                    <details class="faq-item p-6 border rounded-lg bg-gray-50">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            What should I bring to my first meeting?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Please bring any documents relevant to your case, such as police reports, contracts, correspondence, medical records, or any court notices. A written summary of events can also be very helpful.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold">Schedule Your Free, Confidential Consultation</h2>
+                    <p class="text-gray-300 mt-4 max-w-3xl mx-auto text-lg">Take the first step towards resolving your legal issue. Contact us today. Our team is ready to listen and provide the guidance you need.</p>
+                </div>
+                <div class="md:flex md:items-start md:space-x-12 max-w-6xl mx-auto">
+                    <div class="md:w-1/2 bg-white text-gray-800 p-8 rounded-lg shadow-lg mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Secure Message</h3>
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Briefly describe your legal issue</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-yellow-600 cta-button">Submit Inquiry</button>
+                        </form>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
+                             <h3 class="text-2xl font-bold mb-4 text-white">Contact Information</h3>
+                             <div class="flex items-center mb-4"><i data-lucide="map-pin" class="w-6 h-6 mr-4 text-yellow-400"></i><p class="text-gray-300">123 Legal Avenue, Suite 400, Justice City, ST 54321</p></div>
+                             <div class="flex items-center mb-4"><i data-lucide="phone" class="w-6 h-6 mr-4 text-yellow-400"></i><p class="text-gray-300">(123) 456-7890</p></div>
+                             <div class="flex items-center"><i data-lucide="mail" class="w-6 h-6 mr-4 text-yellow-400"></i><p class="text-gray-300">contact@jdoelaw.com</p></div>
+                        </div>
+                        <div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.295441566373!2d-73.9882393233342!3d40.7554489713886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6565597%3A0x1d36c57f7396096!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1684342442795!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-lg"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold">Vivexa Law</h3>
+                    <p class="text-sm text-gray-400 mt-2">Fighting for Your Rights</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Quick Links</h4>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white text-sm">About Us</a></li>
+                        <li><a href="#practice-areas" class="text-gray-400 hover:text-white text-sm">Practice Areas</a></li>
+                        <li><a href="#results" class="text-gray-400 hover:text-white text-sm">Case Results</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white text-sm">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold">Practice Areas</h4>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Personal Injury</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Criminal Defense</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Family Law</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Business Law</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold">Get In Touch</h4>
+                    <ul class="mt-2 space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start"><i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-1 shrink-0"></i>123 Legal Avenue, Justice City</li>
+                        <li class="flex items-start"><i data-lucide="phone" class="w-4 h-4 mr-2 mt-1 shrink-0"></i>(123) 456-7890</li>
+                        <li class="flex items-start"><i data-lucide="mail" class="w-4 h-4 mr-2 mt-1 shrink-0"></i>contact@jdoelaw.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-xs text-gray-500 mt-10 border-t border-gray-700 pt-6">
+                 <p class="mb-2">&copy; 2024 J. Doe & Associates. All Rights Reserved.</p>
+                <p>Disclaimer: The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+                // Close mobile menu on link click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // FAQ accordion icon rotation
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('toggle', event => {
+                const icon = item.querySelector('summary i');
+                if (item.open) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
