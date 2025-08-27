@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivay Hospital – NABH Approved Multispeciality Hospital in Gurugram</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --secondary-green: #28a745;
+            --light-blue: #e7f1ff;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-white: #ffffff;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--bg-white);
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-green);
+            color: var(--bg-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #1e7e34;
+            transform: translateY(-2px);
+        }
+        
+        header {
+            background: var(--bg-white);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: background 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        #home {
+            background-color: var(--light-blue);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .hero-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text .tagline {
+            display: inline-block;
+            background-color: #fff;
+            color: var(--secondary-green);
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid var(--secondary-green);
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            margin-bottom: 40px;
+        }
+
+        .hero-emergency {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero-emergency h4 {
+            color: #dc3545;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .hero-emergency a {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        .hero-emergency span {
+            color: var(--border-color);
+        }
+
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            z-index: 2;
+            border: 10px solid #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .image-bg-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: 450px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-blue));
+            border-radius: 50%;
+            transform: rotate(45deg);
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 992px) {
+            #home {
+                min-height: auto;
+                padding-top: 120px;
+            }
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text {
+                order: 2;
+            }
+            .hero-image {
+                order: 1;
+                margin-bottom: 40px;
+            }
+            .hero-text .description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-emergency {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image img {
+                max-width: 300px;
+            }
+            .image-bg-shape {
+                max-width: 300px;
+            }
+        }
+        
+        .quick-links-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .quick-links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .quick-link-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .quick-link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,123,255,0.15);
+        }
+        
+        .quick-link-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .quick-link-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        #about {
+            background: var(--bg-white);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-green);
+            margin-bottom: 15px;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .about-badges {
+            flex-basis: 400px;
+            text-align: center;
+        }
+        .about-badges img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .tpa-banner {
+            background: var(--light-blue);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            border: 2px dashed var(--primary-blue);
+        }
+
+        #facilities {
+            background-color: #f9f9f9;
+        }
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .facility-card {
+            background: var(--bg-white);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--secondary-green);
+            transition: transform 0.3s ease;
+        }
+        
+        .facility-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .facility-card i {
+            font-size: 3rem;
+            color: var(--secondary-green);
+            margin-bottom: 20px;
+        }
+
+        .facility-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .facility-card p {
+            color: var(--text-light);
+        }
+
+        #doctors {
+             background: var(--light-blue);
+        }
+        
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .doctor-card {
+            background: var(--bg-white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .doctor-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .doctor-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        
+        .doctor-info {
+            padding: 20px;
+        }
+        
+        .doctor-info h4 {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+        }
+        
+        .doctor-info p {
+            font-size: 1rem;
+            color: var(--secondary-green);
+            font-weight: 500;
+        }
+
+        .gallery-slider {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .slide {
+            display: none;
+        }
+        
+        .slide.active {
+            display: block;
+            animation: fade 1.5s;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        @keyframes fade {
+            from { opacity: .4 } 
+            to { opacity: 1 }
+        }
+
+        #contact {
+            background: var(--bg-white);
+        }
+        .contact-wrapper {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info, .contact-form-container {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-green);
+            margin-right: 15px;
+            width: 30px;
+        }
+        
+        .contact-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary-blue);
+        }
+
+        .appointment-form {
+            background: var(--light-blue);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .appointment-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .map-container {
+            margin-top: 50px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #001f3f;
+            color: #f4f4f4;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--bg-white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-green);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col li a:hover {
+            color: var(--bg-white);
+        }
+        
+        .footer-col p {
+            color: #bbb;
+        }
+
+        .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background: rgba(255,255,255,0.2);
+            margin-right: 10px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: var(--bg-white);
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .whatsapp-chat, .emergency-call-sticky {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 999;
+        }
+
+        .whatsapp-chat {
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+        }
+
+        .emergency-call-sticky {
+            bottom: 100px;
+            right: 30px;
+            background-color: #dc3545;
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .nav-links li {
+                margin: 20px 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .header-buttons {
+                display: none;
+            }
+            .about-content, .contact-wrapper {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title h2 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <img src="https://placehold.co/100x100/007bff/FFFFFF?text=SH" alt="Shivay Hospital Logo">
+                    <span>Shivay Hospital</span>
+                </a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="header-buttons">
+                    <a href="#contact" class="btn btn-primary">Book Appointment</a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="hero-wrapper">
+                    <div class="hero-text">
+                        <span class="tagline">Trusted Care Since 1999 – NABH Approved</span>
+                        <h1>Quality & Affordable Healthcare in Gurugram</h1>
+                        <p class="description">
+                            Shivay Hospital combines state-of-the-art technology with compassionate care to provide comprehensive multispeciality services for your family.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+                        </div>
+                        <div class="hero-emergency">
+                            <h4><i class="fas fa-phone-volume"></i> 24/7 Emergency Helpline</h4>
+                            <a href="tel:9711368893">9711368893</a>
+                            <span>|</span>
+                            <a href="tel:8860421424">8860421424</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-bg-shape"></div>
+                        <img src="https://media.istockphoto.com/id/692381776/photo/doctor-talking-to-a-family-at-the-hospital.jpg?s=612x612&w=0&k=20&c=cDwVx1sgH6JXQcD0N8ljSxU2389-O0NhufDa6FE9YbY=" alt="Doctor at Shivay Hospital">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Shivay Hospital</h2>
+                    <p>Your Health is Our Priority</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Welcome to A Center of Healing and Trust</h3>
+                        <p>Shivay Hospital is a trusted multispeciality hospital in Gurugram, providing affordable and quality healthcare since 1999. We are committed to offering comprehensive medical services with a focus on patient care, safety, and satisfaction.</p>
+                        <p>Our team of experienced doctors and dedicated staff work tirelessly to ensure the best possible outcomes for our patients. We blend compassionate care with state-of-the-art technology to create a healing environment for everyone.</p>
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    </div>
+                    <div class="about-badges">
+                        <img src="https://www.babajiayurveda.in/images/about-nabh.png" alt="NABH Approved Badge">
+                        <div class="tpa-banner">
+                            <i class="fas fa-shield-alt"></i> All TPA & Insurance Available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Facilities</h2>
+                    <p>Comprehensive services under one roof.</p>
+                </div>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <i class="fas fa-stethoscope"></i>
+                        <h3>OPD</h3>
+                        <p>Expert consultations across various specialities.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-bed-pulse"></i>
+                        <h3>Admission</h3>
+                        <p>Comfortable and well-equipped inpatient services.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-baby-carriage"></i>
+                        <h3>Delivery</h3>
+                        <p>Advanced maternity care for mother and child.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-flask-vial"></i>
+                        <h3>Lab</h3>
+                        <p>Accurate and fast diagnostic laboratory services.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-spa"></i>
+                        <h3>Skin Diseases</h3>
+                        <p>Specialized dermatology and cosmetic treatments.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-female"></i>
+                        <h3>Gynae</h3>
+                        <p>Complete gynaecological and obstetric care.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-x-ray"></i>
+                        <h3>Surgery</h3>
+                        <p>Modern operation theatres for various surgeries.</p>
+                    </div>
+                    <div class="facility-card">
+                        <i class="fas fa-pills"></i>
+                        <h3>Pharmacy</h3>
+                        <p>24/7 in-house pharmacy with genuine medicines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="doctors">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Expert Doctors</h2>
+                    <p>Meet our team of dedicated medical professionals.</p>
+                </div>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <img src="https://placehold.co/400x500/007bff/FFFFFF?text=Doctor+1" alt="Doctor 1">
+                        <div class="doctor-info">
+                            <h4>Dr. Placeholder Name</h4>
+                            <p>General Physician</p>
+                        </div>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="https://placehold.co/400x500/28a745/FFFFFF?text=Doctor+2" alt="Doctor 2">
+                        <div class="doctor-info">
+                            <h4>Dr. Placeholder Name</h4>
+                            <p>Gynaecologist</p>
+                        </div>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="https://placehold.co/400x500/ffc107/FFFFFF?text=Doctor+3" alt="Doctor 3">
+                        <div class="doctor-info">
+                            <h4>Dr. Placeholder Name</h4>
+                            <p>Dermatologist</p>
+                        </div>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="https://placehold.co/400x500/dc3545/FFFFFF?text=Doctor+4" alt="Doctor 4">
+                        <div class="doctor-info">
+                            <h4>Dr. Placeholder Name</h4>
+                            <p>Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Hospital Gallery</h2>
+                    <p>A glimpse into our facilities and infrastructure.</p>
+                </div>
+                <div class="gallery-slider">
+                    <div class="slide active">
+                        <img src="https://media.istockphoto.com/id/1755140492/photo/nurse-waiting-for-a-patient-to-fill-a-form-while-checking-in-at-the-hospital.jpg?s=612x612&w=0&k=20&c=LEZV5kKo4PC0-_RBdnN9C02Uwe3OSxiHBwNKjWM7G_c=" alt="Hospital Reception">
+                    </div>
+                    <div class="slide">
+                        <img src="https://media.istockphoto.com/id/504447306/photo/nurse-talking-to-senior-female-patient-in-hospital-bed.jpg?s=612x612&w=0&k=20&c=Ik6LrkEr6J1_xDItPqvhp94z5OgVKj_-pSUKkh_KIgs=" alt="Patient Room">
+                    </div>
+                    <div class="slide">
+                        <img src="https://media.istockphoto.com/id/1247114148/photo/surgeons-team-in-the-operating-room-portraits-close-up-modern-operating-plastic-surgery.jpg?s=612x612&w=0&k=20&c=4d9xUtpS40kMWWo-zxfNbrrxqWyybNej1s2Z8C0hF5E=" alt="Operation Theater">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us & Book Appointment</h2>
+                    <p>We are here to help you. Reach out to us for any queries or to book your slot.</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Dhanwapur Road Near Daultabad Flyover, Sec-104 Gurugram – 122006</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <a href="tel:9711368893">9711368893</a><br>
+                                <a href="tel:8860421424">8860421424</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-tty"></i>
+                            <a href="tel:8527290145">8527290145 (Landline)</a>
+                        </div>
+                        
+                        <a href="tel:9711368893" class="btn btn-secondary mt-3"><i class="fas fa-phone-volume"></i> Call Emergency</a>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="appointment-form">
+                            <h3>Book Your Appointment</h3>
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="mobile" placeholder="Your Mobile Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="opd">OPD</option>
+                                    <option value="gynae">Gynae</option>
+                                    <option value="skin">Skin Diseases</option>
+                                    <option value="surgery">Surgery</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container">
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.481525046208!2d76.98972807535928!3d28.46522927576082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1757e468cf51%3A0x1563842d72199b9!2sShivay%20Hospital%20-%20Gynaecologist%20in%20Gurgaon%20%7C%20IVF%20Centre%20in%20Gurgaon%20%7C%20ICSI%20Centre%20in%20Gurgaon!5e0!3m2!1sen!2sin!4v1724744111306!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Shivay Hospital</h4>
+                    <p>Providing trusted, quality, and affordable healthcare to the community since 1999. Your health is our utmost priority.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#facilities">Our Facilities</a></li>
+                        <li><a href="#doctors">Our Doctors</a></li>
+                        <li><a href="#contact">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Emergency Contact</h4>
+                    <p>Mobile: <a href="tel:9711368893">9711368893</a></p>
+                    <p>Mobile: <a href="tel:8860421424">8860421424</a></p>
+                    <p>Landline: <a href="tel:8527290145">8527290145</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Shivay Hospital. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/919711368893" class="whatsapp-chat" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:9711368893" class="emergency-call-sticky" title="Call Emergency">
+        <i class="fas fa-phone-volume"></i>
+    </a>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";
+            slides[slideIndex-1].classList.add("active");
+            setTimeout(showSlides, 4000);
+        }
+
+    </script>
+</body>
+</html>
