@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Ensures no horizontal scroll from animations */
         }
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
@@ -331,7 +331,7 @@
                             </div>
                             <div class="flex items-center">
                                 <i data-lucide="mail" class="h-6 w-6 mr-3 text-purple-600"></i>
-                                <span class="text-gray-700 text-lg">contact@shubhutstav.in</span>
+                                <span class="text-gray-700 text-lg">contact@vivexaevent.in</span>
                             </div>
                             <div class="flex items-center">
                                 <i data-lucide="map-pin" class="h-6 w-6 mr-3 text-purple-600"></i>
@@ -455,28 +455,32 @@
         function animateCounter(element) {
             const target = +element.getAttribute('data-target');
             const duration = 2000;
-            const stepTime = Math.abs(Math.floor(duration / target));
-            let current = 0;
-            const timer = setInterval(() => {
-                current += 1;
-                element.textContent = current;
-                if (current == target) {
-                    clearInterval(timer);
+            let start = 0;
+            const step = (timestamp) => {
+                if (!start) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                element.textContent = Math.floor(progress * target);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    element.textContent = target; // Ensure it ends on the exact target
                 }
-            }, stepTime);
+            };
+            window.requestAnimationFrame(step);
         }
 
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter(entry.target);
+                    const counterElement = entry.target.querySelector('span') || entry.target;
+                    animateCounter(counterElement);
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.8 });
 
-        document.querySelectorAll('.counter-value').forEach(counter => {
-            counterObserver.observe(counter);
+        document.querySelectorAll('.counter-value, .counter-value span').forEach(counter => {
+            counterObserver.observe(counter.closest('.text-center'));
         });
         
         const faqQuestions = document.querySelectorAll('.faq-question');
@@ -485,6 +489,7 @@
                 const answer = question.nextElementSibling;
                 const isOpen = question.classList.contains('open');
                 
+                // Close all other open questions
                 document.querySelectorAll('.faq-question.open').forEach(openQuestion => {
                     if (openQuestion !== question) {
                         openQuestion.classList.remove('open');
