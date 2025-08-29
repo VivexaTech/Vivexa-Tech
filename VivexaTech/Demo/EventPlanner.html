@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivexa Event Planners - Crafting Exquisite Indian Celebrations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://media.istockphoto.com/id/1151361779/photo/luxury-banquet-hall-in-hotel-dinner-table-for-special-guests.jpg?s=612x612&w=0&k=20&c=snNWt5VSGmDpO1L03r5Iq0M05U15zR3c5DbdaglY0PQ=');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gallery-img {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #a855f7;
+            transition: width .3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .animated-gradient-bg {
+            background: linear-gradient(45deg, #f3e8ff, #e9d5ff, #d8b4fe, #c084fc);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .faq-question.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 flex items-center">
+                <i data-lucide="sparkles" class="mr-2 text-purple-600"></i>
+                Vivexa Event
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium">Home</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium">About</a>
+                <a href="#why-us" class="nav-link text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium">Why Us</a>
+                <a href="#services" class="nav-link text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium">Services</a>
+                <a href="#gallery" class="nav-link text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium">Gallery</a>
+                <a href="#faq" class="nav-link text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium">FAQ</a>
+                <a href="#contact" class="bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Get a Quote
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="h-6 w-6 text-gray-800"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#home" class="block py-3 px-6 text-sm text-gray-700 hover:bg-purple-50">Home</a>
+            <a href="#about" class="block py-3 px-6 text-sm text-gray-700 hover:bg-purple-50">About</a>
+            <a href="#why-us" class="block py-3 px-6 text-sm text-gray-700 hover:bg-purple-50">Why Us</a>
+            <a href="#services" class="block py-3 px-6 text-sm text-gray-700 hover:bg-purple-50">Services</a>
+            <a href="#gallery" class="block py-3 px-6 text-sm text-gray-700 hover:bg-purple-50">Gallery</a>
+            <a href="#faq" class="block py-3 px-6 text-sm text-gray-700 hover:bg-purple-50">FAQ</a>
+            <div class="p-4">
+                <a href="#contact" class="w-full text-center bg-purple-600 text-white px-5 py-3 rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center pt-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-8xl font-extrabold mb-4 leading-tight" data-aos="fade-down" data-aos-duration="1000">Crafting Exquisite Indian Celebrations</h1>
+                <p class="text-lg md:text-2xl max-w-4xl mx-auto mb-10 text-gray-200" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">From vibrant weddings to sophisticated corporate events, we bring your vision to life with traditional elegance and modern flair.</p>
+                <a href="#contact" class="bg-purple-600 text-white px-10 py-5 rounded-full hover:bg-purple-700 transition-all duration-300 shadow-2xl hover:shadow-purple-400/50 transform hover:-translate-y-2 text-xl font-semibold" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
+                    Plan Your Dream Event
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="rounded-lg overflow-hidden shadow-2xl" data-aos="fade-right">
+                         <img src="https://media.istockphoto.com/id/1474892119/photo/conference-coordinator-jobs.jpg?s=612x612&w=0&k=20&c=eAcrrIXh658r_lMix1axmEpuryiYH-iIlg9AoJCkUwk=" alt="Event planning team in a meeting" class="w-full h-full object-cover">
+                    </div>
+                    <div data-aos="fade-left">
+                        <h2 class="text-5xl font-bold text-gray-900 mb-6">Who We Are</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Vivexa Event is a premier event planning company based in Gurugram, dedicated to crafting exceptional experiences. With over a decade of industry expertise, our team of passionate planners and creative designers specializes in delivering flawless events that honour Indian traditions while embracing modern sophistication.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Our philosophy is simple: every event is a unique story waiting to be told. We listen to your dreams and translate them into a tangible, beautiful reality, handling every detail so you can enjoy your special moments.
+                        </p>
+                        <div class="flex flex-wrap gap-8 justify-center md:justify-start md:gap-12">
+                            <div class="text-center">
+                                <p class="text-5xl font-bold text-purple-600 counter-value" data-target="10">0</p>
+                                <p class="text-gray-500 mt-1">Years of Experience</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-5xl font-bold text-purple-600 counter-value" data-target="500">0</p>
+                                <p class="text-gray-500 mt-1">Successful Events</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-5xl font-bold text-purple-600"><span class="counter-value" data-target="99">0</span>%</p>
+                                <p class="text-gray-500 mt-1">Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="py-28 animated-gradient-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-bold text-gray-900 mb-4">Why Choose Vivexa Event?</h2>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">We are more than just planners; we are your partners in celebration, committed to making your event truly special.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white/50 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="inline-block bg-white text-purple-600 p-4 rounded-full mb-4 shadow-md">
+                            <i data-lucide="pen-tool" class="h-10 w-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Bespoke Design</h3>
+                        <p class="text-gray-700">Every detail is tailored to your unique style. We specialize in creating custom themes that reflect your personality and cultural traditions.</p>
+                    </div>
+                    <div class="bg-white/50 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="inline-block bg-white text-purple-600 p-4 rounded-full mb-4 shadow-md">
+                            <i data-lucide="users" class="h-10 w-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Expert Vendor Network</h3>
+                        <p class="text-gray-700">Access our exclusive network of trusted vendors, from the best caterers of Indian cuisine to talented decorators and entertainers.</p>
+                    </div>
+                    <div class="bg-white/50 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="inline-block bg-white text-purple-600 p-4 rounded-full mb-4 shadow-md">
+                            <i data-lucide="shield-check" class="h-10 w-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Peace of Mind</h3>
+                        <p class="text-gray-700">Our meticulous planning and on-site management mean you can relax and be a guest at your own event. We handle it all.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer a comprehensive range of services to make your event seamless and spectacular.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white p-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center transform hover:-translate-y-2" data-aos="zoom-in">
+                        <div class="inline-block bg-purple-100 text-purple-600 p-5 rounded-full mb-5">
+                            <i data-lucide="gem" class="h-10 w-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Weddings</h3>
+                        <p class="text-gray-600">From grand Sangeets to intimate Mehendis and lavish receptions, we craft the Indian wedding you've always dreamed of.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="inline-block bg-purple-100 text-purple-600 p-5 rounded-full mb-5">
+                            <i data-lucide="briefcase" class="h-10 w-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Corporate Events</h3>
+                        <p class="text-gray-600">Conferences, product launches, and corporate galas. We design professional events that reflect your brand and achieve your objectives.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="inline-block bg-purple-100 text-purple-600 p-5 rounded-full mb-5">
+                            <i data-lucide="cake" class="h-10 w-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Social Gatherings</h3>
+                        <p class="text-gray-600">Birthdays, anniversaries, Diwali parties, and more. We create memorable celebrations for life's special moments, big or small.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-bold text-gray-900 mb-4">Our Celebrations</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">A glimpse into the beautiful moments we've helped create.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/866987706/photo/indian-wedding-hands.jpg?s=612x612&w=0&k=20&c=6L-u9qhFPv9MjDnF4UK4AqjVbDKM4_8Xad72IHhwPZE=" alt="Wedding event"></div>
+                        <div data-aos="zoom-in" data-aos-delay="100"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/1172044762/photo/business-people-attending-a-conference.jpg?s=612x612&w=0&k=20&c=j-WCgLGhIKbZibd9xMqnDT4yAZbRsANwyz5Bg4QXxD8=" alt="Corporate event"></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in" data-aos-delay="150"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/1459669779/photo/family-friends-at-the-dinner-table-drinking-wine-having-fun-at-an-outdoor-dinner-party.jpg?s=612x612&w=0&k=20&c=g--fQ8srcx7i9KzqfxR7GqfGUjbTHc-J93V9dlmCz4g=" alt="Social gathering"></div>
+                        <div data-aos="zoom-in" data-aos-delay="250"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/2174199115/photo/elegant-couple-arriving-at-red-carpet-event.jpg?s=612x612&w=0&k=20&c=qVCK5pH1oMIxxYfEEc7f_QnelKE07Cxzv-2g73k1hp0=" alt="Event decor"></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in" data-aos-delay="300"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/2214002673/photo/group-toasting-with-champagne-glasses-during-a-festive-celebration-dinner.jpg?s=612x612&w=0&k=20&c=RBvRBmVrAALddfguZhOErEl_SaV0ag-kV4fktAurhH0=" alt="Celebration moment"></div>
+                        <div data-aos="zoom-in" data-aos-delay="400"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/471906412/photo/beautiful-table-setting-for-an-wedding-reception-or-an-event.jpg?s=612x612&w=0&k=20&c=knlIBspy-ZKuQV7bUVr_eclJmyC24ShNAva_Jh9Rwfc=" alt="Gala dinner"></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in" data-aos-delay="450"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE=" alt="Conference setup"></div>
+                        <div data-aos="zoom-in" data-aos-delay="550"><img class="h-auto max-w-full rounded-lg gallery-img" src="https://media.istockphoto.com/id/858568514/photo/group-of-cheerful-people-toasting-with-wine-on-a-party.jpg?s=612x612&w=0&k=20&c=Ai_TVND9jbjaFvHHx5A6_1UWfX3NVqUTYfudMQYbmcw=" alt="Outdoor party"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-xl relative" data-aos="fade-right">
+                        <i data-lucide="quote" class="absolute top-4 right-4 h-16 w-16 text-purple-100"></i>
+                        <p class="text-gray-600 mb-6 italic z-10 relative">"Vivexa Event turned our dream wedding into a reality. Their attention to detail was incredible, and they handled everything with such grace. We couldn't have done it without them!"</p>
+                        <div class="flex items-center">
+                            <img class="w-14 h-14 rounded-full mr-4" src="https://placehold.co/100x100/f0abfc/334155?text=P.R" alt="Avatar of a client">
+                            <div>
+                                <p class="font-semibold text-gray-900">Priya & Rohan</p>
+                                <p class="text-sm text-gray-500">Wedding Client</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-xl relative" data-aos="fade-left">
+                        <i data-lucide="quote" class="absolute top-4 right-4 h-16 w-16 text-purple-100"></i>
+                        <p class="text-gray-600 mb-6 italic z-10 relative">"Our annual corporate gala was the best one yet, all thanks to the team. The entire process was seamless, professional, and delivered beyond our expectations. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <img class="w-14 h-14 rounded-full mr-4" src="https://placehold.co/100x100/93c5fd/334155?text=A.S" alt="Avatar of a client">
+                            <div>
+                                <p class="font-semibold text-gray-900">Arjun Sharma</p>
+                                <p class="text-sm text-gray-500">CEO, Innovate India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Have questions? We've got answers. Here are some of the most common inquiries.</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="border rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-800 focus:outline-none">
+                            <span>What types of events do you plan?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-gray-600">
+                            <p class="pb-6">We plan a wide variety of events, including weddings, corporate functions (conferences, galas), and social gatherings (birthdays, anniversaries, festival parties). If you have a unique event in mind, we'd love to hear about it!</p>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-800 focus:outline-none">
+                            <span>How early should I book your services?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-gray-600">
+                            <p class="pb-6">For weddings, we recommend booking 10-12 months in advance. For other large events, 6-8 months is ideal. For smaller events, 3-4 months is typically sufficient. However, do reach out with shorter timelines, as we can sometimes accommodate requests.</p>
+                        </div>
+                    </div>
+                     <div class="border rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-800 focus:outline-none">
+                            <span>What is your pricing structure?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-gray-600">
+                            <p class="pb-6">Our pricing is customized for each event based on its scale, complexity, and specific requirements. We offer a complimentary initial consultation to discuss your vision and provide a detailed quote. All our pricing is in Indian Rupees (₹).</p>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-800 focus:outline-none">
+                            <span>Are you involved on the day of the event?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-gray-600">
+                            <p class="pb-6">Absolutely! All of our planning packages include on-site event management. Our team will be there to oversee every detail, manage vendors, and handle any unexpected situations, ensuring everything runs smoothly so you can enjoy your event stress-free.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-bold text-gray-900 mb-4">Let's Plan Your Next Event</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Get in touch with us today for a complimentary consultation. We're excited to hear your ideas!</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 bg-white p-10 rounded-lg shadow-2xl" data-aos="zoom-in-up">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Contact Information</h3>
+                        <p class="text-gray-600 mb-6">We are based in Gurugram and serve the entire Delhi-NCR region and beyond. Reach out via phone, email, or the form.</p>
+                        <div class="space-y-5">
+                            <div class="flex items-center">
+                                <i data-lucide="phone" class="h-6 w-6 mr-3 text-purple-600"></i>
+                                <span class="text-gray-700 text-lg">+91 98765 43210</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="mail" class="h-6 w-6 mr-3 text-purple-600"></i>
+                                <span class="text-gray-700 text-lg">contact@shubhutstav.in</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="map-pin" class="h-6 w-6 mr-3 text-purple-600"></i>
+                                <span class="text-gray-700 text-lg">123 Utsav Marg, DLF Phase 5, Gurugram, Haryana</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Send Message
+                        </button>
+                        <p id="form-status" class="text-center mt-4 text-green-600 font-medium"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto py-12 px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Vivexa Event Planners</h4>
+                    <p class="text-gray-400">Crafting unforgettable moments with passion and precision.</p>
+                </div>
+                 <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-purple-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-purple-400 transition-colors">Services</a></li>
+                        <li><a href="#gallery" class="hover:text-purple-400 transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Connect With Us</h4>
+                     <div class="flex justify-center md:justify-start space-x-6">
+                         <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="instagram"></i></a>
+                         <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="facebook"></i></a>
+                         <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 Vivexa Event Planners. All Rights Reserved. Crafted with passion in India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-xl');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2', 'shadow-xl');
+            }
+        });
+
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a.nav-link');
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.6 });
+        sections.forEach(section => navObserver.observe(section));
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formStatus.textContent = 'Thank you! Your message has been sent.';
+            contactForm.reset();
+            setTimeout(() => { formStatus.textContent = ''; }, 5000);
+        });
+
+        function animateCounter(element) {
+            const target = +element.getAttribute('data-target');
+            const duration = 2000;
+            const stepTime = Math.abs(Math.floor(duration / target));
+            let current = 0;
+            const timer = setInterval(() => {
+                current += 1;
+                element.textContent = current;
+                if (current == target) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+        document.querySelectorAll('.counter-value').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+        
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = question.classList.contains('open');
+                
+                document.querySelectorAll('.faq-question.open').forEach(openQuestion => {
+                    if (openQuestion !== question) {
+                        openQuestion.classList.remove('open');
+                        openQuestion.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                question.classList.toggle('open');
+
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
