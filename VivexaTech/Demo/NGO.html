@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Foundation - Spreading Kindness Across India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://t3.ftcdn.net/jpg/05/75/82/22/360_F_575822240_dBlP0oH7vvWFSmn1Xafi2UHuzTtbZZaV.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .nav-link.active {
+            color: #EF4444; /* red-500 */
+            font-weight: 600;
+        }
+        .page-content {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .faq-question.open .faq-answer {
+            max-height: 200px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-question.open i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" data-page="home" class="text-2xl font-bold text-gray-800 page-link">
+                <i class="fas fa-heart text-red-500"></i> Hope Foundation
+            </a>
+            <div id="desktop-nav" class="hidden md:flex space-x-6 items-center">
+                <a href="#" data-page="home" class="nav-link text-gray-600 hover:text-red-500 transition duration-300 active">Home</a>
+                <a href="#" data-page="about" class="nav-link text-gray-600 hover:text-red-500 transition duration-300">About Us</a>
+                <a href="#" data-page="work" class="nav-link text-gray-600 hover:text-red-500 transition duration-300">Our Work</a>
+                <a href="#" data-page="contact" class="nav-link text-gray-600 hover:text-red-500 transition duration-300">Contact</a>
+            </div>
+            <a href="#" id="donate-nav-btn" class="hidden md:block bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition duration-300 shadow-lg">
+                Donate Now
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2">
+            <a href="#" data-page="home" class="block nav-link text-gray-600 hover:text-red-500 active">Home</a>
+            <a href="#" data-page="about" class="block nav-link text-gray-600 hover:text-red-500">About Us</a>
+            <a href="#" data-page="work" class="block nav-link text-gray-600 hover:text-red-500">Our Work</a>
+            <a href="#" data-page="contact" class="block nav-link text-gray-600 hover:text-red-500">Contact</a>
+            <a href="#" id="donate-mobile-btn" class="block bg-red-500 text-white text-center mt-2 px-6 py-2 rounded-full hover:bg-red-600">Donate Now</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="page-home" class="page-content">
+            <section class="hero-bg text-white h-[85vh] flex items-center">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Empowering Indian Lives, One Act of Kindness at a Time</h1>
+                    <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Join us in our mission to bring hope and support to underprivileged communities across India. Your contribution can make a world of difference.</p>
+                    <a href="#donate" class="bg-white text-red-500 font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-200 transition duration-300 scroll-link">
+                        <i class="fas fa-gift mr-2"></i>Make a Donation
+                    </a>
+                </div>
+            </section>
+            
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact in Numbers</h2>
+                    <p class="text-gray-600 mb-12 max-w-2xl mx-auto">We are proud of the tangible difference we've made across the nation, thanks to the unwavering support of our community.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                            <i class="fas fa-users text-4xl text-red-500 mb-4"></i>
+                            <h3 class="text-5xl font-bold mb-2" data-target="50000">0</h3>
+                            <p class="text-gray-600 text-lg">Lives Touched</p>
+                        </div>
+                        <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                            <i class="fas fa-hands-helping text-4xl text-red-500 mb-4"></i>
+                            <h3 class="text-5xl font-bold mb-2" data-target="1200">0</h3>
+                            <p class="text-gray-600 text-lg">Volunteers Engaged</p>
+                        </div>
+                        <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                            <i class="fas fa-map-marked-alt text-4xl text-red-500 mb-4"></i>
+                            <h3 class="text-5xl font-bold mb-2" data-target="250">0</h3>
+                            <p class="text-gray-600 text-lg">Villages Supported</p>
+                        </div>
+                         <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                            <i class="fas fa-utensils text-4xl text-red-500 mb-4"></i>
+                            <h3 class="text-5xl font-bold mb-2" data-target="250000">0</h3>
+                            <p class="text-gray-600 text-lg">Meals Served</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                         <h2 class="text-3xl md:text-4xl font-bold">Stories of Change</h2>
+                         <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Behind every number is a life changed. Here are a few stories of hope that you made possible.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                            <img src="https://placehold.co/150x150/fecaca/991b1b?text=Sunita" class="w-32 h-32 rounded-full object-cover border-4 border-red-200 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">Sunita's Tailoring Shop</h3>
+                                <p class="text-gray-700 italic">"Thanks to the livelihood program, I started my own tailoring business. I can now afford to send both my children to a good school. My life has completely changed."</p>
+                            </div>
+                        </div>
+                         <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                            <img src="https://placehold.co/150x150/bfdbfe/1e40af?text=Ramesh" class="w-32 h-32 rounded-full object-cover border-4 border-blue-200 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">Clean Water for Ramesh's Village</h3>
+                                <p class="text-gray-700 italic">"For years, we struggled with waterborne diseases. The new well installed by Hope Foundation has brought health and happiness to over 200 families in our village."</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                            <img src="https://placehold.co/150x150/bbf7d0/166534?text=Arjun" class="w-32 h-32 rounded-full object-cover border-4 border-green-200 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">Arjun's Digital Dream</h3>
+                                <p class="text-gray-700 italic">"I never imagined I could use a computer. The digital literacy workshop opened a new world for me. I now help other farmers in my village access government schemes online."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold">How You Can Help</h2>
+                        <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Every contribution fuels our mission. Join us in making a difference in one of these ways.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div class="border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-donate text-5xl text-red-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">Donate</h3>
+                            <p class="text-gray-600 mb-4">Your financial support helps us reach more communities with essential services like education, healthcare, and clean water.</p>
+                            <a href="#donate" class="text-red-500 font-semibold hover:underline scroll-link">Give Today &rarr;</a>
+                        </div>
+                         <div class="border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-hand-paper text-5xl text-red-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">Volunteer</h3>
+                            <p class="text-gray-600 mb-4">Gift your time and skills. Whether on the field or remotely, your efforts can inspire change and bring hope to many.</p>
+                            <a href="#" data-page="contact" class="nav-link text-red-500 font-semibold hover:underline">Join Us &rarr;</a>
+                        </div>
+                        <div class="border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-shadow duration-300">
+                            <i class="fas fa-handshake text-5xl text-red-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">Partner With Us</h3>
+                            <p class="text-gray-600 mb-4">We collaborate with corporations and institutions to create large-scale impact. Let's work together for a better India.</p>
+                            <a href="#" data-page="contact" class="nav-link text-red-500 font-semibold hover:underline">Contact Us &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="donate" class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="bg-gray-800 text-white rounded-lg shadow-2xl p-8 md:p-12 max-w-6xl mx-auto">
+                        <div class="flex flex-wrap -mx-4 items-center">
+                             <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+                                <div class="text-center lg:text-left mb-8">
+                                    <h2 class="text-3xl md:text-4xl font-bold">Make a Difference Today</h2>
+                                    <p class="text-gray-300 mt-2">Your generous support is crucial for our work. Every donation, big or small, helps us change lives across India.</p>
+                                </div>
+                                <form id="donation-form" class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="donor-name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                                            <input type="text" id="donor-name" placeholder="Ravi Kumar" class="w-full bg-gray-700 border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                                        </div>
+                                        <div>
+                                            <label for="donor-email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                                            <input type="email" id="donor-email" placeholder="ravi.kumar@example.com" class="w-full bg-gray-700 border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="donation-amount" class="block text-sm font-medium text-gray-300 mb-1">Donation Amount (₹)</label>
+                                        <input type="number" id="donation-amount" placeholder="Enter amount e.g., 1000" class="w-full bg-gray-700 border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                                    </div>
+                                    <div class="flex justify-center lg:justify-start">
+                                        <button type="submit" class="bg-red-500 text-white font-bold w-full py-3 px-8 rounded-full text-lg hover:bg-red-600 transition duration-300 shadow-xl">
+                                            <i class="fas fa-credit-card mr-2"></i>Proceed to Donate
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="w-full lg:w-1/2 px-4">
+                                <div class="bg-gray-700 p-8 rounded-lg">
+                                    <h3 class="text-2xl font-bold mb-6 text-center">See Your Impact</h3>
+                                    <ul class="space-y-4 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-red-400 mt-1 mr-3"></i>
+                                            <span><strong>₹500</strong> can provide school supplies for a child for an entire year.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-red-400 mt-1 mr-3"></i>
+                                            <span><strong>₹1,200</strong> can provide a family with a water filter for safe drinking water.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-red-400 mt-1 mr-3"></i>
+                                            <span><strong>₹2,500</strong> can fund a mobile health camp, providing check-ups for an entire village.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-red-400 mt-1 mr-3"></i>
+                                            <span><strong>₹5,000</strong> can sponsor a woman's vocational training, empowering her towards financial independence.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-about" class="page-content hidden">
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold">About Hope Foundation</h2>
+                        <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">We are more than just an organization; we are a movement. A passionate team of humanitarians, community leaders, and volunteers dedicated to creating lasting, positive change through education, healthcare, and community empowerment across India.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center mb-20">
+                        <div class="w-full md:w-1/2 p-4">
+                            <img src="https://placehold.co/600x400/e2e8f0/333333?text=Our+Team+in+Action" alt="Our Team" class="rounded-lg shadow-2xl w-full">
+                        </div>
+                        <div class="w-full md:w-1/2 p-4 md:pl-10">
+                            <h3 class="text-3xl font-semibold mb-4">Our Mission</h3>
+                            <p class="text-gray-700 text-lg mb-4">
+                                Our mission is to uplift marginalized communities by providing access to essential resources and opportunities. We strive to tackle the root causes of poverty and social injustice, fostering a society where every individual has the chance to thrive with dignity, regardless of their circumstances. We believe in building bridges of hope, connecting those who can help with those who need it most.
+                            </p>
+                             <h3 class="text-3xl font-semibold mb-4 mt-6">Our Vision</h3>
+                            <p class="text-gray-700 text-lg">
+                                We envision a self-reliant and equitable India, where every person is empowered to reach their full potential. We focus on sustainable, community-led projects that build local capacity, promote social harmony, and create a brighter, more inclusive future for generations to come. Our goal is to create a ripple effect of positive change that transforms communities from within.
+                            </p>
+                        </div>
+                    </div>
+
+                    <section class="py-20">
+                         <div class="container mx-auto px-6">
+                            <div class="text-center mb-16">
+                                <h2 class="text-3xl md:text-4xl font-bold">Our Journey of Hope</h2>
+                                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">From a small initiative to a nationwide movement, our journey has been one of compassion and commitment.</p>
+                            </div>
+                            <div class="relative wrap overflow-hidden p-10 h-full">
+                                <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
+                                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                                    <div class="order-1 w-5/12"></div>
+                                    <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                                        <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                                    </div>
+                                    <div class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                        <h3 class="mb-3 font-bold text-gray-800 text-xl">2010 - The Beginning</h3>
+                                        <p class="text-sm leading-snug tracking-wide text-gray-600">Hope Foundation was founded with a small food distribution drive in a Delhi slum, serving 100 meals.</p>
+                                    </div>
+                                </div>
+                                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                    <div class="order-1 w-5/12"></div>
+                                    <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                                        <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+                                    </div>
+                                    <div class="order-1 bg-red-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                        <h3 class="mb-3 font-bold text-gray-800 text-xl">2014 - First Education Center</h3>
+                                        <p class="text-sm leading-snug tracking-wide text-gray-600">Launched our first "Bal Shiksha" learning center, providing after-school support to 50 children.</p>
+                                    </div>
+                                </div>
+                                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                                    <div class="order-1 w-5/12"></div>
+                                    <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                                        <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                                    </div>
+                                    <div class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                        <h3 class="mb-3 font-bold text-gray-800 text-xl">2018 - Clean Water Project</h3>
+                                        <p class="text-sm leading-snug tracking-wide text-gray-600">Initiated "Jal Jeevan" project, installing our 10th hand pump and impacting over 5,000 lives in rural Rajasthan.</p>
+                                    </div>
+                                </div>
+                                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                    <div class="order-1 w-5/12"></div>
+                                    <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                                        <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
+                                    </div>
+                                    <div class="order-1 bg-red-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                        <h3 class="mb-3 font-bold text-gray-800 text-xl">2023 - Reaching 50,000 Lives</h3>
+                                        <p class="text-sm leading-snug tracking-wide text-gray-600">Celebrated a major milestone of positively impacting 50,000 lives across five states in India.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="py-16 text-center bg-gray-100 rounded-lg">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-12">Our Core Values</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+                            <div class="text-center p-4">
+                                <div class="bg-red-500 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"><i class="fas fa-hand-holding-heart"></i></div>
+                                <h4 class="text-xl font-bold">Compassion</h4>
+                                <p class="text-gray-600 mt-2">We approach our work with empathy, treating every individual with respect and dignity.</p>
+                            </div>
+                            <div class="text-center p-4">
+                                <div class="bg-red-500 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"><i class="fas fa-shield-alt"></i></div>
+                                <h4 class="text-xl font-bold">Integrity</h4>
+                                <p class="text-gray-600 mt-2">We are committed to transparency and accountability in all our operations and finances.</p>
+                            </div>
+                            <div class="text-center p-4">
+                                <div class="bg-red-500 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"><i class="fas fa-seedling"></i></div>
+                                <h4 class="text-xl font-bold">Empowerment</h4>
+                                <p class="text-gray-600 mt-2">We focus on building skills and confidence, enabling communities to create their own solutions.</p>
+                            </div>
+                            <div class="text-center p-4">
+                                <div class="bg-red-500 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"><i class="fas fa-users"></i></div>
+                                <h4 class="text-xl font-bold">Collaboration</h4>
+                                <p class="text-gray-600 mt-2">We believe in the power of partnership, working with communities, governments, and donors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="text-center mt-20">
+                         <h2 class="text-3xl md:text-4xl font-bold mb-12">Meet Our Leaders</h2>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <img src="https://placehold.co/150x150/cccccc/333333?text=PS" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-md">
+                                <h4 class="text-xl font-bold">Priya Sharma</h4>
+                                <p class="text-red-500">Founder & CEO</p>
+                                <p class="text-gray-600 mt-2 text-sm">With over 20 years in social work, Priya's vision is the driving force behind our every initiative.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <img src="https://placehold.co/150x150/cccccc/333333?text=RP" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-md">
+                                <h4 class="text-xl font-bold">Rohan Patel</h4>
+                                <p class="text-red-500">Director of Programs</p>
+                                <p class="text-gray-600 mt-2 text-sm">Rohan masterfully manages our field operations, ensuring that aid reaches those who need it most, effectively and efficiently.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <img src="https://placehold.co/150x150/cccccc/333333?text=AS" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-md">
+                                <h4 class="text-xl font-bold">Aanya Singh</h4>
+                                <p class="text-red-500">Chief Financial Officer</p>
+                                <p class="text-gray-600 mt-2 text-sm">Aanya ensures the utmost transparency and accountability in our finances, maximizing the impact of every rupee donated.</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-work" class="page-content hidden">
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold">Our Initiatives</h2>
+                        <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">We are actively working on several fronts to address the most pressing needs of the communities we serve across India. Our approach is holistic, aiming not just for immediate relief but for long-term, sustainable change.</p>
+                    </div>
+
+                    <div class="mb-20">
+                        <h3 class="text-3xl font-bold text-center mb-10">Our Strategic Approach</h3>
+                        <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <i class="fas fa-bullseye text-red-500 text-4xl mb-3"></i>
+                                <h4 class="font-bold text-xl mb-2">Identify Core Needs</h4>
+                                <p class="text-gray-600 text-sm">We begin with grassroots-level research and community consultations to understand the most urgent challenges.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <i class="fas fa-cogs text-red-500 text-4xl mb-3"></i>
+                                <h4 class="font-bold text-xl mb-2">Design Sustainable Solutions</h4>
+                                <p class="text-gray-600 text-sm">Our programs are designed to be community-owned and self-sustaining, ensuring long-term impact beyond our direct involvement.</p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md">
+                                <i class="fas fa-chart-line text-red-500 text-4xl mb-3"></i>
+                                <h4 class="font-bold text-xl mb-2">Measure and Report Impact</h4>
+                                <p class="text-gray-600 text-sm">We continuously monitor our projects and transparently report our progress and outcomes to our stakeholders and donors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/400x250/fecaca/991b1b?text=Education" alt="Education Program" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Education for All</h3>
+                                <p class="text-gray-700">We believe education is the key to breaking the cycle of poverty. We establish community learning centers, provide scholarships for meritorious students from low-income families, and conduct digital literacy workshops to bridge the educational gap and prepare youth for the future.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/400x250/bbf7d0/166534?text=Healthcare" alt="Healthcare Program" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Healthcare Access</h3>
+                                <p class="text-gray-700">Good health is a fundamental right. Our mobile medical vans reach remote villages, offering free health check-ups, essential medicines, and awareness programs on preventive healthcare, maternal health, and nutrition for women and children.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/400x250/bfdbfe/1e40af?text=Clean+Water" alt="Clean Water Program" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Clean Water & Sanitation</h3>
+                                <p class="text-gray-700">Access to clean water is life-changing. We install hand pumps, borewells, and water purification systems in water-scarce regions. We also build community toilets and promote hygiene education (WASH programs) to create healthier environments.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/400x250/f5d0fe/701a75?text=Livelihood" alt="Livelihood Program" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Livelihood Programs</h3>
+                                <p class="text-gray-700">We empower individuals with the skills to earn a sustainable income. We provide vocational training in high-demand skills like tailoring, computing, and handicrafts. We also support the formation of Self-Help Groups (SHGs) to empower women financially.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/400x250/fed7aa/9a3412?text=Disaster+Relief" alt="Disaster Relief Program" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Disaster Relief</h3>
+                                <p class="text-gray-700">When disaster strikes, we are among the first to respond. During natural calamities like floods and earthquakes, our emergency response teams provide immediate aid like food, clean water, shelter, and medical assistance to affected families.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/400x250/d1d5db/1f2937?text=Advocacy" alt="Advocacy Program" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Advocacy & Awareness</h3>
+                                <p class="text-gray-700">Change requires a shift in mindset and policy. We campaign for the rights of children, women, and marginalized groups. We work with local governments to ensure effective implementation of social welfare policies and raise awareness on critical social issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-contact" class="page-content hidden">
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                     <div class="text-center mb-12">
+                         <h2 class="text-4xl md:text-5xl font-bold">Get In Touch</h2>
+                         <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">Have questions, suggestions, or want to partner with us? We'd love to hear from you. Your feedback helps us grow and serve better.</p>
+                     </div>
+                     <div class="flex flex-wrap -mx-4">
+                         <div class="w-full lg:w-7/12 px-4 mb-8 lg:mb-0">
+                             <div class="max-w-full mx-auto bg-white p-8 rounded-lg shadow-lg h-full">
+                                <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                                 <form action="#" method="POST" class="space-y-6">
+                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" required>
+                                        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" required>
+                                     </div>
+                                     <input type="text" placeholder="Subject" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" required>
+                                     <textarea placeholder="Your Message" rows="6" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" required></textarea>
+                                     <div class="text-center">
+                                         <button type="submit" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-900 transition duration-300">Send Message</button>
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                         <div class="w-full lg:w-5/12 px-4">
+                             <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                                 <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                                 <div class="space-y-4 text-lg text-gray-700">
+                                     <p><i class="fas fa-map-marker-alt text-red-500 mr-3 w-5 text-center"></i> 123 Hope Street, Connaught Place, New Delhi - 110001</p>
+                                     <p><i class="fas fa-phone-alt text-red-500 mr-3 w-5 text-center"></i> +91 98765 43210</p>
+                                     <p><i class="fas fa-envelope text-red-500 mr-3 w-5 text-center"></i> contact@hopefoundation.in</p>
+                                     <p><i class="fas fa-clock text-red-500 mr-3 w-5 text-center"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                 </div>
+                                 <div class="mt-8">
+                                     <h3 class="text-xl font-bold mb-4">Find Us Here</h3>
+                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.162985172313!2d77.21731631508237!3d28.6248989824209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b7414375%3A0x13532675b5b385e!2sConnaught%20Place!5e0!3m2!1sen!2sin!4v1678886055532!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-md"></iframe>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="mt-20 max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+                        </div>
+                        <div id="faq-container" class="space-y-4">
+                            <div class="faq-question border border-gray-200 rounded-lg overflow-hidden">
+                                <button class="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 flex justify-between items-center font-semibold">
+                                    <span>How can I be sure my donation is used effectively?</span>
+                                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-4 bg-white">
+                                    <p class="text-gray-700">We are committed to financial transparency. We publish annual impact reports on our website detailing our program expenditures and outcomes. Over 85% of every donation goes directly to our community programs.</p>
+                                </div>
+                            </div>
+                             <div class="faq-question border border-gray-200 rounded-lg overflow-hidden">
+                                <button class="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 flex justify-between items-center font-semibold">
+                                    <span>Can I volunteer for a specific program?</span>
+                                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-4 bg-white">
+                                    <p class="text-gray-700">Absolutely! We have various volunteering opportunities, both on-field and skill-based remote roles. Please visit our "Get Involved" page or contact us with your area of interest, and we will match you with a suitable program.</p>
+                                </div>
+                            </div>
+                             <div class="faq-question border border-gray-200 rounded-lg overflow-hidden">
+                                <button class="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 flex justify-between items-center font-semibold">
+                                    <span>Are my donations tax-exempt?</span>
+                                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-4 bg-white">
+                                    <p class="text-gray-700">Yes, Hope Foundation is a registered non-profit organization. All donations made by Indian nationals are eligible for tax exemption under Section 80G of the Income Tax Act. A receipt for the same will be provided to you via email after your donation is processed.</p>
+                                </div>
+                            </div>
+                             <div class="faq-question border border-gray-200 rounded-lg overflow-hidden">
+                                <button class="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 flex justify-between items-center font-semibold">
+                                    <span>How does Hope Foundation choose the communities it works with?</span>
+                                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-4 bg-white">
+                                    <p class="text-gray-700">Our intervention areas are selected based on extensive need-assessment surveys. We prioritize remote and marginalized communities that have limited access to basic services and are often overlooked by larger welfare programs. We work closely with local community leaders to ensure our efforts are relevant and welcomed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-heart text-red-500"></i> Hope Foundation</h3>
+                    <p class="text-gray-400">Working towards an India where everyone has the opportunity to lead a healthy, educated, and dignified life. Our commitment is to create sustainable change, one community at a time.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" data-page="about" class="nav-link text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" data-page="work" class="nav-link text-gray-400 hover:text-white">Our Initiatives</a></li>
+                        <li><a href="#" id="donate-footer-btn" class="text-gray-400 hover:text-white">Donate</a></li>
+                        <li><a href="#" data-page="contact" class="nav-link text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <p class="text-gray-400 mb-4">Stay connected for updates on our work and stories of impact.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; <span id="year"></span> Hope Foundation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="message-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm mx-auto">
+            <h3 id="modal-title" class="text-xl font-bold mb-4"></h3>
+            <p id="modal-message" class="text-gray-700 mb-6"></p>
+            <button id="modal-close" class="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600">Close</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const allNavLinks = document.querySelectorAll('.nav-link');
+            const pageContents = document.querySelectorAll('.page-content');
+            const pageLinks = document.querySelectorAll('.page-link');
+            const allLinks = [...document.querySelectorAll('[data-page]')];
+
+            function switchPage(pageId) {
+                pageContents.forEach(page => page.classList.add('hidden'));
+                
+                const targetPage = document.getElementById(`page-${pageId}`);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                } else {
+                    document.getElementById('page-home').classList.remove('hidden');
+                }
+
+                allNavLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+                
+                window.scrollTo(0, 0);
+            }
+
+            allLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.classList.contains('nav-link') || link.classList.contains('page-link')) {
+                        e.preventDefault();
+                        const pageId = link.dataset.page;
+                        switchPage(pageId);
+                    }
+                });
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.addEventListener('click', (e) => {
+                if(e.target.matches('.nav-link, #donate-mobile-btn')) {
+                     mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            const donateButtons = [
+                document.getElementById('donate-nav-btn'),
+                document.getElementById('donate-mobile-btn'),
+                document.getElementById('donate-footer-btn')
+            ];
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+
+            function showHomePageAndScroll() {
+                switchPage('home');
+                setTimeout(() => {
+                    document.getElementById('donate').scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+
+            donateButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showHomePageAndScroll();
+                });
+            });
+
+            scrollLinks.forEach(link => {
+                 link.addEventListener('click', (e) => {
+                     e.preventDefault();
+                     document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                 });
+            })
+
+            const counters = document.querySelectorAll('.text-5xl[data-target]');
+            const speed = 200;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText.replace(/,/g, '');
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target.toLocaleString('en-IN');
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            if (counters.length > 0) {
+                 observer.observe(counters[0].parentElement.parentElement);
+            }
+            
+            const donationForm = document.getElementById('donation-form');
+            donationForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const donorName = document.getElementById('donor-name').value;
+                const donorEmail = document.getElementById('donor-email').value;
+                const amount = document.getElementById('donation-amount').value;
+                
+                if (!donorName || !donorEmail || !amount || amount <= 0) {
+                    showMessage('Error', 'Please fill in all fields correctly.');
+                    return;
+                }
+                
+                const razorpayKey = 'rzp_test_YOUR_KEY_ID'; 
+
+                if (razorpayKey === 'rzp_test_YOUR_KEY_ID') {
+                    // This is a dummy success message for demonstration
+                    showMessage('Success!', `Thank you for your generous donation of ₹${amount}. This is a demo and no real payment was processed.`);
+                    donationForm.reset();
+                    return;
+                }
+
+                const options = {
+                    "key": razorpayKey,
+                    "amount": amount * 100,
+                    "currency": "INR",
+                    "name": "Hope Foundation",
+                    "description": "Donation for a noble cause",
+                    "image": "https://placehold.co/100x100/ef4444/ffffff?text=HF",
+                    "handler": function (response) {
+                        console.log(response);
+                        showMessage('Success!', `Thank you for your generous donation of ₹${amount}. Payment ID: ${response.razorpay_payment_id}`);
+                        donationForm.reset();
+                    },
+                    "prefill": {
+                        "name": donorName,
+                        "email": donorEmail,
+                    },
+                    "notes": {
+                        "address": "Hope Foundation Head Office, New Delhi"
+                    },
+                    "theme": {
+                        "color": "#EF4444"
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+                
+                rzp.on('payment.failed', function (response){
+                    console.error(response);
+                    showMessage('Payment Failed', `Error: ${response.error.description}. Please try again.`);
+                });
+                
+                rzp.open();
+            });
+
+            const messageModal = document.getElementById('message-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+            const modalCloseButton = document.getElementById('modal-close');
+
+            function showMessage(title, message) {
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                messageModal.classList.remove('hidden');
+            }
+
+            modalCloseButton.addEventListener('click', () => {
+                messageModal.classList.add('hidden');
+            });
+
+            // FAQ Accordion Logic
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                faqContainer.addEventListener('click', function(e) {
+                    const questionButton = e.target.closest('button');
+                    if (!questionButton) return;
+                    
+                    const questionDiv = questionButton.parentElement;
+                    const currentlyOpen = document.querySelector('.faq-question.open');
+
+                    if (currentlyOpen && currentlyOpen !== questionDiv) {
+                        currentlyOpen.classList.remove('open');
+                    }
+
+                    questionDiv.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
