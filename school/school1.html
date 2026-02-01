@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KR Global School - Nurturing Future Leaders</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            position: relative;
+            height: calc(100vh - 72px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            background-image: url('https://plus.unsplash.com/premium_photo-1663040225613-98b7801c48a2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(23, 37, 84, 0.6); /* dark indigo overlay */
+            z-index: 1;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 2.5rem; /* text-4xl */
+            color: #1e293b; /* slate-800 */
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* text-lg */
+            color: #475569; /* slate-600 */
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+        .nav-link {
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #c2995e; /* gold accent */
+        }
+        footer .nav-link:hover {
+             color: #ffffff;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* --- Animation Styles --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in-up {
+             transform: translateY(40px);
+        }
+
+        .hero-text-h1 { animation: fadeInUp 1s ease-out 0.3s backwards; }
+        .hero-text-p { animation: fadeInUp 1s ease-out 0.6s backwards; }
+        .hero-text-a { animation: fadeInUp 1s ease-out 0.9s backwards; }
+
+        /* Scroll Down Arrow */
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+          40% { transform: translateY(-20px); }
+          60% { transform: translateY(-10px); }
+        }
+        .scroll-down-arrow {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2.5s infinite;
+            cursor: pointer;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" data-page="home" class="text-2xl font-bold font-serif text-slate-800 nav-link">
+                KR Global School
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" data-page="home" class="nav-link text-slate-600 font-medium">Home</a>
+                <a href="#" data-page="about" class="nav-link text-slate-600 font-medium">About</a>
+                <a href="#" data-page="academics" class="nav-link text-slate-600 font-medium">Academics</a>
+                <a href="#" data-page="admissions" class="nav-link text-slate-600 font-medium">Admissions</a>
+                <a href="#" data-page="gallery" class="nav-link text-slate-600 font-medium">Gallery</a>
+                <a href="#" data-page="contact" class="nav-link text-slate-600 font-medium">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="fas fa-bars text-slate-800 text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#" data-page="home" class="block py-2 text-slate-600 font-medium nav-link">Home</a>
+            <a href="#" data-page="about" class="block py-2 text-slate-600 font-medium nav-link">About</a>
+            <a href="#" data-page="academics" class="block py-2 text-slate-600 font-medium nav-link">Academics</a>
+            <a href="#" data-page="admissions" class="block py-2 text-slate-600 font-medium nav-link">Admissions</a>
+            <a href="#" data-page="gallery" class="block py-2 text-slate-600 font-medium nav-link">Gallery</a>
+            <a href="#" data-page="contact" class="block py-2 text-slate-600 font-medium nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Content -->
+        <section id="home" class="page-section">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-overlay"></div>
+                <div class="text-center px-4 z-10">
+                    <h1 class="text-5xl md:text-7xl font-serif font-bold mb-4 drop-shadow-lg hero-text-h1">A Legacy of Excellence</h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md hero-text-p">KR Global School is where tradition meets innovation, crafting the leaders of tomorrow with a world-class education.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-text-a">
+                        <a href="#" data-page="admissions" class="nav-link bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
+                            Begin Your Journey
+                        </a>
+                         <a href="#" data-page="about" class="nav-link bg-transparent border-2 border-white hover:bg-white hover:text-slate-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
+                            Discover Our Campus
+                        </a>
+                    </div>
+                </div>
+                <div id="scroll-down" class="scroll-down-arrow">
+                     <i class="fas fa-chevron-down fa-2x text-white opacity-70"></i>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Section -->
+            <div class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title animate-on-scroll fade-in-up">The KR Global Advantage</h2>
+                    <p class="section-subtitle animate-on-scroll fade-in-up">An environment meticulously designed for intellectual and personal growth.</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Feature 1 -->
+                        <div class="text-center p-6 animate-on-scroll fade-in-up">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-800 mx-auto mb-4">
+                                <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Distinguished Faculty</h3>
+                            <p class="text-slate-600">Mentors and scholars dedicated to fostering intellectual curiosity and academic rigor.</p>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="text-center p-6 animate-on-scroll fade-in-up" style="transition-delay: 150ms;">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-800 mx-auto mb-4">
+                               <i class="fas fa-flask fa-2x"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Advanced Facilities</h3>
+                            <p class="text-slate-600">Cutting-edge labs, digital libraries, and creative studios that inspire innovation.</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="text-center p-6 animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-800 mx-auto mb-4">
+                                <i class="fas fa-globe-americas fa-2x"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Global Curriculum</h3>
+                            <p class="text-slate-600">An internationally-minded curriculum that prepares students for a connected world.</p>
+                        </div>
+                        <!-- Feature 4 -->
+                        <div class="text-center p-6 animate-on-scroll fade-in-up" style="transition-delay: 450ms;">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-800 mx-auto mb-4">
+                                <i class="fas fa-user-graduate fa-2x"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Character Development</h3>
+                            <p class="text-slate-600">Emphasis on leadership, integrity, and social responsibility for a complete education.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News & Events Section -->
+            <div class="py-20 bg-slate-100">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title animate-on-scroll fade-in-up">Campus Chronicles</h2>
+                    <p class="section-subtitle animate-on-scroll fade-in-up">Stay informed about the latest achievements and upcoming events.</p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- News 1 -->
+                        <div class="card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll fade-in-up">
+                            <img src="https://placehold.co/400x250/1e3a8a/ffffff?text=Annual+Gala" alt="Annual Gala" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <p class="text-sm text-amber-600 font-semibold mb-2">August 01, 2025</p>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Annual Founder's Gala</h3>
+                                <p class="text-slate-600 mb-4">A spectacular evening celebrating our school's heritage and future.</p>
+                                <a href="#" class="font-semibold text-indigo-800 hover:text-amber-600 transition-colors">Read More &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- News 2 -->
+                        <div class="card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll fade-in-up" style="transition-delay: 150ms;">
+                            <img src="https://placehold.co/400x250/312e81/ffffff?text=Tech+Symposium" alt="Tech Symposium" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <p class="text-sm text-amber-600 font-semibold mb-2">July 25, 2025</p>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">National Tech Symposium</h3>
+                                <p class="text-slate-600 mb-4">Our students win top honors with their groundbreaking robotics project.</p>
+                                <a href="#" class="font-semibold text-indigo-800 hover:text-amber-600 transition-colors">Read More &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- News 3 -->
+                        <div class="card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                            <img src="https://placehold.co/400x250/4338ca/ffffff?text=Art+Exhibition" alt="Art Exhibition" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <p class="text-sm text-amber-600 font-semibold mb-2">July 15, 2025</p>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Expressions Art Exhibition</h3>
+                                <p class="text-slate-600 mb-4">A stunning display of creativity and talent from our budding artists.</p>
+                                <a href="#" class="font-semibold text-indigo-800 hover:text-amber-600 transition-colors">Read More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section (Page) -->
+        <section id="about" class="page-section hidden py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">About KR Global School</h2>
+                <p class="section-subtitle">Our commitment to fostering a vibrant and inspiring learning environment.</p>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/e2e8f0/334155?text=Our+Campus" alt="School Campus" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-3xl font-bold font-serif text-slate-800 mb-4">Our Mission & Vision</h3>
+                        <p class="mb-4 text-slate-600">Our mission is to provide a holistic education that balances academic excellence with personal growth. We aim to cultivate critical thinking, creativity, and a lifelong passion for learning in every student.</p>
+                        <p class="text-slate-600">Our vision is to be a leading educational institution recognized for empowering students to achieve their full potential and make a positive impact on the world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academics Section (Page) -->
+        <section id="academics" class="page-section hidden py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Our Academic Programs</h2>
+                <p class="section-subtitle">Structured programs designed to cater to the intellectual and developmental needs of students at every stage.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/400x250/93c5fd/1e293b?text=Primary" alt="Primary School" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Primary School</h3>
+                            <p class="text-slate-600">Building a strong foundation through interactive and play-based learning methods.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/400x250/60a5fa/1e293b?text=Middle" alt="Middle School" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Middle School</h3>
+                            <p class="text-slate-600">Encouraging exploration and critical thinking to prepare students for higher challenges.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/400x250/3b82f6/1e293b?text=High" alt="High School" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">High School</h3>
+                            <p class="text-slate-600">Specialized streams and guidance to help students pursue their career aspirations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admissions Section (Page) -->
+        <section id="admissions" class="page-section hidden py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Admissions</h2>
+                <p class="section-subtitle">Join our community and start your journey towards excellence.</p>
+                <div class="max-w-4xl mx-auto bg-slate-50 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold font-serif text-slate-800 mb-4">Admission Process</h3>
+                    <p class="text-slate-600 mb-6">Our admission process is designed to be transparent and straightforward. We welcome applications from students of all backgrounds. Please follow the steps below:</p>
+                    <ol class="list-decimal list-inside space-y-4 text-slate-600">
+                        <li><strong>Submit Enquiry Form:</strong> Fill out the contact form on our website or visit the school office.</li>
+                        <li><strong>Campus Tour & Interaction:</strong> Schedule a visit to our campus and have an interaction with our admissions counselor.</li>
+                        <li><strong>Application Form:</strong> Purchase and submit the completed application form along with the required documents.</li>
+                        <li><strong>Assessment:</strong> A simple, age-appropriate assessment will be conducted for prospective students.</li>
+                        <li><strong>Offer of Admission:</strong> Successful candidates will receive an offer of admission. Complete the fee payment to secure the seat.</li>
+                    </ol>
+                    <div class="mt-8 text-center">
+                         <a href="#" data-page="contact" class="nav-link bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section (Page) -->
+        <section id="gallery" class="page-section hidden py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Campus Life</h2>
+                <p class="section-subtitle">A glimpse into the vibrant and enriching life at KR Global School.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid gap-4">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x300/e0f2fe/083344?text=Sports+Day" alt=""></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x800/e0f2fe/083344?text=Science+Fair" alt=""></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x700/bae6fd/083344?text=Art+Class" alt=""></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x400/bae6fd/083344?text=Library" alt=""></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x300/7dd3fc/0c4a6e?text=Music+Room" alt=""></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x800/7dd3fc/0c4a6e?text=Graduation" alt=""></div>
+                    </div>
+                     <div class="grid gap-4">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x700/38bdf8/075985?text=Teamwork" alt=""></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x400/38bdf8/075985?text=Playground" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Page) -->
+        <section id="contact" class="page-section hidden py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We're here to help. Reach out to us for any inquiries or to schedule a campus tour.</p>
+                <div class="bg-white p-8 rounded-xl shadow-2xl max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold font-serif text-slate-800 mb-4">Contact Form</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-slate-600 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-slate-600 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-slate-600 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-800 hover:bg-indigo-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="md:w-1/2">
+                         <h3 class="text-2xl font-bold font-serif text-slate-800 mb-4">Our Location</h3>
+                         <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192936!2d77.0224912069275!3d28.52728033800238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1677322988825!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+                         </div>
+                         <div class="mt-6 text-slate-600">
+                            <p class="mb-2"><strong>Address:</strong> 123 Education Lane, Knowledge Park, Gurugram, Haryana, 122001, India</p>
+                            <p class="mb-2"><strong>Phone:</strong> +91 98765 43210</p>
+                            <p><strong>Email:</strong> admissions@krglobal.edu.in</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+                <!-- Part 1: About the School -->
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold font-serif mb-4">KR Global School</h3>
+                    <p class="text-slate-400 text-sm">Nurturing future leaders with a commitment to academic excellence and holistic development.</p>
+                </div>
+
+                <!-- Part 2: Quick Links -->
+                <div class="w-full md:w-auto">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" data-page="home" class="nav-link text-slate-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#" data-page="about" class="nav-link text-slate-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" data-page="academics" class="nav-link text-slate-400 hover:text-white transition-colors duration-300">Academics</a></li>
+                        <li><a href="#" data-page="admissions" class="nav-link text-slate-400 hover:text-white transition-colors duration-300">Admissions</a></li>
+                        <li><a href="#" data-page="contact" class="nav-link text-slate-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Part 3: Contact Info & Socials -->
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <div class="text-slate-400 text-sm space-y-2">
+                        <p>123 Education Lane, Knowledge Park, Gurugram, Haryana, 122001</p>
+                        <p><strong>Email:</strong> admissions@krglobal.edu.in</p>
+                        <p><strong>Phone:</strong> +91 98765 43210</p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm">
+                <p>&copy; 2025 KR Global School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Page Navigation Logic ---
+            const pages = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.add('hidden'));
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) targetPage.classList.remove('hidden');
+
+                navLinks.forEach(link => {
+                    if (link.closest('footer')) return;
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+                window.scrollTo(0, 0);
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.dataset.page;
+                    if (pageId) {
+                        showPage(pageId);
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                });
+            });
+
+            showPage('home');
+
+            // --- Animation on Scroll Logic ---
+            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(el => observer.observe(el));
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // --- Header Shadow on Scroll ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('shadow-xl', window.scrollY > 50);
+            });
+
+            // --- Scroll Down Arrow Click ---
+            const scrollDownArrow = document.getElementById('scroll-down');
+            if(scrollDownArrow) {
+                scrollDownArrow.addEventListener('click', () => {
+                    const firstSection = document.querySelector('.page-section > div:not(.hero-section)');
+                    if(firstSection) {
+                        firstSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

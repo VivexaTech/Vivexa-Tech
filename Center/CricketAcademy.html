@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Cricket Institute - Train with the Pros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://media.istockphoto.com/id/520834490/photo/rear-view-of-cricket-ball-hitting-stumps-behind-batsman.jpg?s=612x612&w=0&k=20&c=owp3f3m-d3uoS8FpNbUPsn37Dpl3ux5gq1DGIG68_AU=');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-bg {
+             background-image: linear-gradient(rgba(29, 78, 216, 0.8), rgba(29, 78, 216, 0.8)), url('https://media.istockphoto.com/id/1158435298/photo/grand-cricket-stadium-with-wooden-wickets-front-view-in-daylight.jpg?s=612x612&w=0&k=20&c=BNIDRFcvq_1qbxOVcrbzaiScPyApWb7FU448lVZtMjA=');
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-white mb-2;
+        }
+        .section-subtitle {
+            @apply text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto;
+        }
+        .map-dark {
+            filter: invert(100%) hue-rotate(180deg);
+        }
+        .page-section {
+            display: none; /* Pages are hidden by default */
+        }
+        .nav-link.active {
+            color: #60A5FA; /* Corresponds to blue-400 */
+            font-weight: 600;
+        }
+        /* Styling for the timeline in About Us */
+        .timeline-item {
+            @apply relative pl-8 sm:pl-12 pb-12;
+        }
+        .timeline-item:last-child {
+            @apply pb-0;
+        }
+        .timeline-marker {
+            @apply absolute left-0 top-1 w-4 h-4 bg-blue-400 rounded-full;
+        }
+        .timeline-line {
+            @apply absolute left-[7px] top-1 h-full w-0.5 bg-gray-700;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-gray-800/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" id="home-link" class="text-2xl font-bold text-white">
+                <span class="text-blue-400">Apex</span>Cricket
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#" data-page="about" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">About Us</a>
+                <a href="#" data-page="programs" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Programs</a>
+                <a href="#" data-page="coaches" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Coaches</a>
+                <a href="#" data-page="facilities" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Facilities</a>
+                <a href="#" data-page="contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-500 transition duration-300 shadow-lg">Enroll Now</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-4">
+            <a href="#" data-page="about" class="nav-link-mobile block py-2 px-6 text-gray-300 hover:bg-gray-700">About Us</a>
+            <a href="#" data-page="programs" class="nav-link-mobile block py-2 px-6 text-gray-300 hover:bg-gray-700">Programs</a>
+            <a href="#" data-page="coaches" class="nav-link-mobile block py-2 px-6 text-gray-300 hover:bg-gray-700">Coaches</a>
+            <a href="#" data-page="facilities" class="nav-link-mobile block py-2 px-6 text-gray-300 hover:bg-gray-700">Facilities</a>
+            <a href="#" data-page="contact" class="nav-link-mobile block mx-6 my-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full hover:bg-blue-500 transition duration-300">Enroll Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Content -->
+        <div id="home-page">
+            <!-- Hero Section -->
+            <section id="home" class="hero-bg text-white h-[calc(100vh-80px)] flex items-center">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4" data-aos="fade-down">Shape Your Cricketing Future</h1>
+                    <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">Join Apex Cricket Institute and unlock your potential with world-class coaching, state-of-the-art facilities, and a passion for excellence.</p>
+                    <a href="#" data-page="contact" class="nav-link bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-500 transition duration-300 transform hover:scale-105 shadow-xl" data-aos="zoom-in" data-aos-delay="400">Start Your Journey</a>
+                </div>
+            </section>
+
+            <!-- Home - Intro Section -->
+            <section class="py-20 md:py-28 bg-gray-800">
+                <div class="container mx-auto px-6">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div data-aos="fade-right">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">Forge Your Path to Cricketing Greatness</h2>
+                            <p class="mt-4 text-gray-400">Apex Cricket Institute is more than just a training ground. It's a community where passion meets purpose, and talent is forged into legacy. We provide a comprehensive ecosystem for players to thrive, focusing on skill, strategy, and sportsmanship.</p>
+                            <a href="#" data-page="about" class="nav-link mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-500 transition duration-300">Discover Our Story</a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="200">
+                            <img src="https://placehold.co/600x600/1F2937/FFFFFF?text=Passion" class="rounded-lg shadow-lg aspect-square object-cover" alt="Cricket Passion">
+                            <img src="https://placehold.co/600x600/374151/FFFFFF?text=Purpose" class="rounded-lg shadow-lg aspect-square object-cover mt-8" alt="Cricket Purpose">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Home - Featured Programs -->
+            <section class="py-20 md:py-28 bg-gray-900 text-center">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-aos="fade-down">Pathways to Excellence</h2>
+                    <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Find the perfect program to match your ambition and skill level.</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Junior+Stars" alt="Junior Program" class="w-full h-48 object-cover"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Junior Stars (Ages 8-12)</h3><p class="mb-4">Building a strong foundation with a focus on fun, fundamentals, and teamwork.</p></div></div>
+                        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300"><img src="https://placehold.co/600x400/10B981/FFFFFF?text=Youth+Elite" alt="Youth Program" class="w-full h-48 object-cover"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Youth Elite (Ages 13-18)</h3><p class="mb-4">Advanced skill development, tactical awareness, and physical conditioning for competitive players.</p></div></div>
+                        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400"><img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Pro+League" alt="Professional Program" class="w-full h-48 object-cover"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Pro League Prep (Ages 18+)</h3><p class="mb-4">High-performance training for senior players. Focus on specialized skills and mental toughness.</p></div></div>
+                    </div>
+                     <a href="#" data-page="programs" class="nav-link mt-12 inline-block border-2 border-blue-400 text-blue-400 px-8 py-3 rounded-full hover:bg-blue-400 hover:text-white transition duration-300">View All Programs</a>
+                </div>
+            </section>
+
+            <!-- Home - Testimonials -->
+            <section class="py-20 md:py-28 bg-gray-800">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="section-title" data-aos="fade-down">What Our Champions Say</h2>
+                    <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Real stories from players who have trained with us.</p>
+                    <div class="grid md:grid-cols-3 gap-8 text-left">
+                        <div class="bg-gray-700 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <p class="mb-6">"The coaching at Apex is second to none. They transformed my game and gave me the confidence to compete at the highest level."</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/100x100/E5E7EB/374151?text=AP" class="w-12 h-12 rounded-full mr-4" alt="Arjun Patel">
+                                <div>
+                                    <p class="font-bold text-white">Arjun Patel</p>
+                                    <p class="text-sm text-blue-400">Youth Elite Program Alumnus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-700 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                            <p class="mb-6">"A truly professional setup. The facilities, the tech, and the fitness programs are what you'd expect at an international academy."</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/100x100/E5E7EB/374151?text=SK" class="w-12 h-12 rounded-full mr-4" alt="Sneha Kumar">
+                                <div>
+                                    <p class="font-bold text-white">Sneha Kumar</p>
+                                    <p class="text-sm text-blue-400">State Level Player</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-700 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                            <p class="mb-6">"My son started in the Junior Stars program. His love for the game and his skills have grown immensely. Highly recommended."</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/100x100/E5E7EB/374151?text=RV" class="w-12 h-12 rounded-full mr-4" alt="Rohan Verma's Father">
+                                <div>
+                                    <p class="font-bold text-white">Mr. Verma</p>
+                                    <p class="text-sm text-blue-400">Parent</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Home - CTA -->
+            <section class="cta-bg">
+                <div class="py-20 md:py-32 text-center text-white">
+                    <div class="container mx-auto px-6">
+                        <h2 class="text-3xl md:text-5xl font-extrabold" data-aos="zoom-in">Ready to Unleash Your Potential?</h2>
+                        <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-200" data-aos="fade-up" data-aos-delay="200">Join the ranks of champions. Your journey starts with a single step.</p>
+                        <a href="#" data-page="contact" class="nav-link mt-8 inline-block bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="400">Enroll Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Other Pages Container -->
+        <div id="page-container">
+            <!-- About Us Page -->
+            <section id="about" class="page-section">
+                <!-- Sub-section 1: Welcome -->
+                <div class="py-20 md:py-28 bg-gray-900 text-center">
+                    <div class="container mx-auto px-6">
+                        <h2 class="section-title" data-aos="fade-down">Welcome to Apex Cricket Institute</h2>
+                        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">We are dedicated to nurturing the next generation of cricket champions through personalized coaching and a holistic development approach.</p>
+                        <div class="grid md:grid-cols-3 gap-8 text-left">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200"><i data-lucide="target" class="w-12 h-12 text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2">Our Mission</h3><p>To provide a dynamic and challenging environment that inspires young athletes to achieve their highest potential in cricket and in life.</p></div>
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300"><i data-lucide="eye" class="w-12 h-12 text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2">Our Vision</h3><p>To be recognized as a leading cricket development center, renowned for producing skilled, disciplined, and sportsmanlike cricketers.</p></div>
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400"><i data-lucide="gem" class="w-12 h-12 text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2">Core Values</h3><p>Discipline, Respect, Integrity, Teamwork, and a relentless pursuit of Excellence are the cornerstones of our institute.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sub-section 2: Our History Timeline -->
+                <div class="py-20 md:py-28 bg-gray-800">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center">
+                            <h2 class="section-title" data-aos="fade-down">Our Journey</h2>
+                            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">From a humble beginning to a beacon of cricketing excellence.</p>
+                        </div>
+                        <div class="max-w-2xl mx-auto" data-aos="fade-up">
+                            <div class="relative">
+                                <div class="timeline-line"></div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <h4 class="font-bold text-lg text-blue-400">2015 - The Dream Begins</h4>
+                                    <p class="text-gray-400">Founded by coach Ravi Sharma with a single net and a vision to provide quality coaching to local talent.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <h4 class="font-bold text-lg text-blue-400">2018 - First Major Success</h4>
+                                    <p class="text-gray-400">Our U-16 team wins the state championship, putting Apex Institute on the map.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <h4 class="font-bold text-lg text-blue-400">2021 - Facility Expansion</h4>
+                                    <p class="text-gray-400">Inauguration of our state-of-the-art indoor facility and professional gym.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <h4 class="font-bold text-lg text-blue-400">2025 - Going International</h4>
+                                    <p class="text-gray-400">First international student enrollment and collaboration with overseas cricket clubs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Programs Page -->
+            <section id="programs" class="page-section">
+                <!-- Sub-section 1: Program Overview -->
+                 <div class="py-20 md:py-28 bg-gray-900 text-center">
+                    <div class="container mx-auto px-6">
+                        <h2 class="section-title" data-aos="fade-down">Our Training Programs</h2>
+                        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Tailored programs designed to meet the needs of cricketers at every stage of their development, from grassroots to elite levels.</p>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Junior+Stars" alt="Junior Program" class="w-full h-48 object-cover"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Junior Stars (Ages 8-12)</h3><p class="mb-4">Building a strong foundation with a focus on fun, fundamentals, and teamwork.</p><a href="#" data-page="contact" class="nav-link text-blue-400 font-semibold hover:underline">Enroll Now &rarr;</a></div></div>
+                            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300"><img src="https://placehold.co/600x400/10B981/FFFFFF?text=Youth+Elite" alt="Youth Program" class="w-full h-48 object-cover"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Youth Elite (Ages 13-18)</h3><p class="mb-4">Advanced skill development, tactical awareness, and physical conditioning for competitive players.</p><a href="#" data-page="contact" class="nav-link text-blue-400 font-semibold hover:underline">Enroll Now &rarr;</a></div></div>
+                            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400"><img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Pro+League" alt="Professional Program" class="w-full h-48 object-cover"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Pro League Prep (Ages 18+)</h3><p class="mb-4">High-performance training for senior players. Focus on specialized skills and mental toughness.</p><a href="#" data-page="contact" class="nav-link text-blue-400 font-semibold hover:underline">Enroll Now &rarr;</a></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sub-section 2: Program Details -->
+                <div class="py-20 md:py-28 bg-gray-800">
+                    <div class="container mx-auto px-6 space-y-20">
+                        <!-- Detail: Junior Stars -->
+                        <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-4">Program Details: <span class="text-blue-400">Junior Stars</span></h3>
+                                <p class="mb-6">Our Junior Stars program is the perfect entry point. We mix skill-based drills with fun games to instill a lifelong love for cricket. Every session is designed to be engaging and educational.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mr-2"></i> Focus on core skills: Batting, Bowling, Fielding.</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mr-2"></i> Small group sizes for personalized attention.</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mr-2"></i> Weekly friendly matches to build confidence.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-700 p-6 rounded-lg">
+                                <h4 class="text-xl font-semibold text-white mb-4">Sample Schedule</h4>
+                                <p><strong class="text-blue-400">Weekdays (4-6 PM):</strong> Skill Drills</p>
+                                <p><strong class="text-blue-400">Saturday (9-11 AM):</strong> Net Practice & Match Simulation</p>
+                                <p><strong class="text-blue-400">Sunday:</strong> Rest Day</p>
+                            </div>
+                        </div>
+                        <!-- Detail: Youth Elite -->
+                        <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-left">
+                             <div class="bg-gray-700 p-6 rounded-lg md:order-2">
+                                <h4 class="text-xl font-semibold text-white mb-4">Curriculum Focus</h4>
+                                <p><strong class="text-green-400">Technical:</strong> Advanced batting/bowling techniques.</p>
+                                <p><strong class="text-green-400">Tactical:</strong> Field placements, game awareness.</p>
+                                <p><strong class="text-green-400">Physical:</strong> Cricket-specific fitness and diet plans.</p>
+                            </div>
+                            <div class="md:order-1">
+                                <h3 class="text-3xl font-bold text-white mb-4">Program Details: <span class="text-green-400">Youth Elite</span></h3>
+                                <p class="mb-6">This program is for young cricketers who are serious about competing. We introduce advanced concepts, including video analysis, mental conditioning, and personalized fitness regimes to prepare them for tournaments.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mr-2"></i> One-on-one sessions with specialist coaches.</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mr-2"></i> Regular performance reviews and goal setting.</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mr-2"></i> Exposure to competitive district and state-level matches.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coaches Page -->
+            <section id="coaches" class="page-section">
+                 <!-- Sub-section 1: Coaches Overview -->
+                <div class="py-20 md:py-28 bg-gray-900 text-center">
+                    <div class="container mx-auto px-6">
+                        <h2 class="section-title" data-aos="fade-down">Meet Our Expert Coaches</h2>
+                        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Our team of certified and experienced coaches is committed to your success. They bring a wealth of knowledge from their professional playing and coaching careers.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="text-center" data-aos="zoom-in" data-aos-delay="200"><img src="https://placehold.co/400x400/374151/E5E7EB?text=Coach+A" alt="Head Coach" class="w-40 h-40 mx-auto rounded-full mb-4 shadow-lg border-4 border-gray-700"><h3 class="text-xl font-bold text-white">Ravi Sharma</h3><p class="text-blue-400">Head Coach</p></div>
+                            <div class="text-center" data-aos="zoom-in" data-aos-delay="300"><img src="https://placehold.co/400x400/374151/E5E7EB?text=Coach+B" alt="Batting Coach" class="w-40 h-40 mx-auto rounded-full mb-4 shadow-lg border-4 border-gray-700"><h3 class="text-xl font-bold text-white">Anjali Mehta</h3><p class="text-blue-400">Batting Specialist</p></div>
+                            <div class="text-center" data-aos="zoom-in" data-aos-delay="400"><img src="https://placehold.co/400x400/374151/E5E7EB?text=Coach+C" alt="Bowling Coach" class="w-40 h-40 mx-auto rounded-full mb-4 shadow-lg border-4 border-gray-700"><h3 class="text-xl font-bold text-white">Sanjay Singh</h3><p class="text-blue-400">Pace Bowling Coach</p></div>
+                            <div class="text-center" data-aos="zoom-in" data-aos-delay="500"><img src="https://placehold.co/400x400/374151/E5E7EB?text=Coach+D" alt="Fielding Coach" class="w-40 h-40 mx-auto rounded-full mb-4 shadow-lg border-4 border-gray-700"><h3 class="text-xl font-bold text-white">Priya Das</h3><p class="text-blue-400">Fielding & Fitness</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sub-section 2: Head Coach's Message -->
+                <div class="py-20 md:py-28 bg-gray-800">
+                    <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-3 gap-12 items-center">
+                            <div class="md:col-span-1 text-center" data-aos="fade-right">
+                                <img src="https://placehold.co/400x500/374151/E5E7EB?text=Ravi+Sharma" alt="Head Coach Ravi Sharma" class="rounded-lg shadow-xl mx-auto">
+                            </div>
+                            <div class="md:col-span-2" data-aos="fade-left" data-aos-delay="100">
+                                <h3 class="text-3xl font-bold text-white">A Message from the <span class="text-blue-400">Head Coach</span></h3>
+                                <p class="mt-4 text-lg">"At Apex, we don't just build cricketers; we build athletes and leaders. Our philosophy is rooted in the belief that a strong character is the foundation of a great player. We push our students to be technically sound, mentally tough, and strategically brilliant. Your journey to professional cricket starts with the right guidance, and my team and I are here to provide exactly that."</p>
+                                <p class="mt-6 font-bold text-xl text-white">- Ravi Sharma</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Facilities Page -->
+            <section id="facilities" class="page-section">
+                <!-- Sub-section 1: Facilities Overview -->
+                <div class="py-20 md:py-28 bg-gray-900">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center">
+                            <h2 class="section-title" data-aos="fade-down">State-of-the-Art Facilities</h2>
+                            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">We provide a world-class environment designed to support every aspect of a cricketer's training and development.</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
+                                <img src="https://placehold.co/600x600/1F2937/FFFFFF?text=Nets" class="rounded-lg shadow-lg aspect-square object-cover" alt="Cricket Nets">
+                                <img src="https://placehold.co/600x600/374151/FFFFFF?text=Gym" class="rounded-lg shadow-lg aspect-square object-cover mt-4" alt="Gym">
+                                <img src="https://placehold.co/600x600/4B5563/FFFFFF?text=Pitch" class="rounded-lg shadow-lg aspect-square object-cover" alt="Cricket Pitch">
+                                <img src="https://placehold.co/600x600/6B7280/FFFFFF?text=Analysis" class="rounded-lg shadow-lg aspect-square object-cover mt-4" alt="Video Analysis">
+                            </div>
+                            <div class="space-y-6" data-aos="fade-left" data-aos-delay="200">
+                                <div class="flex items-start space-x-4"><i data-lucide="check-circle-2" class="w-8 h-8 text-green-400 flex-shrink-0 mt-1"></i><div><h3 class="text-xl font-semibold text-white">Multiple Turf & Astro-Turf Pitches</h3><p>Practice on various surfaces to adapt to different match conditions.</p></div></div>
+                                <div class="flex items-start space-x-4"><i data-lucide="check-circle-2" class="w-8 h-8 text-green-400 flex-shrink-0 mt-1"></i><div><h3 class="text-xl font-semibold text-white">Indoor Nets with Bowling Machines</h3><p>Train year-round, day or night, with advanced Bola bowling machines.</p></div></div>
+                                <div class="flex items-start space-x-4"><i data-lucide="check-circle-2" class="w-8 h-8 text-green-400 flex-shrink-0 mt-1"></i><div><h3 class="text-xl font-semibold text-white">Professional Gymnasium</h3><p>Fully-equipped gym for strength, conditioning, and injury prevention.</p></div></div>
+                                <div class="flex items-start space-x-4"><i data-lucide="check-circle-2" class="w-8 h-8 text-green-400 flex-shrink-0 mt-1"></i><div><h3 class="text-xl font-semibold text-white">Video Analysis & Tech Hub</h3><p>Cutting-edge technology to analyze technique and game strategy.</p></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Sub-section 2: Tech Hub Details -->
+                <div class="py-20 md:py-28 bg-gray-800">
+                    <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div data-aos="fade-right">
+                                <h3 class="text-3xl font-bold text-white">The <span class="text-blue-400">Apex Tech</span> Advantage</h3>
+                                <p class="mt-4 mb-6">We leverage the latest technology to give our players a competitive edge. Our Tech & Analysis Hub is equipped with industry-standard tools that provide instant feedback and deep insights into every aspect of the game.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center"><i data-lucide="cpu" class="w-5 h-5 text-blue-400 mr-2"></i> <strong>PitchVision:</strong> Video analysis for batting and bowling.</li>
+                                    <li class="flex items-center"><i data-lucide="bar-chart-2" class="w-5 h-5 text-blue-400 mr-2"></i> <strong>Hawk-Eye:</strong> Ball tracking for trajectory and speed analysis.</li>
+                                    <li class="flex items-center"><i data-lucide="smartphone-charging" class="w-5 h-5 text-blue-400 mr-2"></i> <strong>Player App:</strong> Access your performance data and coach feedback anytime.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-left" data-aos-delay="100">
+                                <img src="https://placehold.co/600x450/1F2937/FFFFFF?text=Tech+Hub+in+Action" class="rounded-lg shadow-xl" alt="Technology Hub">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Page -->
+            <section id="contact" class="page-section">
+                <!-- Sub-section 1: Contact Form & Info -->
+                <div class="py-20 md:py-28 bg-gray-900">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center">
+                            <h2 class="section-title" data-aos="fade-down">Get in Touch</h2>
+                            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Ready to take the first step? Fill out the form below for inquiries or admissions.</p>
+                        </div>
+                        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-gray-800 p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                            <form id="contactForm">
+                                <div class="mb-4"><label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label><input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" required></div>
+                                <div class="mb-4"><label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label><input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" required></div>
+                                <div class="mb-4"><label for="program" class="block text-sm font-medium text-gray-300 mb-1">Program of Interest</label><select id="program" name="program" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white"><option>Select a program</option><option>Junior Stars (Ages 8-12)</option><option>Youth Elite (Ages 13-18)</option><option>Pro League Prep (Ages 18+)</option><option>General Inquiry</option></select></div>
+                                <div class="mb-4"><label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label><textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" required></textarea></div>
+                                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-500 transition duration-300 shadow-lg">Send Message</button>
+                                <p id="form-status" class="text-center mt-4"></p>
+                            </form>
+                            <div class="space-y-6">
+                                <div><h3 class="text-xl font-semibold text-white mb-2">Contact Information</h3><p class="flex items-center space-x-3"><i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i> <span>123 Cricket Avenue, Gurugram, Haryana, 122001</span></p><p class="flex items-center space-x-3 mt-2"><i data-lucide="phone" class="w-5 h-5 text-blue-400"></i> <span>+91 98765 43210</span></p><p class="flex items-center space-x-3 mt-2"><i data-lucide="mail" class="w-5 h-5 text-blue-400"></i> <span>info@apexcricket.com</span></p></div>
+                                <div class="h-64"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112328.1399998139!2d76.96090779726562!3d28.426071700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23644fb3e503%3A0x35459f562b53b34!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1722687158309!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg map-dark"></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-1"><h3 class="text-xl font-bold mb-2"><span class="text-blue-400">Apex</span>Cricket</h3><p class="text-gray-400">Nurturing tomorrow's cricket legends, today.</p></div>
+                <div><h4 class="font-semibold text-white mb-4">Quick Links</h4><ul class="space-y-2"><li><a href="#" data-page="about" class="nav-link text-gray-400 hover:text-white">About</a></li><li><a href="#" data-page="programs" class="nav-link text-gray-400 hover:text-white">Programs</a></li><li><a href="#" data-page="contact" class="nav-link text-gray-400 hover:text-white">Contact</a></li></ul></div>
+                <div><h4 class="font-semibold text-white mb-4">Follow Us</h4><div class="flex space-x-4"><a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook" class="w-6 h-6"></i></a><a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter" class="w-6 h-6"></i></a><a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram" class="w-6 h-6"></i></a><a href="#" class="text-gray-400 hover:text-white"><i data-lucide="youtube" class="w-6 h-6"></i></a></div></div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500"><p>&copy; 2025 Apex Cricket Institute. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Initialize Animate on Scroll library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        const pageContainer = document.getElementById('page-container');
+        const homePage = document.getElementById('home-page');
+        const allPages = document.querySelectorAll('.page-section');
+        const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+        const homeLink = document.getElementById('home-link');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function showPage(pageId) {
+            homePage.style.display = 'none';
+            allPages.forEach(page => {
+                page.style.display = 'none';
+            });
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.style.display = 'block';
+                // Use a small timeout to ensure the display property has taken effect before refreshing AOS
+                setTimeout(() => {
+                    AOS.refresh();
+                    // Re-create icons for newly displayed sections
+                    lucide.createIcons();
+                }, 50);
+            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            window.scrollTo(0, 0);
+        }
+
+        function showHomePage() {
+            homePage.style.display = 'block';
+            allPages.forEach(p => p.style.display = 'none');
+            navLinks.forEach(link => link.classList.remove('active'));
+            window.scrollTo(0, 0);
+             setTimeout(() => {
+                AOS.refresh();
+                lucide.createIcons();
+            }, 50);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.dataset.page;
+                showPage(pageId);
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showHomePage();
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('form-status');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formStatus.textContent = 'Sending...';
+            formStatus.classList.remove('text-red-500');
+            formStatus.classList.add('text-blue-400');
+
+            setTimeout(() => {
+                formStatus.textContent = 'Thank you! We will be in touch soon.';
+                formStatus.classList.remove('text-blue-400');
+                formStatus.classList.add('text-green-500');
+                contactForm.reset();
+            }, 1500);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Policies | Vivexa Tech</title>
+    <meta name="description" content="Official Terms and Conditions, Privacy Policy, Refund Policy, and other legal information for Vivexa Tech.">
+    <meta name="author" content="Vivexa Tech">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="https://www.vivexatech.in/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://www.vivexatech.in/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="https://www.vivexatech.in/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.vivexatech.in/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://www.vivexatech.in/assets/favicon/site.webmanifest" />
+
+    <link rel="canonical" href="https://www.vivexatech.in/legal">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Copied all styles from your main website for consistency */
+        :root {
+            --dark-bg: #0A101E;
+            --dark-card: #10182C;
+            --dark-border: #1E293B;
+            --dark-text-primary: #E2E8F0;
+            --dark-text-secondary: #94A3B8;
+
+            --light-bg: #F8FAFC;
+            --light-card: #FFFFFF;
+            --light-border: #E2E8F0;
+            --light-text-primary: #0F172A;
+            --light-text-secondary: #475569;
+
+            --cyan: #00E6F7;
+            --blue: #3672F8;
+
+            --font-sans: 'Poppins', sans-serif;
+            --font-display: 'Orbitron', sans-serif;
+            --border-radius: 8px;
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--dark-bg);
+            --card-color: var(--dark-card);
+            --border-color: var(--dark-border);
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --nav-bg: rgba(10, 16, 30, 0.7);
+        }
+
+        [data-theme="light"] {
+            --bg-color: var(--light-bg);
+            --card-color: var(--light-card);
+            --border-color: var(--light-border);
+            --text-primary: var(--light-text-primary);
+            --text-secondary: var(--light-text-secondary);
+            --nav-bg: rgba(248, 250, 252, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-secondary); font-family: var(--font-sans); line-height: 1.7; font-size: 16px; transition: background-color 0.3s, color 0.3s; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--text-primary); margin-bottom: 1rem; font-weight: 700; transition: color 0.3s; }
+        h2 { font-size: clamp(28px, 5vw, 40px); }
+        p { margin-bottom: 1.5rem; }
+        a { color: var(--cyan); text-decoration: none; transition: var(--transition); }
+        a:hover { filter: brightness(1.2); }
+        
+        /* Header and Footer Styles (from main site) */
+        .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0; background-color: transparent; backdrop-filter: blur(10px); transition: all 0.3s ease-in-out; }
+        .header.scrolled { background-color: var(--nav-bg); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2); padding: 10px 0; }
+        .header nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--text-primary); }
+        .nav-links { display: flex; align-items: center; list-style: none; }
+        .nav-links li { margin: 0 15px; }
+        .nav-links a { color: var(--text-primary); font-size: 0.9rem; font-weight: 500; }
+        .menu-toggle { display: none; }
+        .theme-switch-wrapper { display: flex; align-items: center; cursor: pointer; }
+        .theme-switch { position: relative; display: inline-block; width: 40px; height: 22px; margin-left: 15px; }
+        .theme-switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--dark-border); transition: .4s; border-radius: 22px; }
+        .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--cyan); }
+        input:checked + .slider:before { transform: translateX(18px); }
+        .cta-button { display: inline-block; padding: 12px 28px; border: 1px solid var(--cyan); border-radius: var(--border-radius); background: linear-gradient(90deg, var(--cyan), var(--blue)); color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: 1rem; cursor: pointer; transition: var(--transition); box-shadow: 0 0 20px rgba(0, 230, 247, 0.4); transform: scale(1); }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 230, 247, 0.6); }
+
+        .site-footer { padding: 60px 0 20px; background-color: var(--card-color); border-top: 1px solid var(--border-color); }
+        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
+        .footer-column h4 { color: var(--text-primary); margin-bottom: 1.5rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul a { color: var(--text-secondary); }
+        .social-icons a { font-size: 1.5rem; margin-right: 15px; color: var(--text-secondary); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+        
+        /* Popup form Styles */
+        .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(10, 16, 30, 0.5); backdrop-filter: blur(8px); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+        .popup-overlay.visible { opacity: 1; visibility: visible; }
+        .popup-content { background: var(--nav-bg); padding: 2rem 3rem; border-radius: 12px; border: 1px solid var(--dark-border); width: 90%; max-width: 500px; position: relative; transform: scale(0.95); transition: transform 0.3s; }
+        .popup-overlay.visible .popup-content { transform: scale(1); }
+        .close-popup { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 2rem; color: var(--text-secondary); cursor: pointer; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); color: var(--text-primary); transition: var(--transition); }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--cyan); }
+        .form-submit-btn { width: 100%; }
+
+        /* NEW Styles specific to this Legal Page */
+        .legal-section {
+            padding: 120px 0 60px 0; /* Extra top padding for fixed header */
+        }
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-color);
+            padding: clamp(20px, 5vw, 50px);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+        .legal-container h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .legal-container h2, .legal-container h3 {
+            font-weight: 700;
+        }
+        .legal-container h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .legal-container h2 i {
+            margin-left: 10px;
+            color: var(--cyan);
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+        .legal-container h3 {
+            font-size: 1.2rem;
+            margin-top: 30px;
+            color: var(--text-primary);
+        }
+        .legal-container strong {
+            color: var(--text-primary);
+        }
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: -10px;
+            padding-bottom: 20px;
+        }
+        #table-of-contents {
+            background-color: var(--bg-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0 40px 0;
+            border: 1px solid var(--border-color);
+        }
+        #table-of-contents h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+            font-family: var(--font-sans);
+        }
+        #table-of-contents ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #table-of-contents li {
+            margin-bottom: 10px;
+        }
+        .back-to-top {
+            display: block;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            text-align: right;
+            font-weight: 500;
+        }
+        .legal-container ol, .legal-container ul {
+            padding-left: 25px;
+        }
+        .legal-container li {
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Styles (from main site) */
+        @media (max-width: 992px) { 
+            .footer-grid { grid-template-columns: repeat(2, 1fr); } 
+        }
+        @media (max-width: 768px) { 
+            body { font-size: 15px; } 
+            .nav-links { display: none; position: fixed; top: 0; right: 0; width: min(75vw, 400px); height: 100vh; background-color: var(--card-color); flex-direction: column; justify-content: center; align-items: center; box-shadow: -10px 0px 30px -15px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.3s ease-in-out; } 
+            .nav-links.active { display: flex; transform: translateX(0); } 
+            .nav-links li { margin: 20px 0; } 
+            .nav-links a { font-size: 1.2rem; } 
+            .menu-toggle { display: block; font-size: 1.5rem; color: var(--cyan); cursor: pointer; z-index: 1001; } 
+            .footer-grid { grid-template-columns: 1fr; } 
+            .footer-column#footer-brand { grid-row: 4; text-align: center;} 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container">
+            <a href="https://www.vivexatech.in" class="logo">Vivexa</a>
+            <ul class="nav-links">
+                <li><a href="https://www.vivexatech.in">Home</a></li>
+                <li><a href="https://www.vivexatech.in/about">About us</a></li>
+                <li><a href="https://www.vivexatech.in/service">Services</a></li>
+                <li><a href="https://www.vivexatech.in/#why-us">Why us</a></li>
+                <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
+                <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
+                <li><a href="https://www.vivexatech.in/#pricing">Pricing</a></li>
+                <li><a href="#" class="cta-button nav-cta" data-popup-trigger>Contact Us</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-container">
+                    <h1>Legal & Policies</h1>
+                    <p>Welcome to Vivexa Tech's legal information center. Here you will find our official policies and terms of service. Please review these documents carefully.</p>
+
+                    <nav id="table-of-contents">
+                        <h2>Jump to Section</h2>
+                        <ul>
+                            <li><a href="#terms">Terms and Conditions</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#refund">Refund & Cancellation Policy</a></li>
+                            <li><a href="#disclaimer">Disclaimer</a></li>
+                        </ul>
+                    </nav>
+
+                    <section id="terms">
+                        <h2>Terms and Conditions <i class="fa-solid fa-gavel"></i></h2>
+                        <p class="last-updated">Last Updated: August 2, 2025</p>
+                        <p>Please read these Terms and Conditions ("Terms") carefully. By engaging the services of Vivexa Tech ("we," "us," or "our"), you ("the Client") agree to be bound by these Terms, which form a legally binding agreement between you and Vivexa Tech.</p>
+
+                        <h3>1. Definitions</h3>
+                        <p><strong>"Services"</strong> refers to all work performed by Vivexa Tech, including but not limited to website design, development, hosting, UI/UX design, and SEO as detailed in the project proposal. <strong>"Project"</strong> refers to the specific scope of work agreed upon between Vivexa Tech and the Client.</p>
+
+                        <h3>2. Scope of Services</h3>
+                        <p>Vivexa Tech will provide the Services as outlined in the mutually agreed-upon project proposal or scope of work document. Any work requested by the Client that falls outside of this scope ("scope creep") will be considered an additional service and will be subject to a separate quotation and timeline adjustment.</p>
+
+                        <h3>3. Fees and Payment Terms</h3>
+                        <ul>
+                            <li><strong>Advance Payment:</strong> For our Business and Premium plans, a <strong>non-refundable 30% advance payment</strong> of the total project cost is required to secure project commencement. No advance is required for the Starter plan.</li>
+                            <li><strong>Final Payment:</strong> The remaining 70% of the project fee is due upon completion of the project and prior to the final delivery or launch of the website. The website will not be made live until the final payment is received in full.</li>
+                            <li><strong>Post-Launch Revisions:</strong> Revisions are included during the development phase. Once the project is approved and delivered, any subsequent changes will be chargeable at a rate of <strong>₹600 per revision task</strong>. A revision task may include a single change or a batch of closely related minor adjustments.</li>
+                            <li><strong>Renewal Fees:</strong> We provide one year of complimentary domain and hosting for applicable plans. From the second year, the following renewal fees apply:
+                                <ul>
+                                    <li><strong>Domain:</strong> The actual cost from the registrar plus a 5% service fee.</li>
+                                    <li><strong>Hosting:</strong> A flat rate of ₹1299 per year.</li>
+                                </ul>
+                                Clients will be notified of renewals 30 days in advance. Failure to pay renewal fees may lead to service suspension.</li>
+                            <li><strong>Late Payments:</strong> Invoices for final payments or renewals are due within 15 days of receipt. A late fee of 1.5% per month may be applied to overdue balances.</li>
+                        </ul>
+
+                        <h3>4. Client Obligations</h3>
+                        <p>The Client agrees to provide all necessary content (text, images, branding materials) and feedback in a timely manner. Delays in providing these materials may result in a corresponding delay in the project timeline. If the Client is unresponsive for a period of 30 consecutive days, Vivexa Tech reserves the right to pause the project and may require a re-engagement fee to resume work.</p>
+
+                        <h3>5. Intellectual Property Rights</h3>
+                        <p>Upon receipt of full and final payment, Vivexa Tech grants the Client full ownership and copyright of the final website design and its visual elements. Vivexa Tech retains the right to display the completed project in our portfolio and marketing materials. Any third-party elements used in the project, such as premium plugins or stock photos, are subject to their own respective licenses, which will be transferred to the Client where applicable.</p>
+
+                        <h3>6. Confidentiality</h3>
+                        <p>Both parties agree to treat all information shared during the project as confidential. This includes business strategies, client data, and proprietary processes. This information will not be disclosed to any third party without prior written consent, except as required by law.</p>
+
+                        <h3>7. Termination</h3>
+                        <p>This agreement may be terminated by either party with 15 days written notice. If the Client terminates the agreement, the terms of our Refund & Cancellation Policy will apply. If Vivexa Tech terminates the agreement for reasons other than a Client breach, a proportional refund for uncompleted work will be provided.</p>
+
+                        <h3>8. Limitation of Liability</h3>
+                        <p>Vivexa Tech's total liability to the Client for any claim or damage arising from our Services is limited to the total amount paid by the Client for the specific Project. We are not liable for any indirect, incidental, or consequential damages, including loss of profits or business interruption.</p>
+
+                        <h3>9. Governing Law and Jurisdiction</h3>
+                        <p>These Terms shall be governed by the laws of India. Any disputes arising from this agreement shall be subject to the exclusive jurisdiction of the courts in <strong>Gurugram, Haryana</strong>.</p>
+                        
+                        <h3>10. Amendments</h3>
+                        <p>Vivexa Tech reserves the right to update these Terms at any time. The "Last Updated" date at the top of this page will indicate when revisions were made. Continued use of our services after such changes constitutes acceptance of the new Terms.</p>
+                        <a href="#" class="back-to-top">Back to top</a>
+                    </section>
+
+                    <section id="privacy">
+                        <h2>Privacy Policy <i class="fa-solid fa-shield-halved"></i></h2>
+                        <p class="last-updated">Last Updated: August 2, 2025</p>
+                        <p>Vivexa Tech is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information.</p>
+                        
+                        <h3>1. Information We Collect</h3>
+                        <p>We may collect personal information that you provide to us directly, such as:</p>
+                        <ul>
+                            <li><strong>Personal Data:</strong> Name, email address, phone number.</li>
+                            <li><strong>Project Data:</strong> Business details and project requirements shared during consultation.</li>
+                            <li><strong>Usage Data:</strong> Information on how you interact with our website (e.g., pages visited).</li>
+                        </ul>
+
+                        <h3>2. How We Use Your Information</h3>
+                        <p>We use the information we collect to:</p>
+                        <ul>
+                            <li>Provide, operate, and maintain our services.</li>
+                            <li>Communicate with you regarding your project and inquiries.</li>
+                            <li>Process payments and send invoices.</li>
+                            <li>Improve our website and service offerings.</li>
+                        </ul>
+                        
+                        <h3>3. Information Sharing and Disclosure</h3>
+                        <p>We do not sell or trade your personal information. We may share your information with third-party vendors (e.g., hosting providers, domain registrars) only when it is necessary to provide our services to you.</p>
+
+                        <h3>4. Data Security</h3>
+                        <p>We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the Internet is 100% secure.</p>
+
+                        <h3>5. Your Rights</h3>
+                        <p>You have the right to access, update, or request the deletion of your personal information. To do so, please contact us.</p>
+                        
+                        <h3>6. Contact Us</h3>
+                        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@vivexatech.in">contact@vivexatech.in</a>.</p>
+                        <a href="#" class="back-to-top">Back to top</a>
+                    </section>
+
+                    <section id="refund">
+                        <h2>Refund & Cancellation Policy <i class="fa-solid fa-rotate-left"></i></h2>
+                        <p class="last-updated">Last Updated: August 2, 2025</p>
+                        <p>This policy outlines the terms for refunds and cancellations for services provided by Vivexa Tech.</p>
+                        
+                        <h3>1. Cancellation by Client</h3>
+                        <p>Our cancellation terms depend on the project plan and its status:</p>
+                        <ul>
+                            <li><strong>Starter Plan:</strong> Since no advance payment is required, the Client may cancel the project at any time before work commences without financial penalty.</li>
+                            <li><strong>Business & Premium Plans:</strong> These plans require a 30% advance payment to initiate the project.
+                                <ul>
+                                    <li>If the Client chooses to cancel the project <strong>after work has commenced</strong>, Vivexa Tech will retain an amount equivalent to 20% of the total project value to cover administrative costs and work already performed.</li>
+                                    <li>The remaining portion of the advance payment (equivalent to 10% of the total project value) will be refunded to the Client within 15 business days.</li>
+                                    <li><strong>Example:</strong> For a project valued at ₹20,000, the advance is ₹6,000 (30%). If cancelled, ₹4,000 (20%) is retained, and ₹2,000 (10%) is refunded.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3>2. Non-refundable Services</h3>
+                        <p>The following fees are strictly non-refundable under any circumstances:</p>
+                        <ul>
+                            <li><strong>Third-Party Costs:</strong> Fees paid for domain name registration, web hosting, and any third-party software or licenses purchased on behalf of the Client.</li>
+                            <li><strong>Completed Work:</strong> Fees for services already rendered and approved by the Client, including post-launch maintenance and revision tasks.</li>
+                        </ul>
+                        
+                        <h3>3. How to Request a Cancellation and Refund</h3>
+                        <p>All cancellation requests must be submitted in writing to <a href="mailto:contact@vivexatech.in">contact@vivexatech.in</a>. The request must include the project name and a reason for cancellation. Eligible refunds will be processed via the original method of payment where possible.</p>
+                        <a href="#" class="back-to-top">Back to top</a>
+                    </section>
+                    
+                    <section id="disclaimer">
+                        <h2>Disclaimer <i class="fa-solid fa-triangle-exclamation"></i></h2>
+                        <p class="last-updated">Last Updated: August 2, 2025</p>
+                        <p>The information provided by Vivexa Tech on vivexatech.in is for general informational purposes only.</p>
+                        <ul>
+                            <li><strong>No Guarantees:</strong> We make no guarantee regarding the results of our services, such as specific search engine rankings, website traffic, or sales figures. The online success of a business depends on many factors beyond our control.</li>
+                            <li><strong>Third-Party Services:</strong> We are not responsible for the performance, uptime, or any issues related to third-party services, including hosting providers and domain registrars.</li>
+                            <li><strong>Limitation of Liability:</strong> By using our services, you agree that Vivexa Tech is not liable for any business losses or damages resulting from the use of our services.</li>
+                        </ul>
+                        <a href="#" class="back-to-top">Back to top</a>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-column" id="footer-brand">
+                <a href="https://www.vivexatech.in/" class="logo">Vivexa</a>
+                <p>Launch Your Business Online.<br>Affordably.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                <li><a href="https://www.vivexatech.in">Home</a></li>
+                    <li><a href="https://www.vivexatech.in/about">About us</a></li>
+                    <li><a href="https://www.vivexatech.in/service">Services</a></li>
+                    <li><a href="https://www.vivexatech.in/#why-us">Why us</a></li>
+                    <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
+                    <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
+                    <li><a href="https://www.vivexatech.in/#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@vivexatech.in">contact@vivexatech.in</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:+919354486861">+91 93544 86861</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> Cyber City, Gurugram, India</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/vivexa-tech/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://x.com/VivexaTech" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/vivexatech/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vivexa Tech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="contact-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-popup" aria-label="Close form">&times;</button>
+            <h3>Let's Build Your Vision.</h3>
+            <p>Tell us about your project, and we'll reply within 24 hours.</p>
+            <form action="https://formsubmit.co/contact@vivexatech.in" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://www.vivexatech.in/thanks.html">
+                <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+                <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" name="email" required></div>
+                <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
+                <div class="form-group"><label for="details">Project Details</label><textarea id="details" name="details" rows="4" required></textarea></div>
+                <button type="submit" class="cta-button form-submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+                navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+                    // Only close if it's not a link to another page
+                    if (link.getAttribute('href').startsWith('#') || link.hasAttribute('data-popup-trigger')) {
+                         navLinks.classList.remove('active');
+                    }
+                }));
+            }
+
+            // Theme switcher
+            const themeToggle = document.getElementById('checkbox');
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+                if (currentTheme === 'light') themeToggle.checked = true;
+            }
+            themeToggle.addEventListener('change', () => {
+                const theme = themeToggle.checked ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            });
+
+            // Contact form popup
+            const popup = document.getElementById('contact-popup');
+            if (popup) {
+                document.querySelectorAll('[data-popup-trigger]').forEach(trigger => {
+                    trigger.addEventListener('click', e => {
+                        e.preventDefault();
+                        popup.classList.add('visible');
+                    });
+                });
+                const closePopup = () => popup.classList.remove('visible');
+                popup.querySelector('.close-popup').addEventListener('click', closePopup);
+                popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Corner Store - Your Local Goods</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles for a more attractive and animated look */
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced hover effect for product cards */
+        .product-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Animation for elements on scroll */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Keyframe for hero image animations */
+        @keyframes zoomIn {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        .hero-image-hover {
+            transition: transform 0.4s ease;
+        }
+        
+        .hero-image-hover:hover {
+             transform: scale(1.05);
+        }
+
+
+        /* Initial state for scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .animate-on-scroll.fade-in-up {
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">The Corner Store</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="#products" class="text-gray-600 hover:text-blue-600 transition duration-300">Products</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition duration-300">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
+            <a href="#products" class="block py-2 text-gray-600 hover:text-blue-600">Products</a>
+            <a href="#testimonials" class="block py-2 text-gray-600 hover:text-blue-600">Testimonials</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gray-100">
+        <div class="container mx-auto px-6 py-16 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left" style="animation: fadeInUp 1s ease-out;">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight mb-4">Quality Goods, Locally Sourced</h1>
+                    <p class="text-lg text-gray-600 mb-8">Discover the best products from local artisans and producers, right in your neighborhood.</p>
+                    <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 duration-300 inline-block">Shop Now</a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                         <img src="https://media.istockphoto.com/id/453963935/photo/fruits-and-vegetables-at-city-market-in-riga.jpg?s=612x612&w=0&k=20&c=YLdfhKvGlc6woYVN93OfCVzEUbDdgnqODsvypz3aBvc=" alt="Fresh Produce" class="w-full h-full object-cover hero-image-hover">
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://media.istockphoto.com/id/1286329777/photo/preparing-self-care-package-seasonal-gift-box-with-plastic-free-zero-waste-cosmetics-products.jpg?s=612x612&w=0&k=20&c=Gf95cjUUALqlYw8KREMw4H0brjGOtjJrl-aIWUn_iQU=" alt="Handmade Goods" class="w-full h-full object-cover hero-image-hover">
+                        </div>
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                             <img src="https://t3.ftcdn.net/jpg/05/66/34/10/240_F_566341036_f2mCzWyHi9I4aMOSSiy1XUUhvEqdUKJ1.jpg" alt="Local Crafts" class="w-full h-full object-cover hero-image-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white animate-on-scroll fade-in-up">
+        <div class="container mx-auto px-6">
+            <div class="md:flex md:items-center">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/d1d5db/4a5568?text=Our+Story" alt="Our Shop" class="rounded-lg shadow-2xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
+                    <p class="text-gray-600 mb-4">
+                        The Corner Store was founded with a simple idea: to bring our community together through high-quality, locally sourced goods. We believe in supporting local farmers, artisans, and creators.
+                    </p>
+                    <p class="text-gray-600">
+                        Every item in our store has a story, and we're excited to share it with you. From fresh produce to handmade crafts, we offer a unique selection you won't find anywhere else.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="py-20 animate-on-scroll fade-in-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card">
+                    <img src="https://placehold.co/400x300/a5b4fc/4338ca?text=Product+1" alt="Product 1" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Artisanal Bread</h3>
+                        <p class="text-gray-600 mb-4">Freshly baked daily with organic flour.</p>
+                        <div class="text-lg font-bold text-blue-600">$5.99</div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card">
+                    <img src="https://placehold.co/400x300/a7f3d0/065f46?text=Product+2" alt="Product 2" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Organic Honey</h3>
+                        <p class="text-gray-600 mb-4">Pure, raw honey from local beehives.</p>
+                        <div class="text-lg font-bold text-blue-600">$12.50</div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card">
+                    <img src="https://placehold.co/400x300/fde68a/b45309?text=Product+3" alt="Product 3" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Handmade Soap</h3>
+                        <p class="text-gray-600 mb-4">Crafted with natural ingredients and essential oils.</p>
+                        <div class="text-lg font-bold text-blue-600">$8.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-blue-50 animate-on-scroll fade-in-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-gray-600 mb-6">"The best place to find unique local products. I love the friendly atmosphere and the quality of the goods!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/100x100/cbd5e1/475569?text=A" class="w-12 h-12 rounded-full mr-4" alt="Avatar">
+                        <div>
+                            <p class="font-bold">Alice Johnson</p>
+                            <p class="text-sm text-gray-500">Local Resident</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-gray-600 mb-6">"I always find the freshest produce here. It's my go-to spot for weekly groceries."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/100x100/bbf7d0/166534?text=B" class="w-12 h-12 rounded-full mr-4" alt="Avatar">
+                        <div>
+                            <p class="font-bold">Bob Williams</p>
+                            <p class="text-sm text-gray-500">Happy Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-gray-600 mb-6">"The handmade crafts are beautiful. I found the perfect gift for my friend here."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/100x100/fecaca/991b1b?text=C" class="w-12 h-12 rounded-full mr-4" alt="Avatar">
+                        <div>
+                            <p class="font-bold">Carol White</p>
+                            <p class="text-sm text-gray-500">Art Lover</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white animate-on-scroll fade-in-up">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 mb-8">Have questions? We'd love to hear from you.</p>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <form class="bg-gray-100 p-8 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Email">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Message"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 duration-300">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Part 1: About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Corner Store</h3>
+                    <p class="text-gray-400">Your friendly neighborhood shop for locally sourced goods and handmade crafts.</p>
+                </div>
+                <!-- Part 2: Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition">Products</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <!-- Part 3: Contact & Social -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-2xl"></i></a>
+                    </div>
+                     <p class="text-gray-400">123 Main Street, Anytown, USA</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 The Corner Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Close mobile menu on link click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Scroll Animation Logic
+        const scrollElements = document.querySelectorAll(".animate-on-scroll");
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add("is-visible");
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove("is-visible");
+        }
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } 
+            })
+        }
+
+        window.addEventListener("scroll", () => {
+            handleScrollAnimation();
+        });
+        
+        // Trigger animation for elements already in view on page load
+        handleScrollAnimation();
+
+    </script>
+</body>
+</html>
