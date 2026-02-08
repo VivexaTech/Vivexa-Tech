@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Force vivexatech.online to redirect to vivexatech.in
+RewriteCond %{HTTP_HOST} ^(www\.)?vivexatech\.online$ [NC]
+RewriteRule ^(.*)$ https://www.vivexatech.in/$1 [L,R=301]
