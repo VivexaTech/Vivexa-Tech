@@ -680,13 +680,17 @@
             padding-bottom: 40px;
         }
 
-        .testimonial-card {
-            background: var(--bg-color);
-            padding: 2rem;
-            width: 30vw;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-        }
+.testimonial-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;   /* desktop pe fixed readable width */
+    margin: auto;       /* center align */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
+
         .testimonial-card:hover{
             border-color: var(--cyan);
         }
