@@ -149,8 +149,9 @@
             font-size: 16px;
             transition: background-color 0.3s, color 0.3s;
         }
-        ::-webkit-scrollbar{
-            display: none ;
+
+        ::-webkit-scrollbar {
+            display: none;
         }
 
         .container {
@@ -680,18 +681,20 @@
             padding-bottom: 40px;
         }
 
-.testimonial-card {
-    background: var(--bg-color);
-    padding: 2rem;
-    width: 100%;
-    max-width: 700px;   /* desktop pe fixed readable width */
-    margin: auto;       /* center align */
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    box-sizing: border-box;
-}
+        .testimonial-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            width: 100%;
+            max-width: 700px;
+            /* desktop pe fixed readable width */
+            margin: auto;
+            /* center align */
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
 
-        .testimonial-card:hover{
+        .testimonial-card:hover {
             border-color: var(--cyan);
         }
 
@@ -1084,6 +1087,46 @@
             font-size: 1rem;
             margin-bottom: 1.5rem;
         }
+
+        .service-card button {
+            padding: 10px 22px;
+            border: 1px solid var(--cyan);
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--cyan), var(--blue));
+            color: #fff;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 200, 255, 0.35);
+        }
+
+        .service-card button:active {
+            transform: scale(0.96);
+        }
+
+        .service-card button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .service-card button:hover::before {
+            left: 100%;
+        }
     </style>
 </head>
 
@@ -1095,11 +1138,11 @@
             <ul class="nav-links">
                 <li><a href="https://www.vivexatech.in/about">About us</a></li>
                 <li><a href="https://www.vivexatech.in/service">Services</a></li>
-                
+
                 <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
                 <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
                 <li><a href="https://www.vivexatech.in/career">Career</a></li>
-                
+
                 <li><a href="#" class="cta-button nav-cta" data-popup-trigger>Contact Us</a></li>
             </ul>
             <div class="theme-switch-wrapper">
@@ -1164,29 +1207,43 @@
             <div class="container">
                 <div class="section-title reveal">
                     <h2>Our Core Services</h2>
-                    <p>Everything you need to build a successful online presence.</p>
+                    <p>Everything you need to build, grow, and scale your online presence.</p>
                 </div>
+
                 <div class="services-grid">
+
                     <div class="service-card reveal" style="transition-delay: 100ms;">
                         <i class="fa-solid fa-code card-icon"></i>
                         <h3>Website Development</h3>
-                        <p>Fast, secure, and mobile-friendly websites tailored for your business.</p>
+                        <p>We build fast, secure, and fully responsive websites tailored to your business needs,
+                            ensuring a seamless experience across all devices.</p>
+                        <a href="web-development"><button>Explore More</button></a>
                     </div>
+
                     <div class="service-card reveal" style="transition-delay: 200ms;">
                         <i class="fa-solid fa-palette card-icon"></i>
                         <h3>UI/UX Design</h3>
-                        <p>User-friendly designs that your customers will love and find easy to use.</p>
+                        <p>We create intuitive, visually appealing designs that enhance user experience, boost
+                            engagement, and leave a lasting impression.</p>
+                        <a href="ui-ux-design"><button>Explore More</button></a>
                     </div>
+
                     <div class="service-card reveal" style="transition-delay: 300ms;">
                         <i class="fa-solid fa-chart-line card-icon"></i>
-                        <h3>Basic SEO</h3>
-                        <p>Essential SEO setup to help your new website get found on Google.</p>
+                        <h3>Digital Marketing & SEO</h3>
+                        <p>We optimize your website and execute data-driven marketing strategies to improve rankings,
+                            attract quality traffic, and drive consistent business growth.</p>
+                        <a href="digital-marketing-seo"><button>Explore More</button></a>
                     </div>
+
                     <div class="service-card reveal" style="transition-delay: 400ms;">
                         <i class="fa-solid fa-shield-halved card-icon"></i>
-                        <h3>Maintenance</h3>
-                        <p>Support and updates to keep your website secure and running smoothly.</p>
+                        <h3>Website Maintenance</h3>
+                        <p>We provide ongoing support, updates, and security monitoring to keep your website running
+                            smoothly, safely, and efficiently.</p>
+                        <a href="website-maintenance"><button>Explore More</button></a>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -1442,11 +1499,11 @@
                 <ul>
                     <li><a href="https://www.vivexatech.in/about">About us</a></li>
                     <li><a href="https://www.vivexatech.in/service">Services</a></li>
-                    
+
                     <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
                     <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
-                <li><a href="https://www.vivexatech.in/career">Career</a></li>
-                    
+                    <li><a href="https://www.vivexatech.in/career">Career</a></li>
+
                     <li><a href="https://www.vivexatech.in/legal">Privacy Policy <br>Terms & Conditions</a></li>
                 </ul>
             </div>
