@@ -1,0 +1,99 @@
+
+        .testimonials-section {
+            background-color: var(--card-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+
+            
+        }
+
+        .testimonial-slider {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        .testimonial-card {
+            width: 100%;
+            max-width: 350px;
+            background-color: #08101E;
+            border: 1px solid #1E293B;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            border-color: #00E6F7;
+
+            transform: translateY(-5px);
+        }
+
+        .card-top {
+            background: linear-gradient(135deg, #0C182C, #132540);
+            height: 120px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #08101E;
+            outline: 2px solid #00E6F7;
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            object-fit: cover;
+            background-color: #fff;
+        }
+
+        .card-body {
+            padding: 65px 25px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quote-icon {
+            color: #00E6F7;
+            font-size: 24px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #94A3B8;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .author-info {
+            margin-top: auto;
+        }
+
+        .author {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #E0E8F0;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .company {
+            display: block;
+            font-size: 0.75rem;
+            color: #00E6F7;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
