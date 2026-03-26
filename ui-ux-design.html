@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivexa Tech | UI/UX Design Services</title>
-    
+
     <meta name="description"
         content="Elevate your digital products with Vivexa Tech's premium UI/UX design services in Gurugram. We create clean, modern, and highly intuitive user experiences.">
     <meta name="keywords"
@@ -35,16 +35,17 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vivexa Tech | Intuitive UI/UX Design">
-    <meta name="twitter:description"
-        content="We design premium, user-centric interfaces for websites and mobile apps.">
+    <meta name="twitter:description" content="We design premium, user-centric interfaces for websites and mobile apps.">
     <meta name="twitter:image" content="https://www.vivexatech.in/assets/images/ogimage.png">
     <meta name="twitter:image:alt" content="Vivexa Tech - UI/UX Design Services">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -103,8 +104,16 @@
             --nav-bg: rgba(248, 250, 252, 0.7);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-secondary);
@@ -114,9 +123,16 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-display);
             color: var(--text-primary);
             margin-bottom: 1rem;
@@ -124,12 +140,31 @@
             transition: color 0.3s;
         }
 
-        h1 { font-size: clamp(40px, 8vw, 60px); }
-        h2 { font-size: clamp(28px, 5vw, 40px); }
-        p { margin-bottom: 1rem; }
-        a { color: var(--cyan); text-decoration: none; transition: var(--transition); }
-        a:hover { filter: brightness(1.2); }
-        section { padding: 100px 0; }
+        h1 {
+            font-size: clamp(40px, 8vw, 60px);
+        }
+
+        h2 {
+            font-size: clamp(28px, 5vw, 40px);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--cyan);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            filter: brightness(1.2);
+        }
+
+        section {
+            padding: 100px 0;
+        }
 
         .cta-button {
             display: inline-block;
@@ -146,170 +181,354 @@
             box-shadow: 0 0 20px rgba(0, 230, 247, 0.4);
             transform: scale(1);
         }
+
         .cta-button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(0, 230, 247, 0.6);
         }
 
-        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
         .section-title h2::after {
             content: '';
             display: block;
-            width: 80px; height: 3px;
+            width: 80px;
+            height: 3px;
             background: linear-gradient(90deg, var(--cyan), var(--blue));
             margin: 15px auto 0;
             border-radius: 2px;
         }
 
-        .header {
-            position: fixed; top: 0; left: 0; width: 100%;
-            z-index: 1000; padding: 15px 0;
-            background-color: transparent;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease-in-out;
-        }
-        .header.scrolled {
-            background-color: var(--nav-bg);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
-            padding: 10px 0;
-        }
-        .header nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--text-primary); }
-        .nav-links { display: flex; align-items: center; list-style: none; }
-        .nav-links li { margin: 0 15px; }
-        .nav-links a { color: var(--text-primary); font-size: 0.9rem; font-weight: 500; }
-        .menu-toggle { display: none; }
-
-        .theme-switch-wrapper { display: flex; align-items: center; cursor: pointer; }
-        .theme-switch { position: relative; display: inline-block; width: 40px; height: 22px; margin-left: 15px; }
-        .theme-switch input { opacity: 0; width: 0; height: 0; }
+        
         .slider {
-            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-            background-color: var(--dark-border); transition: .4s; border-radius: 22px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--dark-border);
+            transition: .4s;
+            border-radius: 22px;
         }
-        .slider:before {
-            position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px;
-            background-color: white; transition: .4s; border-radius: 50%;
-        }
-        input:checked+.slider { background-color: var(--cyan); }
-        input:checked+.slider:before { transform: translateX(18px); }
 
-        .page-hero { padding-top: 180px; padding-bottom: 80px; text-align: center; background-color: var(--card-color); }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--cyan);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(18px);
+        }
+
+        .page-hero {
+            padding-top: 180px;
+            padding-bottom: 80px;
+            text-align: center;
+            background-color: var(--card-color);
+        }
 
         .service-detail-section {
-            display: grid; grid-template-columns: 1fr 2fr; gap: 4rem;
-            align-items: center; margin-bottom: 6rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
         }
-        .service-detail-section:nth-child(even) { grid-template-columns: 2fr 1fr; }
-        .service-detail-section:nth-child(even) .service-icon-wrapper { grid-column: 2; grid-row: 1; }
-        .service-detail-section:nth-child(even) .service-detail-content { grid-column: 1; grid-row: 1; }
+
+        .service-detail-section:nth-child(even) {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .service-detail-section:nth-child(even) .service-icon-wrapper {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .service-detail-section:nth-child(even) .service-detail-content {
+            grid-column: 1;
+            grid-row: 1;
+        }
 
         .service-icon-wrapper {
-            background-color: var(--card-color); border-radius: var(--border-radius);
-            padding: 3rem; text-align: center; border: 1px solid var(--border-color);
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
         }
+
         .service-icon-wrapper i {
             font-size: 5rem;
             background: -webkit-linear-gradient(45deg, var(--cyan), var(--blue));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .service-detail-content h3 { font-size: 2rem; margin-bottom: 1.5rem; }
-        .service-detail-content ul { list-style: none; margin-top: 1.5rem; }
-        .service-detail-content ul li { margin-bottom: 1rem; display: flex; align-items: flex-start; }
-        .service-detail-content ul li i { color: var(--cyan); margin-right: 15px; margin-top: 5px; }
+        .service-detail-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
 
-        .process-section { background-color: var(--card-color); }
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; }
-        .process-step { padding: 2rem; }
+        .service-detail-content ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-detail-content ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .service-detail-content ul li i {
+            color: var(--cyan);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .process-section {
+            background-color: var(--card-color);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .process-step {
+            padding: 2rem;
+        }
+
         .process-step .step-number {
-            display: inline-block; width: 50px; height: 50px; line-height: 50px;
-            border-radius: 50%; background: linear-gradient(90deg, var(--cyan), var(--blue));
-            color: #fff; font-family: var(--font-display); font-weight: 700; margin-bottom: 1.5rem;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, var(--cyan), var(--blue));
+            color: #fff;
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
-        .process-step h4 { font-size: 1.2rem; font-family: var(--font-sans); font-weight: 700; }
 
-        .faq-section { max-width: 800px; margin: 0 auto; }
+        .process-step h4 {
+            font-size: 1.2rem;
+            font-family: var(--font-sans);
+            font-weight: 700;
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .faq-item {
-            background-color: var(--card-color); border: 1px solid var(--border-color);
-            border-radius: var(--border-radius); margin-bottom: 1rem;
+            background-color: var(--card-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
         }
-        .faq-question {
-            padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between;
-            align-items: center; font-weight: 700; color: var(--text-primary);
-        }
-        .faq-question::after {
-            content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; transition: transform 0.3s;
-        }
-        .faq-item.active .faq-question::after { transform: rotate(180deg); }
-        .faq-answer {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; padding: 0 1.5rem;
-        }
-        .faq-item.active .faq-answer { max-height: 300px; padding: 0 1.5rem 1.5rem; }
 
-        .site-footer { padding: 60px 0 20px; background-color: var(--card-color); border-top: 1px solid var(--border-color); }
-        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
-        .footer-column h4 { color: var(--text-primary); margin-bottom: 1.5rem; }
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 10px; }
-        .footer-column ul a { color: var(--text-secondary); }
-        .social-icons a { font-size: 1.5rem; margin-right: 15px; color: var(--text-secondary); }
-        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
 
         .popup-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(10, 16, 30, 0.5); backdrop-filter: blur(8px);
-            z-index: 2000; display: flex; justify-content: center; align-items: center;
-            opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 16, 30, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
         }
-        .popup-overlay.visible { opacity: 1; visibility: visible; }
+
+        .popup-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .popup-content {
-            background: var(--nav-bg); padding: 2rem 3rem; border-radius: 12px;
-            border: 1px solid var(--dark-border); width: 90%; max-width: 500px;
-            position: relative; transform: scale(0.95); transition: transform 0.3s;
+            background: var(--nav-bg);
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--dark-border);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s;
         }
-        .popup-overlay.visible .popup-content { transform: scale(1); }
+
+        .popup-overlay.visible .popup-content {
+            transform: scale(1);
+        }
+
         .close-popup {
-            position: absolute; top: 15px; right: 20px; background: none; border: none;
-            font-size: 2rem; color: var(--text-secondary); cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-secondary);
+            cursor: pointer;
         }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 12px; background-color: var(--bg-color);
-            border: 1px solid var(--border-color); border-radius: var(--border-radius);
-            color: var(--text-primary); transition: var(--transition);
+
+        .form-group {
+            margin-bottom: 1.5rem;
         }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--cyan); }
-        .form-submit-btn { width: 100%; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+
+        .form-submit-btn {
+            width: 100%;
+        }
 
         .reveal {
-            opacity: 0; transform: translateY(30px);
+            opacity: 0;
+            transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 992px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 768px) {
-            body { font-size: 15px; }
-            section { padding: 80px 0; }
-            .nav-links {
-                display: none; position: fixed; top: 0; right: 0;
-                width: min(75vw, 400px); height: 100vh; background-color: var(--card-color);
-                flex-direction: column; justify-content: center; align-items: center;
-                box-shadow: -10px 0px 30px -15px rgba(0, 0, 0, 0.2);
-                transform: translateX(100%); transition: transform 0.3s ease-in-out;
+            body {
+                font-size: 15px;
             }
-            .nav-links.active { display: flex; transform: translateX(0); }
-            .nav-links li { margin: 20px 0; }
-            .nav-links a { font-size: 1.2rem; }
-            .menu-toggle { display: block; font-size: 1.5rem; color: var(--cyan); cursor: pointer; z-index: 1001; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-column#footer-brand { grid-row: 4; text-align: center; }
-            .service-detail-section, .service-detail-section:nth-child(even) { grid-template-columns: 1fr; gap: 2rem; }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: min(75vw, 400px);
+                height: 100vh;
+                background-color: var(--card-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: -10px 0px 30px -15px rgba(0, 0, 0, 0.2);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--cyan);
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            .service-detail-section,
+            .service-detail-section:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
             .service-detail-section:nth-child(even) .service-icon-wrapper,
-            .service-detail-section:nth-child(even) .service-detail-content { grid-column: 1; grid-row: auto; }
+            .service-detail-section:nth-child(even) .service-detail-content {
+                grid-column: 1;
+                grid-row: auto;
+            }
         }
     </style>
 </head>
@@ -318,22 +537,19 @@
 
     <header class="header">
         <nav class="container">
-            <a href="https://www.vivexatech.in" class="logo">Vivexa</a>
+            <a href="https://www.vivexatech.in" class="logo">Vivexa Tech</a>
             <ul class="nav-links">
-                <li><a href="https://www.vivexatech.in">Home</a></li>
-                <li><a href="https://www.vivexatech.in/about">About</a></li>
+                <li><a href="https://www.vivexatech.in/about">About us</a></li>
+                <li><a href="https://www.vivexatech.in/service">Services</a></li>
+
                 <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
                 <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
                 <li><a href="https://www.vivexatech.in/career">Career</a></li>
+
                 <li><a href="#" class="cta-button nav-cta" data-popup-trigger>Contact Us</a></li>
             </ul>
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" aria-label="Toggle Dark Mode" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
-            <div class="menu-toggle" aria-label="Open mobile menu">
+            <input type="checkbox" id="checkbox" style="display: none;" />
+            <div class="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -343,7 +559,9 @@
         <section class="page-hero">
             <div class="container reveal">
                 <h1>Premium UI/UX Design Services</h1>
-                <p class="hero-subtext" style="max-width: 700px; color: var(--text-secondary); margin: 0 auto;">We craft clean, modern, and highly intuitive digital experiences. From initial wireframes to polished, futuristic interfaces, we design products that your users will love to engage with.</p>
+                <p class="hero-subtext" style="max-width: 700px; color: var(--text-secondary); margin: 0 auto;">We craft
+                    clean, modern, and highly intuitive digital experiences. From initial wireframes to polished,
+                    futuristic interfaces, we design products that your users will love to engage with.</p>
             </div>
         </section>
 
@@ -361,11 +579,16 @@
                     </div>
                     <div class="service-detail-content">
                         <h3>UX Research & Strategy</h3>
-                        <p>Great design starts with understanding the user. We dive deep into your target audience's behaviors, pain points, and motivations to build a solid foundation for your product's architecture.</p>
+                        <p>Great design starts with understanding the user. We dive deep into your target audience's
+                            behaviors, pain points, and motivations to build a solid foundation for your product's
+                            architecture.</p>
                         <ul>
-                            <li><i class="fa-solid fa-check"></i><b>Competitor Analysis:</b> Identifying industry standards and finding opportunities to outshine the competition.</li>
-                            <li><i class="fa-solid fa-check"></i><b>User Personas & Journeys:</b> Mapping out the exact paths your users will take to ensure a frictionless experience.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Information Architecture:</b> Organizing content logically so users find what they need instantly.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Competitor Analysis:</b> Identifying industry
+                                standards and finding opportunities to outshine the competition.</li>
+                            <li><i class="fa-solid fa-check"></i><b>User Personas & Journeys:</b> Mapping out the exact
+                                paths your users will take to ensure a frictionless experience.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Information Architecture:</b> Organizing content
+                                logically so users find what they need instantly.</li>
                         </ul>
                     </div>
                 </div>
@@ -376,11 +599,16 @@
                     </div>
                     <div class="service-detail-content">
                         <h3>Wireframing & Prototyping</h3>
-                        <p>Before adding colors and typography, we focus on structure. We create detailed blueprints (wireframes) and interactive prototypes so you can test the functionality of your app or website before a single line of code is written.</p>
+                        <p>Before adding colors and typography, we focus on structure. We create detailed blueprints
+                            (wireframes) and interactive prototypes so you can test the functionality of your app or
+                            website before a single line of code is written.</p>
                         <ul>
-                            <li><i class="fa-solid fa-check"></i><b>Low & High-Fidelity Wireframes:</b> Visualizing the skeletal framework of your digital product.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Clickable Prototypes:</b> Interactive mockups created in Figma or Adobe XD to test user flow.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Rapid Iteration:</b> Quickly refining layouts based on your feedback early in the process.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Low & High-Fidelity Wireframes:</b> Visualizing the
+                                skeletal framework of your digital product.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Clickable Prototypes:</b> Interactive mockups
+                                created in Figma or Adobe XD to test user flow.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Rapid Iteration:</b> Quickly refining layouts based
+                                on your feedback early in the process.</li>
                         </ul>
                     </div>
                 </div>
@@ -391,11 +619,16 @@
                     </div>
                     <div class="service-detail-content">
                         <h3>User Interface (UI) Design</h3>
-                        <p>We bring your brand to life visually. Our design team specializes in creating clean, professional, and visually striking interfaces—ranging from modern minimalism to premium, futuristic themes.</p>
+                        <p>We bring your brand to life visually. Our design team specializes in creating clean,
+                            professional, and visually striking interfaces—ranging from modern minimalism to premium,
+                            futuristic themes.</p>
                         <ul>
-                            <li><i class="fa-solid fa-check"></i><b>Custom Design Systems:</b> Creating consistent typography, color palettes, and UI components for scalability.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Micro-interactions:</b> Designing subtle animations that make the user experience feel polished and alive.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Pixel-Perfect Execution:</b> Delivering high-resolution designs ready for seamless developer handoff.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Custom Design Systems:</b> Creating consistent
+                                typography, color palettes, and UI components for scalability.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Micro-interactions:</b> Designing subtle animations
+                                that make the user experience feel polished and alive.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Pixel-Perfect Execution:</b> Delivering
+                                high-resolution designs ready for seamless developer handoff.</li>
                         </ul>
                     </div>
                 </div>
@@ -406,11 +639,16 @@
                     </div>
                     <div class="service-detail-content">
                         <h3>Web & Mobile App Design</h3>
-                        <p>Whether you are launching a complex SaaS dashboard, an e-commerce platform, or a native iOS/Android application, we design interfaces that feel native to the device and intuitive to the user.</p>
+                        <p>Whether you are launching a complex SaaS dashboard, an e-commerce platform, or a native
+                            iOS/Android application, we design interfaces that feel native to the device and intuitive
+                            to the user.</p>
                         <ul>
-                            <li><i class="fa-solid fa-check"></i><b>Responsive Web Design:</b> Interfaces that adapt flawlessly from massive desktop monitors to small smartphone screens.</li>
-                            <li><i class="fa-solid fa-check"></i><b>iOS & Android Standards:</b> Designing in strict adherence to Apple's Human Interface Guidelines and Google's Material Design.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Dashboard & SaaS UI:</b> Transforming complex data and workflows into clean, digestible visual formats.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Responsive Web Design:</b> Interfaces that adapt
+                                flawlessly from massive desktop monitors to small smartphone screens.</li>
+                            <li><i class="fa-solid fa-check"></i><b>iOS & Android Standards:</b> Designing in strict
+                                adherence to Apple's Human Interface Guidelines and Google's Material Design.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Dashboard & SaaS UI:</b> Transforming complex data
+                                and workflows into clean, digestible visual formats.</li>
                         </ul>
                     </div>
                 </div>
@@ -421,11 +659,16 @@
                     </div>
                     <div class="service-detail-content">
                         <h3>UX Audit & Redesign</h3>
-                        <p>Is your current product suffering from high bounce rates or low conversion? We analyze existing websites and apps to identify usability roadblocks and overhaul the interface to meet modern expectations.</p>
+                        <p>Is your current product suffering from high bounce rates or low conversion? We analyze
+                            existing websites and apps to identify usability roadblocks and overhaul the interface to
+                            meet modern expectations.</p>
                         <ul>
-                            <li><i class="fa-solid fa-check"></i><b>Heuristic Evaluation:</b> Reviewing your interface against established usability principles.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Conversion Rate Optimization (CRO):</b> Redesigning layouts specifically to drive more sales or sign-ups.</li>
-                            <li><i class="fa-solid fa-check"></i><b>Modernization:</b> Giving outdated software a fresh, premium facelift to rebuild user trust.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Heuristic Evaluation:</b> Reviewing your interface
+                                against established usability principles.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Conversion Rate Optimization (CRO):</b> Redesigning
+                                layouts specifically to drive more sales or sign-ups.</li>
+                            <li><i class="fa-solid fa-check"></i><b>Modernization:</b> Giving outdated software a fresh,
+                                premium facelift to rebuild user trust.</li>
                         </ul>
                     </div>
                 </div>
@@ -443,22 +686,26 @@
                     <div class="process-step reveal" style="transition-delay: 100ms;">
                         <div class="step-number">1</div>
                         <h4>Discover & Define</h4>
-                        <p>We start by understanding your brand, business goals, and the precise needs of your target audience.</p>
+                        <p>We start by understanding your brand, business goals, and the precise needs of your target
+                            audience.</p>
                     </div>
                     <div class="process-step reveal" style="transition-delay: 200ms;">
                         <div class="step-number">2</div>
                         <h4>Wireframe & Flow</h4>
-                        <p>We map out the user journey and build structural wireframes to ensure the navigation is logical and frictionless.</p>
+                        <p>We map out the user journey and build structural wireframes to ensure the navigation is
+                            logical and frictionless.</p>
                     </div>
                     <div class="process-step reveal" style="transition-delay: 300ms;">
                         <div class="step-number">3</div>
                         <h4>Visual Design (UI)</h4>
-                        <p>We apply your brand identity, bringing the wireframes to life with modern layouts, typography, and vibrant aesthetics.</p>
+                        <p>We apply your brand identity, bringing the wireframes to life with modern layouts,
+                            typography, and vibrant aesthetics.</p>
                     </div>
                     <div class="process-step reveal" style="transition-delay: 400ms;">
                         <div class="step-number">4</div>
                         <h4>Prototype & Handoff</h4>
-                        <p>We deliver clickable prototypes for your approval, followed by comprehensive design assets for seamless developer integration.</p>
+                        <p>We deliver clickable prototypes for your approval, followed by comprehensive design assets
+                            for seamless developer integration.</p>
                     </div>
                 </div>
             </div>
@@ -472,25 +719,34 @@
                 <div class="faq-item reveal">
                     <div class="faq-question">What is the difference between UI and UX?</div>
                     <div class="faq-answer">
-                        <p><b>UX (User Experience)</b> focuses on the structural logic, flow, and usability of the product—how things work and how the user feels navigating it. <b>UI (User Interface)</b> is the visual design—the colors, typography, buttons, and aesthetics that make the product look professional and modern.</p>
+                        <p><b>UX (User Experience)</b> focuses on the structural logic, flow, and usability of the
+                            product—how things work and how the user feels navigating it. <b>UI (User Interface)</b> is
+                            the visual design—the colors, typography, buttons, and aesthetics that make the product look
+                            professional and modern.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">What design tools do you use?</div>
                     <div class="faq-answer">
-                        <p>Our primary tool for interface design and prototyping is <b>Figma</b>, as it allows for excellent real-time collaboration. We also utilize Adobe XD, Illustrator, and Photoshop for custom graphic elements, vectors, and complex image manipulation.</p>
+                        <p>Our primary tool for interface design and prototyping is <b>Figma</b>, as it allows for
+                            excellent real-time collaboration. We also utilize Adobe XD, Illustrator, and Photoshop for
+                            custom graphic elements, vectors, and complex image manipulation.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">Do you develop the designs as well?</div>
                     <div class="faq-answer">
-                        <p>Yes! As a full-service agency, we have an expert in-house web development team. Once you approve the UI/UX designs, we can seamlessly transition into building the actual product using React, Next.js, HTML/CSS, and other modern frameworks.</p>
+                        <p>Yes! As a full-service agency, we have an expert in-house web development team. Once you
+                            approve the UI/UX designs, we can seamlessly transition into building the actual product
+                            using React, Next.js, HTML/CSS, and other modern frameworks.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">How long does the UI/UX process take?</div>
                     <div class="faq-answer">
-                        <p>Timelines vary greatly based on the scope of the project. A standard website redesign might take 1-2 weeks, while designing a comprehensive mobile app or complex SaaS dashboard from scratch can take 4-8 weeks to ensure thorough research and testing.</p>
+                        <p>Timelines vary greatly based on the scope of the project. A standard website redesign might
+                            take 1-2 weeks, while designing a comprehensive mobile app or complex SaaS dashboard from
+                            scratch can take 4-8 weeks to ensure thorough research and testing.</p>
                     </div>
                 </div>
             </div>
@@ -501,24 +757,25 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-column" id="footer-brand">
-                <a href="https://www.vivexatech.in/" class="logo">Vivexa</a>
+                <a href="https://www.vivexatech.in/" class="logo">Vivexa Tech</a>
                 <p>Launch Your Business Online.<br>Affordably.</p>
             </div>
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="https://www.vivexatech.in">Home</a></li>
-                    <li><a href="https://www.vivexatech.in/about">About</a></li>
+                    <li><a href="https://www.vivexatech.in/">Home</a></li>
+                    <li><a href="https://www.vivexatech.in/about">About us</a></li>
+                    <li><a href="https://www.vivexatech.in/service">Services</a></li>
                     <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
                     <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
                     <li><a href="https://www.vivexatech.in/career">Career</a></li>
-                    <li><a href="https://www.vivexatech.in/legal">Privacy Policy <br>Terms & Conditions</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Contact Us</h4>
                 <ul>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@vivexatech.in">contact@vivexatech.in</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> <a
+                            href="mailto:contact@vivexatech.in">contact@vivexatech.in</a></li>
                     <li><i class="fa-solid fa-phone"></i> <a href="tel:+919354486861">+91 93544 86861</a></li>
                     <li><i class="fa-solid fa-location-dot"></i> Cyber City, Gurugram, India</li>
                 </ul>
@@ -526,14 +783,22 @@
             <div class="footer-column">
                 <h4>Connect</h4>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/company/vivexa-tech/" aria-label="Vivexa Tech LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://x.com/VivexaTech" aria-label="Vivexa Tech Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/vivexatech/" aria-label="Vivexa Tech Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/vivexa-tech/" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://x.com/VivexaTech" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/vivexatech/" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/VivexaTech" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Vivexa Tech. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="https://www.vivexatech.in/legal#privacy">Privacy Policy</a>
+                <a href="https://www.vivexatech.in/legal#terms">Terms & Conditions Policy</a>
+                <a href="https://www.vivexatech.in/legal#disclaimer">Disclaimer</a>
+            </div>
         </div>
     </footer>
 
@@ -542,7 +807,9 @@
             <button class="close-popup" aria-label="Close form">&times;</button>
             <h3>Let's Build Your Vision.</h3>
             <p>Tell us about your project, and we'll reply within 24 hours.</p>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSf4wehpKMmxQB7K9zNn_s_ux5AWrLAMzkuFS-uckmzdatYrEg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true; showSuccess();">
+            <form
+                action="https://docs.google.com/forms/d/e/1FAIpQLSf4wehpKMmxQB7K9zNn_s_ux5AWrLAMzkuFS-uckmzdatYrEg/formResponse"
+                method="POST" target="hidden_iframe" onsubmit="submitted=true; showSuccess();">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="entry.290394025" required>

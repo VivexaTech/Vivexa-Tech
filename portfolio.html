@@ -45,6 +45,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 
     <script type="application/ld+json">
     {
@@ -225,77 +226,7 @@
             border-radius: 2px;
         }
 
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 15px 0;
-            background-color: transparent;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .header.scrolled {
-            background-color: var(--nav-bg);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
-            padding: 10px 0;
-        }
-
-        .header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--text-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .theme-switch-wrapper {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .theme-switch {
-            position: relative;
-            display: inline-block;
-            width: 40px;
-            height: 22px;
-            margin-left: 15px;
-        }
-
-        .theme-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
+        
         .slider {
             position: absolute;
             cursor: pointer;
@@ -410,48 +341,6 @@
             text-align: center;
         }
 
-        .site-footer {
-            padding: 60px 0 20px;
-            background-color: var(--card-color);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-column h4 {
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul a {
-            color: var(--text-secondary);
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            color: var(--text-secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-        }
 
         .popup-overlay {
             position: fixed;
@@ -545,9 +434,6 @@
         }
 
         @media (max-width: 992px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
 
             .project-showcase {
                 grid-template-columns: 1fr;
@@ -606,15 +492,6 @@
                 cursor: pointer;
                 z-index: 1001;
             }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-column#footer-brand {
-                grid-row: 4;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -623,23 +500,18 @@
 
     <header class="header">
         <nav class="container">
-            <a href="https://www.vivexatech.in" class="logo">Vivexa</a>
+            <a href="https://www.vivexatech.in" class="logo">Vivexa Tech</a>
             <ul class="nav-links">
-                <li><a href="https://www.vivexatech.in">Home</a></li>
-                <li><a href="https://www.vivexatech.in/about">About</a></li>
+                <li><a href="https://www.vivexatech.in/about">About us</a></li>
                 <li><a href="https://www.vivexatech.in/service">Services</a></li>
-                
+
+                <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
                 <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
                 <li><a href="https://www.vivexatech.in/career">Career</a></li>
-                
+
                 <li><a href="#" class="cta-button nav-cta" data-popup-trigger>Contact Us</a></li>
             </ul>
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
+            <input type="checkbox" id="checkbox" style="display: none;" />
             <div class="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -672,49 +544,50 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-column" id="footer-brand">
-                <a href="https://www.vivexatech.in/" class="logo">Vivexa</a>
-                <p>Launch Your Business Online.<br>Affordably.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="https://www.vivexatech.in">Home</a></li>
-                    <li><a href="https://www.vivexatech.in/about">About</a></li>
-                    <li><a href="https://www.vivexatech.in/service">Services</a></li>
-                    
-                    <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-column" id="footer-brand">
+            <a href="https://www.vivexatech.in/" class="logo">Vivexa Tech</a>
+            <p>Launch Your Business Online.<br>Affordably.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="https://www.vivexatech.in/">Home</a></li>
+                <li><a href="https://www.vivexatech.in/about">About us</a></li>
+                <li><a href="https://www.vivexatech.in/service">Services</a></li>
+                <li><a href="https://www.vivexatech.in/portfolio">Portfolio</a></li>
+                <li><a href="https://www.vivexatech.in/#testimonials">Testimonials</a></li>
                 <li><a href="https://www.vivexatech.in/career">Career</a></li>
-                    
-                    <li><a href="https://www.vivexatech.in/legal">Privacy Policy <br>Terms & Conditions</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li><i class="fa-solid fa-envelope"></i> <a
-                            href="mailto:contact@vivexatech.in">contact@vivexatech.in</a></li>
-                    <li><i class="fa-solid fa-phone"></i> <a href="tel:+919354486861">+91 93544 86861</a></li>
-                    <li><i class="fa-solid fa-location-dot"></i> Cyber City, Gurugram, India</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/company/vivexa-tech/" aria-label="LinkedIn"><i
-                            class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://x.com/VivexaTech" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/vivexatech/" aria-label="Instagram"><i
-                            class="fa-brands fa-instagram"></i></a>
-                </div>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@vivexatech.in">contact@vivexatech.in</a></li>
+                <li><i class="fa-solid fa-phone"></i> <a href="tel:+919354486861">+91 93544 86861</a></li>
+                <li><i class="fa-solid fa-location-dot"></i> Cyber City, Gurugram, India</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Connect</h4>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/vivexa-tech/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/VivexaTech" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/vivexatech/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/VivexaTech" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Vivexa Tech. All Rights Reserved.</p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Vivexa Tech. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+            <a href="https://www.vivexatech.in/legal#privacy">Privacy Policy</a>
+            <a href="https://www.vivexatech.in/legal#terms">Terms & Conditions Policy</a>
+            <a href="https://www.vivexatech.in/legal#disclaimer">Disclaimer</a>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <div id="contact-popup" class="popup-overlay">
         <div class="popup-content">
