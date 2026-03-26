@@ -862,6 +862,9 @@ input:checked + .slider:before {
   font-size: 16px;
 
 }
+           .home-about-section {
+  background-color: var(--card-color);
+}
            .about-section {
   background-color: var(--bg-color);
 }
