@@ -46,7 +46,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preload" href="swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
 {
@@ -493,55 +493,88 @@
         </div>
     </footer>
 
-    <div id="contact-popup" class="popup-overlay">
-        <div class="popup-content">
-            <button class="close-popup" aria-label="Close form">&times;</button>
-            <h3>Let's Build Your Vision.</h3>
-            <p>Tell us about your project, and we'll reply within 24 hours.</p>
-            <form
-                action="https://docs.google.com/forms/d/e/1FAIpQLSf4wehpKMmxQB7K9zNn_s_ux5AWrLAMzkuFS-uckmzdatYrEg/formResponse"
-                method="POST" target="hidden_iframe" onsubmit="submitted=true; showSuccess();">
 
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="entry.290394025" required>
-                </div>
+<!-- ✅ reCAPTCHA v3 Script -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfqbZosAAAAAMD3H9ziIqw0_kyG76cueYQyqfyI"></script>
 
-                <div class="form-group">
-                    <label for="email">Work Email</label>
-                    <input type="email" id="email" name="entry.221684986" required>
-                </div>
+<div id="contact-popup" class="popup-overlay">
+    <div class="popup-content">
+        <button class="close-popup" aria-label="Close form">&times;</button>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="entry.2094133524">
-                </div>
+        <h3>Let's Build Your Vision.</h3>
+        <p>Tell us about your project, and we'll reply within 24 hours.</p>
 
-                <div class="form-group">
-                    <label for="details">Project Details</label>
-                    <textarea id="details" name="entry.575156488" rows="4" required></textarea>
-                </div>
+        <form
+            id="contactForm"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSf4wehpKMmxQB7K9zNn_s_ux5AWrLAMzkuFS-uckmzdatYrEg/formResponse"
+            method="POST"
+            target="hidden_iframe">
 
-                <button type="submit" class="cta-button form-submit-btn">
-                    Submit Inquiry
-                </button>
-
-            </form>
-
-            <iframe name="hidden_iframe" style="display:none;"></iframe>
-            <div id="successMsg" style="display:none; color:#22c55e; font-weight:600; margin-top:15px;">
-                ✔ Thank you! Your inquiry has been sent successfully.
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="entry.290394025" required>
             </div>
 
-            <script>
-                function showSuccess() {
-                    setTimeout(() => {
-                        document.getElementById("successMsg").style.display = "block";
-                    }, 300);
-                }
-            </script>
+            <div class="form-group">
+                <label>Work Email</label>
+                <input type="email" name="entry.221684986" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="entry.2094133524">
+            </div>
+
+            <div class="form-group">
+                <label>Project Details</label>
+                <textarea name="entry.575156488" rows="4" required></textarea>
+            </div>
+
+            <!-- Hidden token field -->
+            <input type="hidden" name="g-recaptcha-response" id="recaptchaToken">
+
+            <button type="submit" class="cta-button form-submit-btn">
+                Submit Inquiry
+            </button>
+
+        </form>
+
+        <!-- Hidden iframe -->
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+        <!-- Success Message -->
+        <div id="successMsg" style="display:none; color:#22c55e; font-weight:600; margin-top:15px;">
+            ✔ Thank you! Your inquiry has been sent successfully.
         </div>
+
+        <!-- Script -->
+        <script>
+            const form = document.getElementById("contactForm");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('6LfqbZosAAAAAMD3H9ziIqw0_kyG76cueYQyqfyI', { action: 'submit' })
+                        .then(function (token) {
+
+                            // Add token to hidden input
+                            document.getElementById("recaptchaToken").value = token;
+
+                            // Submit form after token
+                            form.submit();
+
+                            // Show success message
+                            setTimeout(() => {
+                                document.getElementById("successMsg").style.display = "block";
+                            }, 500);
+                        });
+                });
+            });
+        </script>
+
     </div>
+</div>
 
     <script src="swiper-bundle.min.js"></script>
 
